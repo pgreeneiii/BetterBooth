@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Professors
+    <a href="/professors/new" class="btn btn-lg btn-success">New Professor</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Photo url</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @professors.each do |professor| %>
+      <tr>
+        <td><%= professor.first_name %></td>
+        <td><%= professor.last_name %></td>
+        <td><%= professor.email %></td>
+        <td><%= professor.photo_url %></td>
+        <td>
+          <a href="/professors/<%= professor.id %>" class="btn btn-primary">Show</a>
+          <a href="/professors/<%= professor.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_professor/<%= professor.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

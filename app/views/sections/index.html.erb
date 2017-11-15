@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Sections
+    <a href="/sections/new" class="btn btn-lg btn-success">New Section</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Course</th>
+        <th>Professor</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.course_id %></td>
+        <td><%= section.professor_id %></td>
+        <td>
+          <a href="/sections/<%= section.id %>" class="btn btn-primary">Show</a>
+          <a href="/sections/<%= section.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_section/<%= section.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

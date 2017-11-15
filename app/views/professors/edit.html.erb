@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @professor.errors.any? %>
+  <% @professor.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Professor #<%= @professor.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_professor/<%= @professor.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for first_name -->
+      <div class="form-group">
+        <label for="first_name" class="control-label">
+          First name
+        </label>
+
+        <input type="text" id="first_name" name="first_name" placeholder="First name" class="form-control" value="<%= @professor.first_name %>">
+      </div>
+
+      <!-- Label and input for last_name -->
+      <div class="form-group">
+        <label for="last_name" class="control-label">
+          Last name
+        </label>
+
+        <input type="text" id="last_name" name="last_name" placeholder="Last name" class="form-control" value="<%= @professor.last_name %>">
+      </div>
+
+      <!-- Label and input for email -->
+      <div class="form-group">
+        <label for="email" class="control-label">
+          Email
+        </label>
+
+        <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @professor.email %>">
+      </div>
+
+      <!-- Label and input for photo_url -->
+      <div class="form-group">
+        <label for="photo_url" class="control-label">
+          Photo url
+        </label>
+
+        <input type="text" id="photo_url" name="photo_url" placeholder="Photo url" class="form-control" value="<%= @professor.photo_url %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Professor
+      </button>
+      or
+      <a href="/professors/<%= @professor.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

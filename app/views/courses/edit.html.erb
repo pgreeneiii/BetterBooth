@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @course.errors.any? %>
+  <% @course.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Course #<%= @course.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_course/<%= @course.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for course_number -->
+      <div class="form-group">
+        <label for="course_number" class="control-label">
+          Course number
+        </label>
+
+        <input type="text" id="course_number" name="course_number" placeholder="Course number" class="form-control" value="<%= @course.course_number %>">
+      </div>
+
+      <!-- Label and input for course_name -->
+      <div class="form-group">
+        <label for="course_name" class="control-label">
+          Course name
+        </label>
+
+        <input type="text" id="course_name" name="course_name" placeholder="Course name" class="form-control" value="<%= @course.course_name %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Course
+      </button>
+      or
+      <a href="/courses/<%= @course.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="page-header">
+  <h3>Evaluation #<%= @evaluation.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Class</dt>
+      <dd><%= @evaluation.class_id %></dd>
+
+      <dt>Avg hours</dt>
+      <dd><%= @evaluation.avg_hours %></dd>
+
+      <dt>Communication</dt>
+      <dd><%= @evaluation.communication %></dd>
+
+      <dt>Engagement</dt>
+      <dd><%= @evaluation.engagement %></dd>
+
+      <dt>Practical</dt>
+      <dd><%= @evaluation.practical %></dd>
+
+      <dt>Learning</dt>
+      <dd><%= @evaluation.learning %></dd>
+
+      <dt>Recommendation</dt>
+      <dd><%= @evaluation.recommendation %></dd>
+
+      <dt>Bid min</dt>
+      <dd><%= @evaluation.bid_min %></dd>
+
+      <dt>Bid max</dt>
+      <dd><%= @evaluation.bid_max %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/evaluations" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/evaluations/<%= @evaluation.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_evaluation/<%= @evaluation.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<!-- Validation failure messages -->
+<% if @evaluation.errors.any? %>
+  <% @evaluation.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Evaluation</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_evaluation" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for class_id -->
+      <div class="form-group">
+        <label for="class_id" class="control-label">
+          Class
+        </label>
+
+        <input type="text" id="class_id" name="class_id" placeholder="Class" class="form-control" value="<%= @evaluation.class_id %>">
+      </div>
+
+      <!-- Label and input for avg_hours -->
+      <div class="form-group">
+        <label for="avg_hours" class="control-label">
+          Avg hours
+        </label>
+
+        <input type="text" id="avg_hours" name="avg_hours" placeholder="Avg hours" class="form-control" value="<%= @evaluation.avg_hours %>">
+      </div>
+
+      <!-- Label and input for communication -->
+      <div class="form-group">
+        <label for="communication" class="control-label">
+          Communication
+        </label>
+
+        <input type="text" id="communication" name="communication" placeholder="Communication" class="form-control" value="<%= @evaluation.communication %>">
+      </div>
+
+      <!-- Label and input for engagement -->
+      <div class="form-group">
+        <label for="engagement" class="control-label">
+          Engagement
+        </label>
+
+        <input type="text" id="engagement" name="engagement" placeholder="Engagement" class="form-control" value="<%= @evaluation.engagement %>">
+      </div>
+
+      <!-- Label and input for practical -->
+      <div class="form-group">
+        <label for="practical" class="control-label">
+          Practical
+        </label>
+
+        <input type="text" id="practical" name="practical" placeholder="Practical" class="form-control" value="<%= @evaluation.practical %>">
+      </div>
+
+      <!-- Label and input for learning -->
+      <div class="form-group">
+        <label for="learning" class="control-label">
+          Learning
+        </label>
+
+        <input type="text" id="learning" name="learning" placeholder="Learning" class="form-control" value="<%= @evaluation.learning %>">
+      </div>
+
+      <!-- Label and input for recommendation -->
+      <div class="form-group">
+        <label for="recommendation" class="control-label">
+          Recommendation
+        </label>
+
+        <input type="text" id="recommendation" name="recommendation" placeholder="Recommendation" class="form-control" value="<%= @evaluation.recommendation %>">
+      </div>
+
+      <!-- Label and input for bid_min -->
+      <div class="form-group">
+        <label for="bid_min" class="control-label">
+          Bid min
+        </label>
+
+        <input type="text" id="bid_min" name="bid_min" placeholder="Bid min" class="form-control" value="<%= @evaluation.bid_min %>">
+      </div>
+
+      <!-- Label and input for bid_max -->
+      <div class="form-group">
+        <label for="bid_max" class="control-label">
+          Bid max
+        </label>
+
+        <input type="text" id="bid_max" name="bid_max" placeholder="Bid max" class="form-control" value="<%= @evaluation.bid_max %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Evaluation
+      </button>
+      or
+      <a href="/evaluations">Cancel</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<!-- Validation failure messages -->
+<% if @section.errors.any? %>
+  <% @section.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Section</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_section" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for course_id -->
+      <div class="form-group">
+        <label for="course_id" class="control-label">
+          Course
+        </label>
+
+        <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :course_name, @section.course_id), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for rofessor_id -->
+      <div class="form-group">
+        <label for="professor_id" class="control-label">
+          Professor
+        </label>
+
+        <%= select_tag(:professor_id, options_from_collection_for_select(Professor.all, :id, :last_name, @section.professor_id), :class => "form-control") %>
+      </div>
+
+
+      <button class="btn btn-success">
+        Create Section
+      </button>
+      or
+      <a href="/sections">Cancel</a>
+    </form>
+  </div>
+</div>

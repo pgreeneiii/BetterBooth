@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @section.errors.any? %>
+  <% @section.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Section #<%= @section.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_section/<%= @section.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for course_id -->
+      <div class="form-group">
+        <label for="course_id" class="control-label">
+          Course
+        </label>
+
+        <input type="text" id="course_id" name="course_id" placeholder="Course" class="form-control" value="<%= @section.course_id %>">
+      </div>
+
+      <!-- Label and input for professor_id -->
+      <div class="form-group">
+        <label for="professor_id" class="control-label">
+          Professor
+        </label>
+
+        <input type="text" id="professor_id" name="professor_id" placeholder="Professor" class="form-control" value="<%= @section.professor_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Section
+      </button>
+      or
+      <a href="/sections/<%= @section.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

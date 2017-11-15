@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Professor #<%= @professor.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>First name</dt>
+      <dd><%= @professor.first_name %></dd>
+
+      <dt>Last name</dt>
+      <dd><%= @professor.last_name %></dd>
+
+      <dt>Email</dt>
+      <dd><%= @professor.email %></dd>
+
+      <dt>Photo url</dt>
+      <dd><%= @professor.photo_url %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/professors" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/professors/<%= @professor.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_professor/<%= @professor.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
