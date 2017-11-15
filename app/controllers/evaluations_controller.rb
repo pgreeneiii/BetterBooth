@@ -20,15 +20,25 @@ class EvaluationsController < ApplicationController
   def create
     @evaluation = Evaluation.new
 
-    @evaluation.class_id = params[:class_id]
+    course_id = params[:course_id]
+    professor_id = params[:professor_id]
+
+    @evaluation.class_id = Section.find_by(:course_id => course_id, :professor_id => professor_id).id
     @evaluation.avg_hours = params[:avg_hours]
     @evaluation.communication = params[:communication]
     @evaluation.engagement = params[:engagement]
     @evaluation.practical = params[:practical]
     @evaluation.learning = params[:learning]
     @evaluation.recommendation = params[:recommendation]
-    @evaluation.bid_min = params[:bid_min]
-    @evaluation.bid_max = params[:bid_max]
+    @evaluation.p1_bid_min = params[:p1_bid_min]
+    @evaluation.p1_bid_max = params[:p1_bid_max]
+    @evaluation.p2_bid_min = params[:p2_bid_min]
+    @evaluation.p2_bid_max = params[:p2_bid_max]
+    @evaluation.p3_bid_min = params[:p3_bid_min]
+    @evaluation.p3_bid_max = params[:p3_bid_max]
+    @evaluation.p4_bid_min = params[:p4_bid_min]
+    @evaluation.p4_bid_max = params[:p4_bid_max]
+
 
     save_status = @evaluation.save
 

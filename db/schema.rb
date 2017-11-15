@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115014625) do
+ActiveRecord::Schema.define(version: 20171115200130) do
 
   create_table "classes", force: :cascade do |t|
     t.integer  "course_id"
@@ -34,10 +34,16 @@ ActiveRecord::Schema.define(version: 20171115014625) do
     t.float    "practical"
     t.float    "learning"
     t.float    "recommendation"
-    t.integer  "bid_min"
-    t.integer  "bid_max"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "p1_bid_min"
+    t.integer  "p1_bid_max"
+    t.integer  "p2_bid_min"
+    t.integer  "p2_bid_max"
+    t.integer  "p3_bid_min"
+    t.integer  "p3_bid_max"
+    t.integer  "p4_bid_min"
+    t.integer  "p4_bid_max"
   end
 
   create_table "professors", force: :cascade do |t|

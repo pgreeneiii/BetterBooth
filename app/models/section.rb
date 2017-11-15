@@ -1,4 +1,4 @@
 class Section < ApplicationRecord
-   has_many(:courses, :class_name => "Course", :foreign_key => "id")
-   has_many(:professors, :class_name => "Professor", :foreign_key => "id")
+   belongs_to(:course, :class_name => "Course", :foreign_key => "course_id")
+   belongs_to(:professor, :class_name => "Professor", :foreign_key => "professor_id")
 end

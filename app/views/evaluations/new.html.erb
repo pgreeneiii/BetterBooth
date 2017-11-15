@@ -18,13 +18,22 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for class_id -->
+      <!-- Label and input for course_id -->
       <div class="form-group">
-        <label for="class_id" class="control-label">
-          Class
+        <label for="course_id" class="control-label">
+          Section
         </label>
 
-        <input type="text" id="class_id" name="class_id" placeholder="Class" class="form-control" value="<%= @evaluation.class_id %>">
+        <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :course_name, :course_id), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for professor_id -->
+      <div class="form-group">
+        <label for="professor_id" class="control-label">
+          Professor
+        </label>
+
+        <%= select_tag(:professor_id, options_from_collection_for_select(Professor.all, :id, :last_name, :professor_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for avg_hours -->
@@ -33,7 +42,7 @@
           Avg hours
         </label>
 
-        <input type="text" id="avg_hours" name="avg_hours" placeholder="Avg hours" class="form-control" value="<%= @evaluation.avg_hours %>">
+        <input type="number" min="0" step="0.01" id="avg_hours" name="avg_hours" placeholder="Avg hours" class="form-control" value="<%= @evaluation.avg_hours %>">
       </div>
 
       <!-- Label and input for communication -->
@@ -42,7 +51,7 @@
           Communication
         </label>
 
-        <input type="text" id="communication" name="communication" placeholder="Communication" class="form-control" value="<%= @evaluation.communication %>">
+        <input type="number" min="0" max="5" step="1" id="communication" name="communication" placeholder="Communication" class="form-control" value="<%= @evaluation.communication %>">
       </div>
 
       <!-- Label and input for engagement -->
@@ -51,7 +60,7 @@
           Engagement
         </label>
 
-        <input type="text" id="engagement" name="engagement" placeholder="Engagement" class="form-control" value="<%= @evaluation.engagement %>">
+        <input type="number" min="0" max="5" step="1" id="engagement" name="engagement" placeholder="Engagement" class="form-control" value="<%= @evaluation.engagement %>">
       </div>
 
       <!-- Label and input for practical -->
@@ -60,7 +69,7 @@
           Practical
         </label>
 
-        <input type="text" id="practical" name="practical" placeholder="Practical" class="form-control" value="<%= @evaluation.practical %>">
+        <input type="number" min="0" max="5" step="1" id="practical" name="practical" placeholder="Practical" class="form-control" value="<%= @evaluation.practical %>">
       </div>
 
       <!-- Label and input for learning -->
@@ -69,7 +78,7 @@
           Learning
         </label>
 
-        <input type="text" id="learning" name="learning" placeholder="Learning" class="form-control" value="<%= @evaluation.learning %>">
+        <input type="number" min="0" max="5" step="1" id="learning" name="learning" placeholder="Learning" class="form-control" value="<%= @evaluation.learning %>">
       </div>
 
       <!-- Label and input for recommendation -->
@@ -78,25 +87,86 @@
           Recommendation
         </label>
 
-        <input type="text" id="recommendation" name="recommendation" placeholder="Recommendation" class="form-control" value="<%= @evaluation.recommendation %>">
+        <input type="number" min="0" max="5" step="1" id="recommendation" name="recommendation" placeholder="Recommendation" class="form-control" value="<%= @evaluation.recommendation %>">
       </div>
 
-      <!-- Label and input for bid_min -->
+      <!-- Label and input for p1_bid_min -->
       <div class="form-group">
-        <label for="bid_min" class="control-label">
-          Bid min
+        <label for="p1_bid_min" class="control-label">
+          Phase 1 Bid min
         </label>
 
-        <input type="text" id="bid_min" name="bid_min" placeholder="Bid min" class="form-control" value="<%= @evaluation.bid_min %>">
+        <input type="number" id="p1_bid_min" name="p1_bid_min" placeholder="Phase 1 Bid min" class="form-control" value="<%= @evaluation.p1_bid_min %>">
       </div>
 
-      <!-- Label and input for bid_max -->
+      <!-- Label and input for p1_bid_max -->
       <div class="form-group">
-        <label for="bid_max" class="control-label">
-          Bid max
+        <label for="p1_bid_max" class="control-label">
+          Phase 1 Bid max
         </label>
 
-        <input type="text" id="bid_max" name="bid_max" placeholder="Bid max" class="form-control" value="<%= @evaluation.bid_max %>">
+        <input type="number" id="p1_bid_max" name="p1_bid_max" placeholder="Phase 1 Bid max" class="form-control" value="<%= @evaluation.p1_bid_max %>">
+      </div>
+
+
+
+      <!-- Label and input for p2_bid_min -->
+      <div class="form-group">
+        <label for="p2_bid_min" class="control-label">
+          Phase 2 Bid min
+        </label>
+
+        <input type="number" id="p2_bid_min" name="p2_bid_min" placeholder="Phase 2 Bid min" class="form-control" value="<%= @evaluation.p2_bid_min %>">
+      </div>
+
+      <!-- Label and input for p2_bid_max -->
+      <div class="form-group">
+        <label for="p2_bid_max" class="control-label">
+          Phase 2 Bid max
+        </label>
+
+        <input type="number" id="p2_bid_max" name="p2_bid_max" placeholder="Phase 2 Bid max" class="form-control" value="<%= @evaluation.p2_bid_max %>">
+      </div>
+
+
+
+      <!-- Label and input for p3_bid_min -->
+      <div class="form-group">
+        <label for="p3_bid_min" class="control-label">
+          Phase 3 Bid min
+        </label>
+
+        <input type="number" id="p3_bid_min" name="p3_bid_min" placeholder="Phase 3 Bid min" class="form-control" value="<%= @evaluation.p3_bid_min %>">
+      </div>
+
+      <!-- Label and input for p3_bid_max -->
+      <div class="form-group">
+        <label for="p3_bid_max" class="control-label">
+          Phase 3 Bid max
+        </label>
+
+        <input type="number" id="p3_bid_max" name="p3_bid_max" placeholder="Phase 3 Bid max" class="form-control" value="<%= @evaluation.p3_bid_max %>">
+      </div>
+
+
+
+
+      <!-- Label and input for p4_bid_min -->
+      <div class="form-group">
+        <label for="p4_bid_min" class="control-label">
+          Phase 4 Bid min
+        </label>
+
+        <input type="number" id="p4_bid_min" name="p4_bid_min" placeholder="Phase 4 Bid min" class="form-control" value="<%= @evaluation.p4_bid_min %>">
+      </div>
+
+      <!-- Label and input for p4_bid_max -->
+      <div class="form-group">
+        <label for="p4_bid_max" class="control-label">
+          Phase 4 Bid max
+        </label>
+
+        <input type="number" id="p4_bid_max" name="p4_bid_max" placeholder="Phase 4 Bid max" class="form-control" value="<%= @evaluation.p4_bid_max %>">
       </div>
 
       <button class="btn btn-success">

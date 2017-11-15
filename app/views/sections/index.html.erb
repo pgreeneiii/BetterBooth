@@ -16,8 +16,8 @@
 
       <% @sections.each do |section| %>
       <tr>
-        <td><%= section.course_id %></td>
-        <td><%= section.professor_id %></td>
+        <td><%= section.course.course_name %></td>
+        <td><%= section.professor.last_name %></td>
         <td>
           <a href="/sections/<%= section.id %>" class="btn btn-primary">Show</a>
           <a href="/sections/<%= section.id %>/edit" class="btn btn-warning">Edit</a>
