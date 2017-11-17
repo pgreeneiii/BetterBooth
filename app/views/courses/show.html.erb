@@ -11,6 +11,9 @@
       <dt>Course name</dt>
       <dd><%= @course.course_name %></dd>
 
+      <dt>Subject</dt>
+      <dd><%= @course.subject %></dd>
+
     </dl>
 
     <div class="btn-group btn-group-justified">
@@ -25,4 +28,64 @@
       </a>
     </div>
   </div>
+</div>
+
+<!-- UI Testing -->
+<div class="row">
+   <div class="col-md-4 mb-2">
+      <div class="card">
+         <div class="card-body">
+            <h4 class="card-title"><%= @course.course_name %></h4>
+
+            <!-- Label and input for professor_id -->
+            <div class="form-group">
+               <select class="form-control">
+                  <% @course.professors.each do |prof| %>
+
+                  <option value="<%= prof.id %>">
+                     <%= prof.first_name %> <%= prof.last_name %>
+                  </option>
+
+                  <% end %>
+               </select>
+            </div>
+
+            <% @course.professors.each do |prof| %>
+
+               <% section = Section.find_by(:course_id => @course.id, :professor_id => prof.id) %>
+
+                  <div class="dyn_sched" id="prof_<%= prof.id %>">
+                     <div class="row">
+                     <div class="col-md-7">
+
+                     <% section.schedules.each do |schedule| %>
+
+                                 <div class="chip">
+                                    <div class="chip-dot">
+                                       <%= schedule.daytable.day_output %>
+                                    </div>
+                                    <%= schedule.timetable.time_output %>
+                                 </div>
+
+                     <% end %>
+
+                     </div>
+
+                     <div class="col-md-5">
+                        <p>Avg. Hours:  <%= section.evaluation.avg_hours %></p>
+                        <p>Communication:  <%= section.evaluation.communication %></p>
+                        <p>Recommendation:  <%= section.evaluation.recommendation %></p>
+                     </div>
+                     </div>
+               </div>
+
+                     <!-- <p>Avg. Hours:  <%= section.evaluation.avg_hours %></p>
+                     <p>Communication:  <%= section.evaluation.communication %></p> -->
+
+            <% end %>
+
+         </div>
+
+      </div>
+   </div>
 </div>

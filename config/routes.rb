@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Schedule resource:
+  # CREATE
+  get "/schedules/new", :controller => "schedules", :action => "new"
+  post "/create_schedule", :controller => "schedules", :action => "create"
+
+  # READ
+  get "/schedules", :controller => "schedules", :action => "index"
+  get "/schedules/:id", :controller => "schedules", :action => "show"
+
+  # UPDATE
+  get "/schedules/:id/edit", :controller => "schedules", :action => "edit"
+  post "/update_schedule/:id", :controller => "schedules", :action => "update"
+
+  # DELETE
+  get "/delete_schedule/:id", :controller => "schedules", :action => "destroy"
+  #------------------------------
+
   # Routes for the Section resource:
   # CREATE
   get "/sections/new", :controller => "sections", :action => "new"

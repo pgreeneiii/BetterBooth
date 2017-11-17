@@ -22,6 +22,7 @@ class CoursesController < ApplicationController
 
     @course.course_number = params[:course_number]
     @course.course_name = params[:course_name]
+    @course.subject = params[:subject]
 
     save_status = @course.save
 
@@ -43,6 +44,7 @@ class CoursesController < ApplicationController
 
     @course.course_number = params[:course_number]
     @course.course_name = params[:course_name]
+    @course.subject = params[:subject]
 
     save_status = @course.save
 

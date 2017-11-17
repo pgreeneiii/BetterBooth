@@ -38,4 +38,26 @@ namespace :slurp do
      puts "There are now #{Professor.count} rows in the transactions table"
   end
 
+  task schedules: :environment do
+     require "csv"
+
+     csv_text = File.read(Rails.root.join("lib", "csvs", "schedule.csv"))
+     # puts csv_text
+     csv = CSV.parse(csv_text, :headers => true, :header_converters => :symbol, :encoding => 'ISO-8859-1')
+     csv.each do |row|
+        t = Schedule.new
+        t.section_id = row[:section_id]
+        t.section_number = row[:section_number]
+        t.quarter = row[:quarter]
+        t.day = row[:day]
+        t.time = row[:time]
+        t.half_credit = row[:half_credit]
+        t.save
+
+        puts "#{t.section_id}, #{t.section_number}, #{t.quarter}, #{t.day}, #{t.time}, #{t.half_credit} saved"
+     end
+
+     puts "There are now #{Schedule.count} rows in the schedule table"
+  end
+
 end

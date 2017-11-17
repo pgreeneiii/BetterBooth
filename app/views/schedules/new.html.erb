@@ -1,0 +1,81 @@
+<!-- Validation failure messages -->
+<% if @schedule.errors.any? %>
+  <% @schedule.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Schedule</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_schedule" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for section_id -->
+      <div class="form-group">
+        <label for="section_id" class="control-label">
+          Section
+        </label>
+
+        <input type="text" id="section_id" name="section_id" placeholder="Section" class="form-control" value="<%= @schedule.section_id %>">
+      </div>
+
+      <!-- Label and input for section_number -->
+      <div class="form-group">
+        <label for="section_number" class="control-label">
+          Section number
+        </label>
+
+        <input type="text" id="section_number" name="section_number" placeholder="Section number" class="form-control" value="<%= @schedule.section_number %>">
+      </div>
+
+      <!-- Label and input for quarter -->
+      <div class="form-group">
+        <label for="quarter" class="control-label">
+          Quarter
+        </label>
+
+        <input type="text" id="quarter" name="quarter" placeholder="Quarter" class="form-control" value="<%= @schedule.quarter %>">
+      </div>
+
+      <!-- Label and input for day -->
+      <div class="form-group">
+        <label for="day" class="control-label">
+          Day
+        </label>
+
+        <input type="text" id="day" name="day" placeholder="Day" class="form-control" value="<%= @schedule.day %>">
+      </div>
+
+      <!-- Label and input for time -->
+      <div class="form-group">
+        <label for="time" class="control-label">
+          Time
+        </label>
+
+        <input type="text" id="time" name="time" placeholder="Time" class="form-control" value="<%= @schedule.time %>">
+      </div>
+
+      <!-- Label and input for half_credit -->
+      <div class="checkbox">
+        <label for="half_credit">
+          <input type="checkbox" id="half_credit" name="half_credit" value="1" <%= "checked" if @schedule.half_credit %>>
+          Half credit
+        </label>
+      </div>
+
+      <button class="btn btn-success">
+        Create Schedule
+      </button>
+      or
+      <a href="/schedules">Cancel</a>
+    </form>
+  </div>
+</div>

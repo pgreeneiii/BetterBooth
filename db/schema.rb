@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115200130) do
+ActiveRecord::Schema.define(version: 20171117022405) do
 
   create_table "classes", force: :cascade do |t|
     t.integer  "course_id"
@@ -24,10 +24,17 @@ ActiveRecord::Schema.define(version: 20171115200130) do
     t.string   "course_name"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "subject"
+  end
+
+  create_table "day_tables", force: :cascade do |t|
+    t.string   "day_output"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "evaluations", force: :cascade do |t|
-    t.integer  "class_id"
+    t.integer  "section_id"
     t.float    "avg_hours"
     t.float    "communication"
     t.float    "engagement"
@@ -55,11 +62,28 @@ ActiveRecord::Schema.define(version: 20171115200130) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "section_id"
+    t.string   "section_number"
+    t.integer  "quarter"
+    t.integer  "day"
+    t.integer  "time"
+    t.boolean  "half_credit"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "sections", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "professor_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "time_tables", force: :cascade do |t|
+    t.string   "time_output"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
