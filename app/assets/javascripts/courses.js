@@ -1,27 +1,46 @@
+
+
 $( document ).on('turbolinks:load', function() {
-   $('div.dyn_sched').hide();
-   $('div.dyn_sched:first').show();
+   $('div.schedule').show();
+   $('div.rating').hide();
+   $('div.bid').hide();
 
-   $('div.dyn_ratings').hide();
-   $('div.dyn_ratings:first').show();
+   $('div.card').each(function(){
+      var prof_id = this.select.value;
+      var course_id = $(this).attr('id');
+        $.ajax({
+            url: '/fetch_schedules',
+            data: { prof_id: prof_id, course_id: course_id },
+        });
+   })
 
-    $('select').change(function() {
-        var val = $(this).val();
-        if (val) {
-            $('div.dyn_sched:not(#prof_' + val + ')').hide();
-            $('#prof_' + val).show();
-        } else {
-            $('prof').show();
-        }
+
+   $('select').change(function () {
+     var prof_id = this.value;
+     var course_id = $(this).parents('div.card').attr('id');
+        $.ajax({
+            url: '/fetch_schedules',
+            data: { prof_id: prof_id, course_id: course_id },
+        });
     });
 
-    $('select').change(function() {
-        var val = $(this).val();
-        if (val) {
-            $('div.dyn_ratings:not(#prof_' + val + ')').hide();
-            $('#prof_' + val).show();
-        } else {
-            $('prof').show();
-        }
-    });
+   $('.card').on('click', '#schedule', function () {
+      $(this).parents('div.card').find('div.schedule').show();
+      $(this).parents('div.card').find('div.rating').hide();
+      $(this).parents('div.card').find('div.bid').hide();
+   });
+
+   $('.card').on('click', '#rating', function (){
+      $(this).parents('div.card').find('div.schedule').hide();
+      $(this).parents('div.card').find('div.rating').show();
+      $(this).parents('div.card').find('div.bid').hide();
+   });
+
+   $('.card').on('click', '#bid', function (){
+      $(this).parents('div.card').find('div.schedule').hide();
+      $(this).parents('div.card').find('div.rating').hide();
+      $(this).parents('div.card').find('div.bid').show();
+   });
+
+
 });

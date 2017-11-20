@@ -1,288 +1,288 @@
-id,course_id,professor_id,created_at,updated_at
-2,1,580,2017-11-15 04:50:37 UTC,2017-11-15 04:50:37 UTC
-3,2,486,2017-11-15 04:51:40 UTC,2017-11-15 04:51:40 UTC
-4,2,449,2017-11-15 04:51:56 UTC,2017-11-15 04:51:56 UTC
-5,2,455,2017-11-15 04:52:56 UTC,2017-11-15 20:17:25 UTC
-6,2,515,2017-11-15 04:53:14 UTC,2017-11-15 04:53:14 UTC
-7,2,405,2017-11-15 04:53:26 UTC,2017-11-15 04:53:26 UTC
-8,2,395,2017-11-15 04:53:38 UTC,2017-11-15 04:53:38 UTC
-9,2,576,2017-11-15 04:53:51 UTC,2017-11-15 04:53:51 UTC
-10,2,558,2017-11-15 04:54:01 UTC,2017-11-15 04:54:01 UTC
-11,3,448,2017-11-15 04:54:26 UTC,2017-11-15 04:54:26 UTC
-12,4,549,2017-11-15 04:54:41 UTC,2017-11-15 04:54:41 UTC
-13,4,423,2017-11-15 04:55:00 UTC,2017-11-15 04:55:00 UTC
-14,5,441,2017-11-15 04:55:12 UTC,2017-11-15 04:55:12 UTC
-15,5,567,2017-11-15 04:55:32 UTC,2017-11-15 04:55:32 UTC
-16,6,497,2017-11-15 13:15:10 UTC,2017-11-15 13:15:10 UTC
-17,7,567,2017-11-15 13:15:30 UTC,2017-11-15 13:15:30 UTC
-18,8,506,2017-11-15 13:15:43 UTC,2017-11-15 13:15:43 UTC
-19,8,581,2017-11-15 13:15:56 UTC,2017-11-15 13:15:56 UTC
-20,8,463,2017-11-15 13:16:09 UTC,2017-11-15 13:16:09 UTC
-21,9,515,2017-11-15 13:16:24 UTC,2017-11-15 13:16:24 UTC
-22,10,539,2017-11-15 13:16:38 UTC,2017-11-15 13:16:38 UTC
-23,11,394,2017-11-15 13:16:51 UTC,2017-11-15 13:16:51 UTC
-24,12,493,2017-11-15 13:17:04 UTC,2017-11-15 13:17:04 UTC
-25,13,546,2017-11-15 13:17:31 UTC,2017-11-15 13:17:31 UTC
-26,14,489,2017-11-15 13:17:50 UTC,2017-11-15 13:17:50 UTC
-27,15,489,2017-11-15 13:18:04 UTC,2017-11-15 13:18:04 UTC
-28,16,446,2017-11-15 13:18:24 UTC,2017-11-15 13:18:24 UTC
-29,16,451,2017-11-15 13:18:36 UTC,2017-11-15 13:18:36 UTC
-30,16,472,2017-11-15 13:18:48 UTC,2017-11-15 13:18:48 UTC
-31,16,559,2017-11-15 13:18:57 UTC,2017-11-15 13:18:57 UTC
-32,16,578,2017-11-15 13:19:10 UTC,2017-11-15 13:19:10 UTC
-33,16,544,2017-11-15 13:19:21 UTC,2017-11-15 13:19:21 UTC
-34,16,545,2017-11-15 13:19:31 UTC,2017-11-15 13:19:31 UTC
-35,16,437,2017-11-15 13:19:44 UTC,2017-11-15 13:19:44 UTC
-36,17,559,2017-11-15 13:20:03 UTC,2017-11-15 13:20:03 UTC
-37,18,489,2017-11-15 13:20:25 UTC,2017-11-15 13:20:25 UTC
-38,18,527,2017-11-15 13:20:49 UTC,2017-11-15 13:20:49 UTC
-39,19,477,2017-11-15 13:21:00 UTC,2017-11-15 13:21:00 UTC
-40,19,563,2017-11-15 13:21:13 UTC,2017-11-15 13:21:13 UTC
-41,19,430,2017-11-15 13:21:24 UTC,2017-11-15 13:21:24 UTC
-42,19,457,2017-11-15 13:21:35 UTC,2017-11-15 13:21:35 UTC
-43,19,569,2017-11-15 13:21:47 UTC,2017-11-15 13:21:47 UTC
-44,20,512,2017-11-15 13:21:58 UTC,2017-11-15 13:21:58 UTC
-45,21,472,2017-11-15 13:22:11 UTC,2017-11-15 13:22:11 UTC
-46,22,396,2017-11-15 13:22:23 UTC,2017-11-15 13:22:23 UTC
-47,23,476,2017-11-15 13:22:34 UTC,2017-11-15 13:22:34 UTC
-48,24,401,2017-11-15 13:22:46 UTC,2017-11-15 13:22:46 UTC
-49,25,523,2017-11-15 13:23:06 UTC,2017-11-15 13:23:06 UTC
-50,26,559,2017-11-15 13:23:19 UTC,2017-11-15 13:23:19 UTC
-51,27,409,2017-11-15 13:23:31 UTC,2017-11-15 13:23:31 UTC
-52,28,459,2017-11-15 13:23:42 UTC,2017-11-15 13:23:42 UTC
-53,28,490,2017-11-15 13:23:51 UTC,2017-11-15 13:23:51 UTC
-54,29,520,2017-11-15 13:24:03 UTC,2017-11-15 13:24:03 UTC
-55,30,520,2017-11-15 13:24:11 UTC,2017-11-15 13:24:11 UTC
-56,31,396,2017-11-15 13:24:30 UTC,2017-11-15 13:24:30 UTC
-57,32,479,2017-11-15 13:24:40 UTC,2017-11-15 13:24:40 UTC
-58,33,513,2017-11-15 13:24:51 UTC,2017-11-15 13:24:51 UTC
-59,33,484,2017-11-15 13:25:02 UTC,2017-11-15 13:25:02 UTC
-60,34,436,2017-11-15 13:25:14 UTC,2017-11-15 13:25:14 UTC
-61,35,475,2017-11-15 13:25:45 UTC,2017-11-15 13:25:45 UTC
-62,36,401,2017-11-15 13:25:58 UTC,2017-11-15 13:25:58 UTC
-63,36,481,2017-11-15 13:26:09 UTC,2017-11-15 13:26:09 UTC
-64,36,553,2017-11-15 13:26:19 UTC,2017-11-15 13:26:19 UTC
-65,37,513,2017-11-15 13:26:37 UTC,2017-11-15 13:26:37 UTC
-66,38,559,2017-11-15 13:26:50 UTC,2017-11-15 13:26:50 UTC
-67,40,465,2017-11-15 13:27:16 UTC,2017-11-15 13:27:16 UTC
-68,41,553,2017-11-15 13:27:32 UTC,2017-11-15 13:27:32 UTC
-69,43,416,2017-11-15 13:28:06 UTC,2017-11-15 13:28:06 UTC
-70,44,430,2017-11-15 13:28:36 UTC,2017-11-15 13:28:36 UTC
-71,45,477,2017-11-15 13:28:52 UTC,2017-11-15 13:28:52 UTC
-72,46,563,2017-11-15 13:29:04 UTC,2017-11-15 13:29:04 UTC
-73,47,482,2017-11-15 13:29:20 UTC,2017-11-15 13:29:20 UTC
-74,47,471,2017-11-15 13:29:34 UTC,2017-11-15 13:29:34 UTC
-75,47,582,2017-11-15 13:29:46 UTC,2017-11-15 13:29:46 UTC
-76,47,504,2017-11-15 13:29:57 UTC,2017-11-15 13:29:57 UTC
-77,48,540,2017-11-15 13:30:13 UTC,2017-11-15 13:30:13 UTC
-78,48,410,2017-11-15 13:30:24 UTC,2017-11-15 13:30:24 UTC
-79,49,496,2017-11-15 13:30:39 UTC,2017-11-15 13:30:39 UTC
-80,50,499,2017-11-15 13:30:52 UTC,2017-11-15 13:30:52 UTC
-81,50,482,2017-11-15 13:31:03 UTC,2017-11-15 13:31:03 UTC
-82,50,535,2017-11-15 13:31:15 UTC,2017-11-15 13:31:15 UTC
-83,51,504,2017-11-15 13:31:27 UTC,2017-11-15 13:31:27 UTC
-84,52,496,2017-11-15 13:31:39 UTC,2017-11-15 13:31:39 UTC
-85,53,460,2017-11-15 13:31:54 UTC,2017-11-15 13:31:54 UTC
-86,54,391,2017-11-15 13:32:09 UTC,2017-11-15 13:32:09 UTC
-87,56,450,2017-11-15 13:32:26 UTC,2017-11-15 13:32:26 UTC
-88,57,519,2017-11-15 13:32:43 UTC,2017-11-15 13:32:43 UTC
-89,58,392,2017-11-15 13:33:01 UTC,2017-11-15 13:33:01 UTC
-90,59,511,2017-11-15 13:33:24 UTC,2017-11-15 13:33:24 UTC
-91,60,567,2017-11-15 13:33:37 UTC,2017-11-15 13:33:37 UTC
-92,61,520,2017-11-15 13:33:55 UTC,2017-11-15 13:33:55 UTC
-93,62,555,2017-11-15 13:34:19 UTC,2017-11-15 13:34:19 UTC
-94,63,404,2017-11-15 13:34:33 UTC,2017-11-15 13:34:33 UTC
-95,64,456,2017-11-15 13:34:45 UTC,2017-11-15 13:34:45 UTC
-96,65,450,2017-11-15 13:34:56 UTC,2017-11-15 13:34:56 UTC
-97,65,460,2017-11-15 13:35:07 UTC,2017-11-15 13:35:07 UTC
-98,66,514,2017-11-15 13:35:25 UTC,2017-11-15 13:35:25 UTC
-99,66,426,2017-11-15 13:35:38 UTC,2017-11-15 13:35:38 UTC
-100,66,566,2017-11-15 13:35:49 UTC,2017-11-15 13:35:49 UTC
-101,66,415,2017-11-15 13:35:58 UTC,2017-11-15 13:35:58 UTC
-102,66,461,2017-11-15 13:36:10 UTC,2017-11-15 13:36:10 UTC
-103,67,492,2017-11-15 13:36:23 UTC,2017-11-15 13:36:23 UTC
-104,68,564,2017-11-15 13:36:38 UTC,2017-11-15 13:36:38 UTC
-105,69,399,2017-11-15 13:36:52 UTC,2017-11-15 13:36:52 UTC
-106,70,521,2017-11-15 13:37:16 UTC,2017-11-15 13:37:16 UTC
-107,71,466,2017-11-15 13:37:29 UTC,2017-11-15 13:37:29 UTC
-108,72,547,2017-11-15 13:37:40 UTC,2017-11-15 13:37:40 UTC
-109,73,580,2017-11-15 13:37:52 UTC,2017-11-15 13:37:52 UTC
-110,74,425,2017-11-15 13:38:03 UTC,2017-11-15 13:38:03 UTC
-111,75,564,2017-11-15 13:38:16 UTC,2017-11-15 13:38:16 UTC
-112,76,564,2017-11-15 13:38:30 UTC,2017-11-15 13:38:30 UTC
-113,77,564,2017-11-15 13:38:48 UTC,2017-11-15 13:38:48 UTC
-114,78,501,2017-11-15 13:39:00 UTC,2017-11-15 13:39:00 UTC
-115,78,485,2017-11-15 13:39:10 UTC,2017-11-15 13:39:10 UTC
-116,78,480,2017-11-15 13:39:48 UTC,2017-11-15 13:39:48 UTC
-117,78,406,2017-11-15 13:39:59 UTC,2017-11-15 13:39:59 UTC
-118,78,516,2017-11-15 13:40:08 UTC,2017-11-15 13:40:08 UTC
-119,78,508,2017-11-15 13:40:20 UTC,2017-11-15 13:40:20 UTC
-120,78,461,2017-11-15 13:40:30 UTC,2017-11-15 13:40:30 UTC
-121,79,406,2017-11-15 13:40:41 UTC,2017-11-15 13:40:41 UTC
-122,79,531,2017-11-15 13:40:53 UTC,2017-11-15 13:40:53 UTC
-123,80,434,2017-11-15 13:41:06 UTC,2017-11-15 13:41:06 UTC
-124,81,528,2017-11-15 13:41:30 UTC,2017-11-15 13:41:30 UTC
-125,82,483,2017-11-15 13:41:48 UTC,2017-11-15 13:41:48 UTC
-126,83,551,2017-11-15 13:41:59 UTC,2017-11-15 13:41:59 UTC
-127,84,565,2017-11-15 13:42:12 UTC,2017-11-15 13:42:12 UTC
-128,85,468,2017-11-15 13:42:27 UTC,2017-11-15 13:42:27 UTC
-129,86,425,2017-11-15 13:42:37 UTC,2017-11-15 13:42:37 UTC
-130,86,483,2017-11-15 13:42:47 UTC,2017-11-15 13:42:47 UTC
-131,86,485,2017-11-15 13:42:56 UTC,2017-11-15 13:42:56 UTC
-132,87,446,2017-11-15 13:43:15 UTC,2017-11-15 13:43:15 UTC
-133,88,442,2017-11-15 13:43:27 UTC,2017-11-15 13:43:27 UTC
-134,89,434,2017-11-15 13:43:38 UTC,2017-11-15 13:43:38 UTC
-135,90,551,2017-11-15 13:43:47 UTC,2017-11-15 13:43:47 UTC
-136,91,469,2017-11-15 13:43:57 UTC,2017-11-15 13:43:57 UTC
-137,92,466,2017-11-15 13:44:11 UTC,2017-11-15 13:44:11 UTC
-138,93,564,2017-11-15 13:44:36 UTC,2017-11-15 13:44:36 UTC
-139,94,442,2017-11-15 13:44:53 UTC,2017-11-15 13:44:53 UTC
-140,95,498,2017-11-15 13:45:06 UTC,2017-11-15 13:45:06 UTC
-141,96,468,2017-11-15 13:46:04 UTC,2017-11-15 13:46:04 UTC
-142,97,468,2017-11-15 13:46:15 UTC,2017-11-15 13:46:15 UTC
-143,98,468,2017-11-15 13:46:26 UTC,2017-11-15 13:46:26 UTC
-144,99,500,2017-11-15 13:46:46 UTC,2017-11-15 13:46:46 UTC
-145,99,538,2017-11-15 13:47:06 UTC,2017-11-15 13:47:06 UTC
-146,99,393,2017-11-15 13:47:28 UTC,2017-11-15 13:47:28 UTC
-147,99,458,2017-11-15 13:47:43 UTC,2017-11-15 13:47:43 UTC
-148,100,420,2017-11-15 13:47:52 UTC,2017-11-15 13:47:52 UTC
-149,101,402,2017-11-15 13:48:24 UTC,2017-11-15 13:48:24 UTC
-150,101,439,2017-11-15 13:48:34 UTC,2017-11-15 13:48:34 UTC
-151,102,577,2017-11-15 13:48:45 UTC,2017-11-15 13:48:45 UTC
-152,103,500,2017-11-15 13:48:57 UTC,2017-11-15 13:48:57 UTC
-153,104,413,2017-11-15 13:49:07 UTC,2017-11-15 13:49:07 UTC
-154,105,550,2017-11-15 13:49:18 UTC,2017-11-15 13:49:18 UTC
-155,106,389,2017-11-15 13:49:30 UTC,2017-11-15 13:49:30 UTC
-156,107,393,2017-11-15 13:49:40 UTC,2017-11-15 13:49:40 UTC
-157,108,414,2017-11-15 13:49:51 UTC,2017-11-15 13:49:51 UTC
-158,109,542,2017-11-15 13:50:08 UTC,2017-11-15 13:50:08 UTC
-159,109,529,2017-11-15 13:50:21 UTC,2017-11-15 13:50:21 UTC
-160,109,552,2017-11-15 13:50:38 UTC,2017-11-15 13:50:38 UTC
-161,109,433,2017-11-15 13:50:49 UTC,2017-11-15 13:50:49 UTC
-162,109,503,2017-11-15 13:51:02 UTC,2017-11-15 13:51:02 UTC
-163,109,435,2017-11-15 13:51:15 UTC,2017-11-15 13:51:15 UTC
-164,110,421,2017-11-15 13:51:24 UTC,2017-11-15 13:51:24 UTC
-165,111,397,2017-11-15 13:51:40 UTC,2017-11-15 13:51:40 UTC
-166,112,470,2017-11-15 13:51:55 UTC,2017-11-15 13:51:55 UTC
-167,113,470,2017-11-15 13:52:09 UTC,2017-11-15 13:52:09 UTC
-168,114,556,2017-11-15 13:52:22 UTC,2017-11-15 13:52:22 UTC
-169,115,562,2017-11-15 13:52:33 UTC,2017-11-15 13:52:33 UTC
-170,116,507,2017-11-15 13:52:43 UTC,2017-11-15 13:52:43 UTC
-171,118,556,2017-11-15 13:53:02 UTC,2017-11-15 13:53:02 UTC
-172,118,505,2017-11-15 13:53:14 UTC,2017-11-15 13:53:14 UTC
-173,119,505,2017-11-15 13:53:28 UTC,2017-11-15 13:53:28 UTC
-174,119,556,2017-11-15 13:53:38 UTC,2017-11-15 13:53:38 UTC
-175,120,438,2017-11-15 13:53:48 UTC,2017-11-15 13:53:48 UTC
-176,121,429,2017-11-15 13:54:05 UTC,2017-11-15 13:54:05 UTC
-177,122,509,2017-11-15 13:54:21 UTC,2017-11-15 13:54:21 UTC
-178,123,507,2017-11-15 13:54:42 UTC,2017-11-15 13:54:42 UTC
-179,124,470,2017-11-15 13:54:55 UTC,2017-11-15 13:54:55 UTC
-180,124,542,2017-11-15 13:55:13 UTC,2017-11-15 13:55:13 UTC
-181,125,447,2017-11-15 13:55:42 UTC,2017-11-15 13:55:42 UTC
-182,126,509,2017-11-15 13:55:58 UTC,2017-11-15 13:55:58 UTC
-183,127,421,2017-11-15 13:56:12 UTC,2017-11-15 13:56:12 UTC
-184,128,552,2017-11-15 13:56:26 UTC,2017-11-15 13:56:26 UTC
-185,129,438,2017-11-15 13:56:38 UTC,2017-11-15 13:56:38 UTC
-186,130,421,2017-11-15 13:56:53 UTC,2017-11-15 13:56:53 UTC
-187,131,507,2017-11-15 13:57:06 UTC,2017-11-15 13:57:06 UTC
-188,132,502,2017-11-15 13:57:22 UTC,2017-11-15 13:57:22 UTC
-189,132,417,2017-11-15 13:58:51 UTC,2017-11-15 13:58:51 UTC
-190,132,444,2017-11-15 13:59:13 UTC,2017-11-15 13:59:13 UTC
-191,132,518,2017-11-15 13:59:28 UTC,2017-11-15 13:59:28 UTC
-192,133,467,2017-11-15 13:59:50 UTC,2017-11-15 13:59:50 UTC
-193,133,530,2017-11-15 14:00:06 UTC,2017-11-15 14:00:06 UTC
-194,133,474,2017-11-15 14:00:17 UTC,2017-11-15 14:00:17 UTC
-195,134,517,2017-11-15 14:00:29 UTC,2017-11-15 14:00:29 UTC
-196,134,418,2017-11-15 14:00:47 UTC,2017-11-15 14:00:47 UTC
-197,135,568,2017-11-15 14:01:05 UTC,2017-11-15 14:01:05 UTC
-198,136,568,2017-11-15 14:01:17 UTC,2017-11-15 14:01:17 UTC
-199,137,541,2017-11-15 14:01:30 UTC,2017-11-15 14:01:30 UTC
-200,137,570,2017-11-15 14:01:49 UTC,2017-11-15 14:01:49 UTC
-201,137,411,2017-11-15 14:01:59 UTC,2017-11-15 14:01:59 UTC
-202,137,407,2017-11-15 14:02:12 UTC,2017-11-15 14:02:12 UTC
-203,137,554,2017-11-15 14:02:35 UTC,2017-11-15 14:02:35 UTC
-204,137,478,2017-11-15 14:02:46 UTC,2017-11-15 14:02:46 UTC
-205,137,453,2017-11-15 14:02:55 UTC,2017-11-15 14:02:55 UTC
-206,137,494,2017-11-15 14:03:10 UTC,2017-11-15 14:03:10 UTC
-207,138,572,2017-11-15 14:03:40 UTC,2017-11-15 14:03:40 UTC
-208,139,533,2017-11-15 14:03:57 UTC,2017-11-15 14:03:57 UTC
-209,140,579,2017-11-15 14:04:08 UTC,2017-11-15 14:04:08 UTC
-210,141,440,2017-11-15 14:13:12 UTC,2017-11-15 14:13:12 UTC
-211,142,526,2017-11-15 14:13:29 UTC,2017-11-15 14:13:29 UTC
-212,143,572,2017-11-15 14:13:59 UTC,2017-11-15 14:13:59 UTC
-213,143,570,2017-11-15 14:14:12 UTC,2017-11-15 14:14:12 UTC
-214,144,557,2017-11-15 14:14:25 UTC,2017-11-15 14:14:25 UTC
-215,145,502,2017-11-15 14:14:38 UTC,2017-11-15 14:14:38 UTC
-216,146,518,2017-11-15 14:14:50 UTC,2017-11-15 14:14:50 UTC
-217,147,481,2017-11-15 14:15:03 UTC,2017-11-15 14:15:03 UTC
-218,148,440,2017-11-15 14:15:22 UTC,2017-11-15 14:15:22 UTC
-219,149,526,2017-11-15 14:15:38 UTC,2017-11-15 14:15:38 UTC
-220,150,525,2017-11-15 14:15:57 UTC,2017-11-15 14:15:57 UTC
-221,150,543,2017-11-15 14:16:11 UTC,2017-11-15 14:16:11 UTC
-222,150,424,2017-11-15 14:16:23 UTC,2017-11-15 14:16:23 UTC
-223,151,412,2017-11-15 14:16:37 UTC,2017-11-15 14:16:37 UTC
-224,151,400,2017-11-15 14:16:51 UTC,2017-11-15 14:16:51 UTC
-225,153,487,2017-11-15 14:17:09 UTC,2017-11-15 14:17:09 UTC
-226,154,543,2017-11-15 14:17:22 UTC,2017-11-15 14:17:22 UTC
-227,154,525,2017-11-15 14:17:46 UTC,2017-11-15 14:17:46 UTC
-228,155,413,2017-11-15 14:18:05 UTC,2017-11-15 14:18:05 UTC
-229,155,577,2017-11-15 14:18:21 UTC,2017-11-15 14:18:21 UTC
-230,155,414,2017-11-15 14:18:37 UTC,2017-11-15 14:18:37 UTC
-231,155,398,2017-11-15 14:18:51 UTC,2017-11-15 14:18:51 UTC
-232,155,574,2017-11-15 14:19:03 UTC,2017-11-15 14:19:03 UTC
-233,156,432,2017-11-15 14:19:18 UTC,2017-11-15 14:19:18 UTC
-234,157,403,2017-11-15 14:19:30 UTC,2017-11-15 14:19:30 UTC
-235,157,413,2017-11-15 14:19:38 UTC,2017-11-15 14:19:38 UTC
-236,158,537,2017-11-15 14:19:50 UTC,2017-11-15 14:19:50 UTC
-237,158,439,2017-11-15 14:20:01 UTC,2017-11-15 14:20:01 UTC
-238,160,389,2017-11-15 14:20:21 UTC,2017-11-15 14:20:21 UTC
-239,161,389,2017-11-15 14:20:28 UTC,2017-11-15 14:20:28 UTC
-240,162,458,2017-11-15 14:20:41 UTC,2017-11-15 14:20:41 UTC
-241,163,538,2017-11-15 14:20:54 UTC,2017-11-15 14:20:54 UTC
-242,164,428,2017-11-15 14:21:09 UTC,2017-11-15 14:21:09 UTC
-243,164,524,2017-11-15 14:21:20 UTC,2017-11-15 14:21:20 UTC
-244,164,536,2017-11-15 14:21:31 UTC,2017-11-15 14:21:31 UTC
-245,164,462,2017-11-15 14:21:44 UTC,2017-11-15 14:21:44 UTC
-246,164,419,2017-11-15 14:21:57 UTC,2017-11-15 14:21:57 UTC
-247,164,495,2017-11-15 14:22:10 UTC,2017-11-15 14:22:10 UTC
-248,164,491,2017-11-15 14:22:22 UTC,2017-11-15 14:22:22 UTC
-249,165,443,2017-11-15 14:22:43 UTC,2017-11-15 14:22:43 UTC
-250,165,573,2017-11-15 14:22:55 UTC,2017-11-15 14:22:55 UTC
-251,165,575,2017-11-15 14:23:06 UTC,2017-11-15 14:23:06 UTC
-252,165,560,2017-11-15 14:23:17 UTC,2017-11-15 14:23:17 UTC
-253,166,532,2017-11-15 14:23:32 UTC,2017-11-15 14:23:32 UTC
-254,167,561,2017-11-15 14:24:09 UTC,2017-11-15 14:24:09 UTC
-255,168,536,2017-11-15 14:25:02 UTC,2017-11-15 14:25:02 UTC
-256,169,488,2017-11-15 14:25:12 UTC,2017-11-15 14:25:12 UTC
-257,170,462,2017-11-15 14:25:26 UTC,2017-11-15 14:25:26 UTC
-258,171,452,2017-11-15 14:25:44 UTC,2017-11-15 14:25:44 UTC
-259,172,462,2017-11-15 14:25:57 UTC,2017-11-15 14:25:57 UTC
-260,172,464,2017-11-15 14:26:12 UTC,2017-11-15 14:26:12 UTC
-261,172,575,2017-11-15 14:26:22 UTC,2017-11-15 14:26:22 UTC
-262,173,524,2017-11-15 14:26:35 UTC,2017-11-15 14:26:35 UTC
-263,174,575,2017-11-15 14:26:51 UTC,2017-11-15 14:26:51 UTC
-264,175,464,2017-11-15 14:27:08 UTC,2017-11-15 14:27:08 UTC
-265,176,536,2017-11-15 14:27:23 UTC,2017-11-15 14:27:23 UTC
-266,177,561,2017-11-15 14:27:34 UTC,2017-11-15 14:27:34 UTC
-267,178,498,2017-11-15 14:27:46 UTC,2017-11-15 14:27:46 UTC
-268,178,544,2017-11-15 14:27:57 UTC,2017-11-15 14:27:57 UTC
-269,178,553,2017-11-15 14:28:07 UTC,2017-11-15 14:28:07 UTC
-270,178,427,2017-11-15 14:28:19 UTC,2017-11-15 14:28:19 UTC
-271,178,571,2017-11-15 14:28:30 UTC,2017-11-15 14:28:30 UTC
-272,178,408,2017-11-15 14:28:39 UTC,2017-11-15 14:28:39 UTC
-273,179,431,2017-11-15 14:29:11 UTC,2017-11-15 14:29:11 UTC
-274,180,431,2017-11-15 14:29:26 UTC,2017-11-15 14:29:26 UTC
-275,181,422,2017-11-15 14:29:47 UTC,2017-11-15 14:29:47 UTC
-276,182,450,2017-11-15 14:29:58 UTC,2017-11-15 14:29:58 UTC
-277,183,481,2017-11-15 14:30:10 UTC,2017-11-15 14:30:10 UTC
-278,184,454,2017-11-15 14:30:19 UTC,2017-11-15 14:30:19 UTC
-279,185,390,2017-11-15 14:30:42 UTC,2017-11-15 14:30:42 UTC
-280,186,510,2017-11-15 14:30:53 UTC,2017-11-15 14:30:53 UTC
-281,187,534,2017-11-15 14:31:08 UTC,2017-11-15 14:31:08 UTC
-282,188,534,2017-11-15 14:31:20 UTC,2017-11-15 14:31:20 UTC
-283,189,522,2017-11-15 14:31:33 UTC,2017-11-15 14:31:33 UTC
-284,190,431,2017-11-15 14:31:51 UTC,2017-11-15 14:31:51 UTC
-285,191,445,2017-11-15 14:32:04 UTC,2017-11-15 14:32:04 UTC
-286,192,534,2017-11-15 14:32:18 UTC,2017-11-15 14:32:18 UTC
-287,193,548,2017-11-15 14:32:34 UTC,2017-11-15 14:32:34 UTC
-288,194,548,2017-11-15 14:32:49 UTC,2017-11-15 14:32:49 UTC
+section_id,course_id,professor_id,course name,prof last name
+2,1,580,Crony Capitalism,Zingales
+3,2,486,Financial Accounting,Kleymenova
+4,2,449,Financial Accounting,Gao
+5,2,455,Financial Accounting,Granja
+6,2,515,Financial Accounting,Nikolaev
+7,2,405,Financial Accounting,Bonham
+8,2,395,Financial Accounting,Barrios
+9,2,576,Financial Accounting,Zakolyukina
+10,2,558,Financial Accounting,Tomy
+11,3,448,Cost Analysis and Internal Controls,Gallemore
+12,4,549,Accounting and Financial Analysis I,Soffer
+13,4,423,Accounting and Financial Analysis I,Christensen
+14,5,441,Taxes and Business Strategy,Erickson
+15,5,567,Taxes and Business Strategy,Weiss
+16,6,497,"Accounting, Economic, and Regulatory Issues in Complex Deals ",Maffett
+17,7,567,Accounting for Entrepreneurship:  From Start-Up through IPO,Weiss
+18,8,506,Financial Statement Analysis,Minnis
+19,8,581,Financial Statement Analysis,Zmijewski
+20,8,463,Financial Statement Analysis,Hand
+21,9,515,Workshop in Accounting Research,Nikolaev
+22,10,539,Economic Modeling of Accounting Issues,Sapra
+23,11,394,Empirical Research in Accounting,Ball
+24,12,493,"Topics Empirical Acct Research: Disclosure, Reporting and Transparency Issues Mkts and Reg",Leuz
+25,13,546,Empirical Research on Managers Corporate Financial Reporting Decisions,Skinner
+26,14,489,Leadership Effectiveness and Development (LEAD) Lab I,Kole
+27,15,489,Leadership Effectiveness and Development (LEAD) Lab II,Kole
+28,16,446,Microeconomics,Frankel
+29,16,451,Microeconomics,Gibbs
+30,16,472,Microeconomics,Hornbeck
+31,16,559,Microeconomics,Topel
+32,16,578,Microeconomics,Zimmerman
+33,16,544,Microeconomics,Shefi
+34,16,545,Microeconomics,Shivakumar
+35,16,437,Microeconomics,Dizon-Ross
+36,17,559,Accelerated Microeconomics,Topel
+37,18,489,Managing the Workplace,Kole
+38,18,527,Managing the Workplace,Prendergast
+39,19,477,Macroeconomics,Hurst
+40,19,563,Macroeconomics,Vavra
+41,19,430,Macroeconomics,Davis
+42,19,457,Macroeconomics,Guerrieri
+43,19,569,Macroeconomics,Winberry
+44,20,512,Advanced Microeconomic Analysis,Murphy
+45,21,472,Business in Historical Perspective,Hornbeck
+46,22,396,History of Economic Ideas,Barry
+47,23,476,Sports Analytics,Huizinga
+48,24,401,The Firm and the Non-Market Environment,Bertrand
+49,25,523,Employment Law for Entrepreneurs and Managers,Pogrund
+50,26,559,Big Problems,Topel
+51,27,409,Some Critical Concepts Executives Need To Know About Employment Law and Regulation ,Bulger
+52,28,459,Money and Banking,Hachem
+53,28,490,Money and Banking,Kroszner
+54,29,520,Real Estate Investments I,Pagliari
+55,30,520,Real Estate Investments II,Pagliari
+56,31,396,"Business, Politics, and Ethics",Barry
+57,32,479,International Commercial Policy,Irwin
+58,33,513,International Financial Policy,Neiman
+59,33,484,International Financial Policy,Kekre
+60,34,436,Managing the Firm in the Global Economy,Dingel
+61,35,475,The Wealth of Nations,Hsieh
+62,36,401,Applied Economics Workshop,Bertrand
+63,36,481,Applied Economics Workshop,Kamenica
+64,36,553,Applied Economics Workshop,Syverson
+65,37,513,Workshop in Macro and International Economics,Neiman
+66,38,559,Energy Policy Practicum,Topel
+67,40,465,The Economics of Information,Harris
+68,41,553,Advanced Industrial Organization I,Syverson
+69,43,416,Advanced Industrial Organization III,Carlton
+70,44,430,Applied Macroeconomics: Micro Data for Macro Models,Davis
+71,45,477,Applied Macroeconomics II,Hurst
+72,46,563,Applied Macroeconomics: Heterogeneity and Macro,Vavra
+73,47,482,Entrepreneurial Finance and Private Equity,Kaplan
+74,47,471,Entrepreneurial Finance and Private Equity,Hochberg
+75,47,582,Entrepreneurial Finance and Private Equity,Zwick
+76,47,504,Entrepreneurial Finance and Private Equity,Meadow
+77,48,540,New Venture Strategy,Schrager
+78,48,410,New Venture Strategy,Bunch
+79,49,496,Building the New Venture,Lyman
+80,50,499,Special Topics in Entrepreneurship: Developing a New Venture (New Venture Challenge),Marcello
+81,50,482,Special Topics in Entrepreneurship: Developing a New Venture (New Venture Challenge),Kaplan
+82,50,535,Special Topics in Entrepreneurship: Developing a New Venture (New Venture Challenge),Rudnick
+83,51,504,Commercializing Innovation: Tools to Research and Analyze Private Enterprises,Meadow
+84,52,496,Innovation Leadership,Lyman
+85,53,460,Social Enterprise Lab,Hachikian
+86,54,391,Entrepreneurial Selling,Alter
+87,56,450,New Social Ventures,Gertner
+88,57,519,Entrepreneurship through Acquisition,O'Connor
+89,58,392,Entrepreneurship for Science and Medicine,Altman
+90,59,511,New Venture and Small Enterprise Lab,Moyer
+91,60,567,Private Equity/Venture Capital Lab,Weiss
+92,61,520,Real Estate Lab: Real Estate Challenge,Pagliari
+93,62,555,Entrepreneurial Discovery,Tebbe
+94,63,404,Energy and CleanTech Lab,Blumberg
+95,64,456,Global Social Impact Practicum,Grossman
+96,65,450,Scaling Social Innovation Search Lab,Gertner
+97,65,460,Scaling Social Innovation Search Lab,Hachikian
+98,66,514,Investments,Neuhierl
+99,66,426,Investments,Constantinides
+100,66,566,Investments,Weber
+101,66,415,Investments,Carlin
+102,66,461,Investments,Hadlock
+103,67,492,Introductory Finance,Leftwich
+104,68,564,Financial Instruments,Veronesi
+105,69,399,"Futures, Forwards, Options and Swaps: Theory and Practice",Belton
+106,70,521,Portfolio Management,Pastor
+107,71,466,Behavioral Finance,Hartzmark
+108,72,547,Hedge Fund Investing,Small
+109,73,580,The FinTech Revolution,Zingales
+110,74,425,Quantimental Investment,Cong
+111,75,564,Fixed Income Asset Pricing,Veronesi
+112,76,564,Advanced Models of Option Pricing and Credit Risk,Veronesi
+113,77,564,Fixed Income Investments: Corporate and Sovereign Bonds,Veronesi
+114,78,501,Corporation Finance,Matvos
+115,78,485,Corporation Finance,Kempf
+116,78,480,Corporation Finance,Jeffers
+117,78,406,Corporation Finance,Born
+118,78,516,Corporation Finance,Noel
+119,78,508,Corporation Finance,Mitchell
+120,78,461,Corporation Finance,Hadlock
+121,79,406,Cases in Financial Management,Born
+122,79,531,Cases in Financial Management,Rock
+123,80,434,Financial Markets and Institutions,Diamond
+124,81,528,International Corporate Finance,Rajan
+125,82,483,The Analytics of Financial Crises,Kashyap
+126,83,551,"Debt, Distress, and Restructuring",Sufi
+127,84,565,Behavioral and Institutional Finance,Vishny
+128,85,468,Chinese Economy and Financial Markets,He
+129,86,425,Seminar:  Finance,Cong
+130,86,483,Seminar:  Finance,Kashyap
+131,86,485,Seminar:  Finance,Kempf
+132,87,446,Applied Theory Workshop,Frankel
+133,88,442,Theory of Financial Decisions I,Fama
+134,89,434,Theory of Financial Decisions II,Diamond
+135,90,551,Theory of Financial Decisions III,Sufi
+136,91,469,Asset Pricing,Heaton
+137,92,466,Behavioral Finance,Hartzmark
+138,93,564,Topics in Asset Pricing,Veronesi
+139,94,442,Research Projects: Finance,Fama
+140,95,498,New Developments in Public Finance,Mahoney
+141,96,468,Research Seminar,He
+142,97,468,Research Seminar,He
+143,98,468,Research Seminar,He
+144,99,500,Managerial Decision Modeling,Martin
+145,99,538,Managerial Decision Modeling,Sandikçi
+146,99,393,Managerial Decision Modeling,Ata
+147,99,458,Managerial Decision Modeling,Gupta
+148,100,420,Data Analysis with Python,Cheng
+149,101,402,Application Development,Betina
+150,101,439,Application Development,Eisenstein
+151,102,577,Workshop in Operations/Management Science,Zhong
+152,103,500,Linear Programming,Martin
+153,104,413,Dynamic Programming/Markov Decision Processes,Caldentey
+154,105,550,Convex Optimization,Srebro
+155,106,389,Approximate Dynamic Programming,Adelman
+156,107,393,Stochastic Processes,Ata
+157,108,414,Networks: Introduction to Modeling and Analysis,Candogan
+158,109,542,Marketing Strategy,Shapiro
+159,109,529,Marketing Strategy,Rao
+160,109,552,Marketing Strategy,Sussman
+161,109,433,Marketing Strategy,Dhar
+162,109,503,Marketing Strategy,McKinney
+163,109,435,Marketing Strategy,Dietvorst
+164,110,421,Marketing Strategy with Simulation,Chintagunta
+165,111,397,Consumer Behavior,Bartels
+166,112,470,Data-Driven Marketing,Hitsch
+167,113,470,Data Science for Marketing Decision Making,Hitsch
+168,114,556,Marketing Research Lab,Terrill
+169,115,562,Experimental Marketing,Urminsky
+170,116,507,Startup Marketing,Misra
+171,118,556,New Products and Services,Terrill
+172,118,505,New Products and Services,Middlebrooks
+173,119,505,Lab in Developing New Products and Services,Middlebrooks
+174,119,556,Lab in Developing New Products and Services,Terrill
+175,120,438,Pricing Strategies,Dubé
+176,121,429,Going to Market: Managing Channel Strategy,Daljord
+177,122,509,Digital Marketing ,Mohan
+178,123,507,Digital and Algorithmic Marketing,Misra
+179,124,470,Marketing Workshop,Hitsch
+180,124,542,Marketing Workshop,Shapiro
+181,125,447,Laboratory in New Product and Strategy Development I,Frenzen
+182,126,509,Digital Marketing and MarTech Lab,Mohan
+183,127,421,Foundations of Advanced Quantitative Marketing,Chintagunta
+184,128,552,Adv Mktg Theory:  Behavioral Science Approach,Sussman
+185,129,438,Advanced Quantitative Marketing,Dubé
+186,130,421,Marketing Literature Seminar,Chintagunta
+187,131,507,Applied Bayesian Econometrics,Misra
+188,132,502,Managing in Organizations,McGill
+189,132,417,Managing in Organizations,Caruso
+190,132,444,Managing in Organizations,Fishbach
+191,132,518,Managing in Organizations,O'Brien
+192,133,467,Managerial Decision Making,Hastie
+193,133,530,Managerial Decision Making,Risen
+194,133,474,Managerial Decision Making,Hsee
+195,134,517,Power and Influence in Organizations,Nussbaum
+196,134,418,Power and Influence in Organizations,Caruso
+197,135,568,Persuasion: Effective Business Communication,Weitzman
+198,136,568,Persuasion II: Influence Through Narrative,Weitzman
+199,137,541,Strategies and Processes of Negotiation,Shah
+200,137,570,Strategies and Processes of Negotiation,Wittenbrink
+201,137,411,Strategies and Processes of Negotiation,Burrows
+202,137,407,Strategies and Processes of Negotiation,Bryan
+203,137,554,Strategies and Processes of Negotiation,Talhelm
+204,137,478,Strategies and Processes of Negotiation,Imas
+205,137,453,Strategies and Processes of Negotiation,Ginzel
+206,137,494,Strategies and Processes of Negotiation,Levine
+207,138,572,Advanced Negotiations,Wu
+208,139,533,Ethics of Business,Rollert
+209,140,579,Leading and Managing Teams,Zinchenko
+210,141,440,Designing a Good Life,Epley
+211,142,526,The Study of Behavioral Economics,Pope
+212,143,572,Workshop in Behavioral Science,Wu
+213,143,570,Workshop in Behavioral Science,Wittenbrink
+214,144,557,Choice Architecture in Practice,Thaler
+215,145,502,Current Topics in Behavioral Science I:  Intuitive Belief and Consumer Behavior,McGill
+216,146,518,Current Topics in Behavioral Science III,O'Brien
+217,147,481,Behavioral Economics,Kamenica
+218,148,440,Foundations of Social Psychology,Epley
+219,149,526,Topics in Behavioral Economics,Pope
+220,150,525,Strategy and Structure: Markets and Organizations,Pontikes
+221,150,543,Strategy and Structure: Markets and Organizations,Sharkey
+222,150,424,Strategy and Structure: Markets and Organizations,Chu
+223,151,412,Strategic Leadership,Burt
+224,151,400,Strategic Leadership,Bergemann
+225,153,487,Technology Strategy,Knez
+226,154,543,Workshop in Organizations and Markets,Sharkey
+227,154,525,Workshop in Organizations and Markets,Pontikes
+228,155,413,Operations Management: Business Process Fundamentals,Caldentey
+229,155,577,Operations Management: Business Process Fundamentals,Zhong
+230,155,414,Operations Management: Business Process Fundamentals,Candogan
+231,155,398,Operations Management: Business Process Fundamentals,Belavina
+232,155,574,Operations Management: Business Process Fundamentals,Xin
+233,156,432,Supply Chain Strategy and Practice,DeHoratius
+234,157,403,Revenue Management,Birge
+235,157,413,Revenue Management,Caldentey
+236,158,537,Managing Service Operations,Ryan
+237,158,439,Managing Service Operations,Eisenstein
+238,160,389,Healthcare Data Analytics,Adelman
+239,161,389,Healthcare Analytics Lab,Adelman
+240,162,458,Special Topics in Operations Mgt./Mgt. Sci.,Gupta
+241,163,538,Healthcare Operations,Sandikçi
+242,164,428,Business Statistics,Creal
+243,164,524,Business Statistics,Polson
+244,164,536,Business Statistics,Russell
+245,164,462,Business Statistics,Hahn
+246,164,419,Business Statistics,Carvalho
+247,164,495,Business Statistics,Liang
+248,164,491,Business Statistics,Ledolter
+249,165,443,Applied Regression Analysis,Farrell
+250,165,573,Applied Regression Analysis,Wu
+251,165,575,Applied Regression Analysis,Xiu
+252,165,560,Applied Regression Analysis,Toulis
+253,166,532,Big Data,Rockova
+254,167,561,Analysis of Financial Time Series,Tsay
+255,168,536,Financial Econometrics,Russell
+256,169,488,Machine Learning,Kolar
+257,170,462,Data Analysis with R,Hahn
+258,171,452,"Statistical Insight into Marketing, Consulting, and Entrepreneurship",Gilula
+259,172,462,Econometrics and Statistics Colloquium,Hahn
+260,172,464,Econometrics and Statistics Colloquium,Hansen
+261,172,575,Econometrics and Statistics Colloquium,Xiu
+262,173,524,Probability and Statistics,Polson
+263,174,575,Statistical Inference,Xiu
+264,175,464,Applied Econometrics,Hansen
+265,176,536,Time-series Analysis for Forecasting and Model Building,Russell
+266,177,561,Applied Multivariate Analysis,Tsay
+267,178,498,Competitive Strategy,Mahoney
+268,178,544,Competitive Strategy,Shefi
+269,178,553,Competitive Strategy,Syverson
+270,178,427,Competitive Strategy,Covert
+271,178,571,Competitive Strategy,Wollmann
+272,178,408,Competitive Strategy,Budish
+273,179,431,Business Policy,Davis
+274,180,431,The Strategy Symposium,Davis
+275,181,422,Corporate Governance,Chookaszian
+276,182,450,Strategic Investment Decisions,Gertner
+277,183,481,Game Theory,Kamenica
+278,184,454,Platform Competition,Goolsbee
+279,185,390,Business Applications of Natural Language Processing,Alderucci
+280,186,510,Merger and Acquisition Strategy,Morrissette
+281,187,534,"Reputation, Regulation and Communications - How Media Influences Business",Rolnik
+282,188,534,Storytelling and Narratives in Business,Rolnik
+283,189,522,The Legal Infrastructure of Business,Picker
+284,190,431,Strategy Lab,Davis
+285,191,445,Integrated Strategic Management,Fitzgerald
+286,192,534,"Reputation, Regulation and Communications - How Media Influences Business - Lab",Rolnik
+287,193,548,Entrepreneurship: Urban Opportunities and Solutions I,Smith
+288,194,548,Entrepreneurship: Urban Opportunities and Solutions II,Smith

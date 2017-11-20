@@ -11,6 +11,15 @@ class CoursesController < ApplicationController
     render("courses/show.html.erb")
   end
 
+  def fetch_schedules
+     @schedules = Course.find(params[:course_id]).fetch_schedules(params[:prof_id])
+     @section = Section.find_by(:course_id => params[:course_id], :professor_id => params[:prof_id])
+
+     respond_to do |format|
+        format.js
+     end
+  end
+
   def new
     @course = Course.new
 

@@ -1,0 +1,52 @@
+<!-- UI Testing -->
+
+<div class="col-md-4 mb-2">
+   <div class="card" id="<%= course.id %>">
+      <div class="card-header">
+         <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item" id="schedule">
+               <a class="nav-link" href="javascript:void(0);"><i class="fa fa-calendar-o" aria-hidden="true"></i> Schedule</a>
+            </li>
+            <li class="nav-item" id="rating">
+               <a class="nav-link" href="javascript:void(0);"><i class="fa fa-star" aria-hidden="true"></i> Ratings</a>
+            </li>
+            <li class="nav-item" id="bid">
+               <a class="nav-link" href="javascript:void(0);"><i class="fa fa-btc" aria-hidden="true"></i> Bid Data</a>
+            </li>
+         </ul>
+      </div>
+      <div class="card-body">
+         <h4 class="card-title"><%= course.course_name %></h4>
+
+
+         <!-- Label and input for professor_id -->
+         <div class="form-group">
+            <select class="form-control">
+               <% course.professors.each do |prof| %>
+
+               <option value="<%= prof.id %>">
+                  <%= prof.first_name %> <%= prof.last_name %>
+               </option>
+
+               <% end %>
+            </select>
+         </div>
+
+
+
+         <div class="schedule">
+         </div>
+
+
+         <div class="bid">
+         </div>
+
+
+         <div class="rating">
+         </div>
+
+      </div>
+
+   </div>
+
+</div>

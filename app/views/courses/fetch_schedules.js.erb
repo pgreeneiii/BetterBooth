@@ -1,0 +1,5 @@
+$('div.schedule').html("<%= escape_javascript(render(partial: "schedules", locals: { :schedules => @schedules })) %>")
+
+$('div.rating').html("<%= escape_javascript(render(partial: "ratings", locals: { :section => @section })) %>")
+
+$('div.bids').html("<%= escape_javascript(render(partial: "bids", locals: { :section => @section })) %>")
