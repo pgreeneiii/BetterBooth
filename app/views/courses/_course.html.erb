@@ -18,32 +18,330 @@
       <div class="card-body">
          <h4 class="card-title"><%= course.course_name %></h4>
 
+         <!-- Identify Winter Sections for Course Card and Store as sections -->
+         <% sections = course.sections.joins(:schedules).where('schedules.quarter = 1').distinct %>
 
          <!-- Label and input for professor_id -->
          <div class="form-group">
             <select class="form-control">
-               <% course.professors.each do |prof| %>
 
-               <option value="<%= prof.id %>">
-                  <%= prof.first_name %> <%= prof.last_name %>
-               </option>
+               <% sections.each do |section| %>
+                  <% prof = Professor.find(section.professor_id) %>
+
+                  <option value="<%= prof.id %>">
+                     <%= prof.first_name %> <%= prof.last_name %>
+                  </option>
 
                <% end %>
             </select>
          </div>
 
+         <!-- For each section, print schedule, rating, and bid data -->
+         <% sections.each do |section| %>
+
+            <div class="section" id="<%= section.id %>">
+               <div class="prof" id="<%= section.professor_id %>">
+
+                  <div class="schedule">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <% schedules = course.fetch_schedules(section.professor_id) %>
+
+                           <% schedules.each do |schedule| %>
+
+                              <div class="chip" title='Course Number: <%= course.course_number %>-<%= schedule.section_number %>'>
+                                 <div class="chip-dot">
+                                    <%= schedule.daytable.day_output %>
+                                 </div>
+                                 <%= schedule.timetable.time_output %>
+                              </div>
+
+                           <% end %>
+
+                        </div>
+                     </div>
+                  </div>
 
 
-         <div class="schedule">
-         </div>
+                  <div class="bid">
+                     <div class="row">
+                        <table class="table table-condensed">
+                           <thead>
+                              <tr>
+                                 <th scope="col">Phase</th>
+                                 <th scope="col">Min Recorded Bid</th>
+                                 <th scope="col">Max Recorded Bid</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th scope="row">1</th>
+                                 <td><%= section.evaluation.p1_bid_min %></td>
+                                 <td><%= section.evaluation.p1_bid_max %></td>
+                              </tr>
+
+                              <tr>
+                                 <th scope="row">2</th>
+                                 <td><%= section.evaluation.p2_bid_min %></td>
+                                 <td><%= section.evaluation.p2_bid_max %></td>
+                              </tr>
+
+                              <tr>
+                                 <th scope="row">3</th>
+                                 <td><%= section.evaluation.p3_bid_min %></td>
+                                 <td><%= section.evaluation.p3_bid_max %></td>
+                              </tr>
+
+                              <tr>
+                                 <th scope="row">4</th>
+                                 <td><%= section.evaluation.p4_bid_min %></td>
+                                 <td><%= section.evaluation.p4_bid_max %></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
 
 
-         <div class="bid">
-         </div>
+                  <div class="rating">
+                     <div class="center row mb-2">
+                        <div class="col-md-4">
+                           <!-- Communication Ratings -->
+                           <p class="mb-0">Communication:</p>
+
+                           <% if section.evaluation.communication == 0 %>
+                              <p class="mb-0">No Data</p>
+
+                           <% elsif section.evaluation.communication == 1 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.communication == 2 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.communication == 3 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.communication == 4 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.communication == 5 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                           <% end %>
+
+                        </div>
+
+                        <div class="col-md-4">
+                           <!-- Engagement Ratings -->
+                           <p class="mb-0">Engagement:</p>
+
+                           <% if section.evaluation.engagement == 0 %>
+                              <p class="mb-0">No Data</p>
+
+                           <% elsif section.evaluation.engagement == 1 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.engagement == 2 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.engagement == 3 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.engagement == 4 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.engagement == 5 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                           <% end %>
+                        </div>
+
+                        <div class="col-md-4">
+                           <!-- Practical Ratings -->
+                           <p class="mb-0">Practical:</p>
+
+                           <% if section.evaluation.practical == 0 %>
+                              <p class="mb-0">No Data</p>
+
+                           <% elsif section.evaluation.practical == 1 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.practical == 2 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.practical == 3 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.practical == 4 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.practical == 5 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                           <% end %>
+                        </div>
+                     </div>
+                     <div class="center row mb-2">
+                        <div class="col-md-6">
+                           <!-- Learning Ratings -->
+                           <p class="mb-0">Learning:</p>
+
+                           <% if section.evaluation.learning == 0 %>
+                              <p class="mb-0">No Data</p>
+
+                           <% elsif section.evaluation.learning == 1 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.learning == 2 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.learning == 3 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.learning == 4 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.learning == 5 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                           <% end %>
+                        </div>
 
 
-         <div class="rating">
-         </div>
+                        <div class="col-md-6">
+                           <!-- Recommendation Ratings -->
+                           <p class="mb-0">
+                              Recommendation:
+                           </p>
+
+                           <% if section.evaluation.recommendation == 0 %>
+                              <p class="mb-0">No Data</p>
+
+                           <% elsif section.evaluation.recommendation == 1 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.recommendation == 2 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.recommendation == 3 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.recommendation == 4 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+
+                           <% elsif section.evaluation.recommendation == 5 %>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                           <% end %>
+                        </div>
+                     </div>
+
+                     <div class="center row">
+                        <div class="col-md-12">
+                           <p><strong>Avg. Hours:  <%= section.evaluation.avg_hours %></strong></p>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+
+         <% end %>
 
       </div>
 

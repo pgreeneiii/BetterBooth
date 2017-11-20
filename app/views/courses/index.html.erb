@@ -1,34 +1,7 @@
 <div class="page-header">
   <h1>
-    Courses
-    <a href="/courses/new" class="btn btn-lg btn-success">New Course</a>
+    Winter Courses
   </h1>
 </div>
 
 <%= render @courses %>
-
-<div class="row">
-  <div class="col-md-12">
-    <table class="table table-striped table-hover">
-      <tr>
-        <th>Course number</th>
-        <th>Course name</th>
-        <th>Subject</th>
-        <th>Actions</th>
-      </tr>
-
-      <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.course_number %></td>
-        <td><%= course.course_name %></td>
-        <td><%= course.subject %></td>
-        <td>
-          <a href="/courses/<%= course.id %>" class="btn btn-primary">Show</a>
-          <a href="/courses/<%= course.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_course/<%= course.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
-</div>

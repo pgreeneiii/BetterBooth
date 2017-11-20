@@ -1,27 +1,20 @@
-
-
 $( document ).on('turbolinks:load', function() {
    $('div.schedule').show();
    $('div.rating').hide();
    $('div.bid').hide();
+   $('.chip').tooltip();
 
-   $('div.card').each(function(){
-      var prof_id = this.select.value;
-      var course_id = $(this).attr('id');
-        $.ajax({
-            url: '/fetch_schedules',
-            data: { prof_id: prof_id, course_id: course_id },
-        });
+   $('.section').hide();
+   $('.card').each(function(){
+      $(this).find('div.section:first').show();
    })
 
+    $('select').change(function () {
+     $(this).parents('div.card').find('div.section').hide();
+     var prof_id = $(this).val();
+     var section_id = $(this).parents('div.card').find('div.prof#' + prof_id).parent().attr('id');
+     $('#' + section_id).show();
 
-   $('select').change(function () {
-     var prof_id = this.value;
-     var course_id = $(this).parents('div.card').attr('id');
-        $.ajax({
-            url: '/fetch_schedules',
-            data: { prof_id: prof_id, course_id: course_id },
-        });
     });
 
    $('.card').on('click', '#schedule', function () {
@@ -41,6 +34,5 @@ $( document ).on('turbolinks:load', function() {
       $(this).parents('div.card').find('div.rating').hide();
       $(this).parents('div.card').find('div.bid').show();
    });
-
 
 });

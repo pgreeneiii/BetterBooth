@@ -78,7 +78,6 @@ Rails.application.routes.draw do
   # READ
   get "/courses", :controller => "courses", :action => "index"
   get "/courses/:id", :controller => "courses", :action => "show"
-  get "/fetch_schedules", :controller => "courses", :action => "fetch_schedules"
 
   # UPDATE
   get "/courses/:id/edit", :controller => "courses", :action => "edit"
