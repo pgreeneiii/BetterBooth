@@ -9,6 +9,8 @@ gem "starter_generators", :git => "https://github.com/raghubetina/starter_genera
 
 gem  'pry-rails'
 
+gem 'seed_dump'
+
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
