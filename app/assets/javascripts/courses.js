@@ -5,6 +5,7 @@ $( document ).on('turbolinks:load', function() {
    $('.chip').tooltip();
 
    $('.section').hide();
+   
    $('.card').each(function(){
       $(this).find('div.section:first').show();
    })
