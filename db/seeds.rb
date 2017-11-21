@@ -691,6 +691,25 @@ Section.create!([
   {id: 288, course_id: 194, professor_id: 548, created_at: "2017-11-15 14:32:49", updated_at: "2017-11-15 14:32:49"}
 ])
 
+TimeTable.create!([
+  {id: 1, time_output: "8:30AM-11:30AM", created_at: "2017-11-17 01:57:27", updated_at: "2017-11-17 01:59:07"},
+  {id: 2, time_output: "1:30PM-4:30PM", created_at: "2017-11-17 01:59:43", updated_at: "2017-11-17 01:59:43"},
+  {id: 3, time_output: "6:00PM-9:00PM", created_at: "2017-11-17 02:00:03", updated_at: "2017-11-17 02:00:03"},
+  {id: 4, time_output: "9:00AM-12:00PM", created_at: "2017-11-17 02:00:37", updated_at: "2017-11-17 02:00:37"},
+  {id: 5, time_output: "1:20PM-2:50PM", created_at: "2017-11-17 02:00:49", updated_at: "2017-11-17 02:00:49"},
+  {id: 6, time_output: "11:45AM-1:15PM", created_at: "2017-11-17 02:01:01", updated_at: "2017-11-17 02:01:01"},
+  {id: 7, time_output: "2:00PM-5:00PM", created_at: "2017-11-17 02:01:13", updated_at: "2017-11-17 02:01:13"},
+  {id: 8, time_output: "3:00PM-6:00PM", created_at: "2017-11-17 02:01:25", updated_at: "2017-11-17 02:01:25"},
+  {id: 9, time_output: "3:00PM-4:20PM", created_at: "2017-11-17 02:01:34", updated_at: "2017-11-17 02:01:34"},
+  {id: 10, time_output: "12:30PM-1:20PM", created_at: "2017-11-17 02:01:44", updated_at: "2017-11-17 02:01:44"},
+  {id: 11, time_output: "10:40AM-12:00PM", created_at: "2017-11-17 02:01:54", updated_at: "2017-11-17 02:01:54"},
+  {id: 12, time_output: "10:10AM-11:30AM", created_at: "2017-11-17 02:02:03", updated_at: "2017-11-17 02:02:03"},
+  {id: 13, time_output: "5:30PM-8:30PM", created_at: "2017-11-17 02:02:11", updated_at: "2017-11-17 02:02:11"},
+  {id: 14, time_output: "7:40PM-9:00PM", created_at: "2017-11-17 02:02:21", updated_at: "2017-11-17 02:02:21"},
+  {id: 15, time_output: "6:00PM-7:20PM", created_at: "2017-11-17 02:02:30", updated_at: "2017-11-17 02:02:30"}
+])
+
+
 Schedule.create!([
   {id: 1, section_id: 7, section_number: "01", quarter: 1, day: 5, time: 2, half_credit: false, created_at: "2017-11-16 20:20:26", updated_at: "2017-11-17 02:22:22"},
   {id: 2, section_id: 7, section_number: "85", quarter: 1, day: 6, time: 2, half_credit: false, created_at: "2017-11-16 20:20:26", updated_at: "2017-11-17 02:22:22"},
@@ -880,24 +899,6 @@ Schedule.create!([
   {id: 186, section_id: 287, section_number: "02", quarter: 1, day: 1, time: 9, half_credit: false, created_at: "2017-11-16 20:20:31", updated_at: "2017-11-17 02:22:33"},
   {id: 187, section_id: 287, section_number: "81", quarter: 1, day: 1, time: 14, half_credit: false, created_at: "2017-11-16 20:20:31", updated_at: "2017-11-17 02:22:33"},
   {id: 188, section_id: 288, section_number: "81", quarter: 1, day: 1, time: 15, half_credit: false, created_at: "2017-11-16 20:20:31", updated_at: "2017-11-17 02:22:34"}
-])
-
-TimeTable.create!([
-  {id: 1, time_output: "8:30AM-11:30AM", created_at: "2017-11-17 01:57:27", updated_at: "2017-11-17 01:59:07"},
-  {id: 2, time_output: "1:30PM-4:30PM", created_at: "2017-11-17 01:59:43", updated_at: "2017-11-17 01:59:43"},
-  {id: 3, time_output: "6:00PM-9:00PM", created_at: "2017-11-17 02:00:03", updated_at: "2017-11-17 02:00:03"},
-  {id: 4, time_output: "9:00AM-12:00PM", created_at: "2017-11-17 02:00:37", updated_at: "2017-11-17 02:00:37"},
-  {id: 5, time_output: "1:20PM-2:50PM", created_at: "2017-11-17 02:00:49", updated_at: "2017-11-17 02:00:49"},
-  {id: 6, time_output: "11:45AM-1:15PM", created_at: "2017-11-17 02:01:01", updated_at: "2017-11-17 02:01:01"},
-  {id: 7, time_output: "2:00PM-5:00PM", created_at: "2017-11-17 02:01:13", updated_at: "2017-11-17 02:01:13"},
-  {id: 8, time_output: "3:00PM-6:00PM", created_at: "2017-11-17 02:01:25", updated_at: "2017-11-17 02:01:25"},
-  {id: 9, time_output: "3:00PM-4:20PM", created_at: "2017-11-17 02:01:34", updated_at: "2017-11-17 02:01:34"},
-  {id: 10, time_output: "12:30PM-1:20PM", created_at: "2017-11-17 02:01:44", updated_at: "2017-11-17 02:01:44"},
-  {id: 11, time_output: "10:40AM-12:00PM", created_at: "2017-11-17 02:01:54", updated_at: "2017-11-17 02:01:54"},
-  {id: 12, time_output: "10:10AM-11:30AM", created_at: "2017-11-17 02:02:03", updated_at: "2017-11-17 02:02:03"},
-  {id: 13, time_output: "5:30PM-8:30PM", created_at: "2017-11-17 02:02:11", updated_at: "2017-11-17 02:02:11"},
-  {id: 14, time_output: "7:40PM-9:00PM", created_at: "2017-11-17 02:02:21", updated_at: "2017-11-17 02:02:21"},
-  {id: 15, time_output: "6:00PM-7:20PM", created_at: "2017-11-17 02:02:30", updated_at: "2017-11-17 02:02:30"}
 ])
 
 Evaluation.create!([
