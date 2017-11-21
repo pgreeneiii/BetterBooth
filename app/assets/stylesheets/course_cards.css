@@ -103,6 +103,7 @@ label {
    .rating {
       font-size: 14px;
    }
+
 }
 
 @media screen and (max-width: 703px) {
@@ -150,5 +151,9 @@ label {
 
    .rating {
       font-size: 12px;
+   }
+
+   .navbar-text {
+      text-align: center;
    }
 }
