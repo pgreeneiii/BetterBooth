@@ -880,7 +880,7 @@ Schedule.create!([
   {id: 188, section_id: 288, section_number: "81", quarter: 1, day: 1, time: 15, half_credit: false, created_at: "2017-11-16 20:20:31", updated_at: "2017-11-17 02:22:34"}
 ])
 Section.create!([
-  {id: 1, course_id: , professor_id: , created_at: "2017-11-15 04:50:36", updated_at: "2017-11-15 04:50:37"},
+  {id: 1, course_id: "", professor_id: "", created_at: "2017-11-15 04:50:36", updated_at: "2017-11-15 04:50:36"},
   {id: 2, course_id: 1, professor_id: 580, created_at: "2017-11-15 04:50:37", updated_at: "2017-11-15 04:50:37"},
   {id: 3, course_id: 2, professor_id: 486, created_at: "2017-11-15 04:51:40", updated_at: "2017-11-15 04:51:40"},
   {id: 4, course_id: 2, professor_id: 449, created_at: "2017-11-15 04:51:56", updated_at: "2017-11-15 04:51:56"},
