@@ -36,6 +36,15 @@
         <input type="text" id="professor_id" name="professor_id" placeholder="Professor" class="form-control" value="<%= @section.professor_id %>">
       </div>
 
+      <!-- Label and input for content -->
+      <div class="form-group">
+        <label for="professor_id" class="control-label">
+          Content
+        </label>
+
+        <input type="text" id="content" name="content" placeholder="Content" class="form-control" value="<%= @section.content %>">
+      </div>
+
       <button class="btn btn-warning">
         Update Section
       </button>

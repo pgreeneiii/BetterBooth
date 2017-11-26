@@ -1,4 +1,5 @@
 class SectionsController < ApplicationController
+
   def index
     @sections = Section.all
 
@@ -22,6 +23,7 @@ class SectionsController < ApplicationController
 
     @section.course_id = params[:course_id]
     @section.professor_id = params[:professor_id]
+    @section.content = params[:content]
 
     save_status = @section.save
 
@@ -43,6 +45,7 @@ class SectionsController < ApplicationController
 
     @section.course_id = params[:course_id]
     @section.professor_id = params[:professor_id]
+    @section.content = params[:content]
 
     save_status = @section.save
 

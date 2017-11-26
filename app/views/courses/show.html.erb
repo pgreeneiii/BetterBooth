@@ -1,20 +1,12 @@
 <div class="page-header">
-  <h3>Course #<%= @course.id %></h3>
+  <h3><%= @course.course_name %></h3>
 </div>
 
 <div class="row">
-  <div class="col-md-12 mb-2">
-    <dl class="dl-horizontal">
-      <dt>Course number</dt>
-      <dd><%= @course.course_number %></dd>
-
-      <dt>Course name</dt>
-      <dd><%= @course.course_name %></dd>
-
-      <dt>Subject</dt>
-      <dd><%= @course.subject %></dd>
-
-    </dl>
+  <div class="col-md-6 mb-2">
+    <div class="description">
+      
+    </div>
 
     <div class="btn-group btn-group-justified">
       <a href="/courses" class="btn btn-primary">

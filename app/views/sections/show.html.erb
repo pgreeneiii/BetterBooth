@@ -1,17 +1,19 @@
 <div class="page-header">
-  <h3>Section #<%= @section.id %></h3>
+  <h3><%= @section.course.course_name %></h3>
 </div>
 
 <div class="row">
-  <div class="col-md-12 mb-2">
+  <div class="col-md-6 mb-2">
     <dl class="dl-horizontal">
-      <dt>Course</dt>
-      <dd><%= @section.course_id %></dd>
+      <dt>Course:</dt>
+      <dd><%= @section.course.course_name %></dd>
 
-      <dt>Professor</dt>
-      <dd><%= @section.professor_id %></dd>
+      <dt>Content:</dt>
+      <dd><span class="course_content"><%= @section.content %></span></dd>
 
     </dl>
+
+
 
     <div class="btn-group btn-group-justified">
       <a href="/sections" class="btn btn-primary">
@@ -24,5 +26,14 @@
         Delete
       </a>
     </div>
+  </div>
+
+  <div class="col-md-6 mb-2">
+     <img src="<%= @section.professor.photo_url %>">
+     <dt>Professor:</dt>
+     <dd><%= @section.professor.first_name %> <%= @section.professor.last_name %></dd>
+
+
+
   </div>
 </div>
