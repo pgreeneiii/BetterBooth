@@ -60,4 +60,31 @@ namespace :slurp do
      puts "There are now #{Schedule.count} rows in the schedule table"
   end
 
+  task bids: :environment do
+     require "csv"
+
+     csv_text = File.read(Rails.root.join("lib", "csvs", "bid.csv"))
+     # puts csv_text
+     csv = CSV.parse(csv_text, :headers => true, :header_converters => :symbol, :encoding => 'ISO-8859-1')
+     csv.each do |row|
+        t = Bid.new
+        t.section_id = row[:section_id]
+        t.quarter_id = row[:quarter_id]
+        t.year = row[:year]
+        t.day_id = row[:day_id]
+        t.time_id = row[:time_id]
+        t.p1_price = row[:p1_price]
+        t.p2_price = row[:p2_price]
+        t.p3_price = row[:p3_price]
+        t.p4_price = row[:p4_price]
+        t.new_student_p1_price = row[:new_students_p1_price]
+        t.new_student_p2_price = row[:new_students_p2_price]
+        t.save
+
+        puts "#{t.section_id}, #{t.quarter_id}, #{t.year}, #{t.day_id}, #{t.time_id}, #{t.p1_price}, #{t.p2_price}, #{t.p3_price}, #{t.p4_price}, #{t.new_student_p1_price}, #{t.new_student_p2_price} saved"
+     end
+
+     puts "There are now #{Bid.count} rows in the bid table"
+  end
+
 end

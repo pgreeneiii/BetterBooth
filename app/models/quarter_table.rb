@@ -1,0 +1,2 @@
+class QuarterTable < ApplicationRecord
+end

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  section_id: 1
+  quarter_id: 1
+  year: 1
+  day_id: 1
+  time_id: 1
+  course_id: 1
+  professor_id: 1
+  p1_price: 1
+  p2_price: 1
+  p3_price: 1
+  p4_price: 1
+  new_student_p1_price: 1
+  new_student_p2_price: 1
+
+two:
+  section_id: 1
+  quarter_id: 1
+  year: 1
+  day_id: 1
+  time_id: 1
+  course_id: 1
+  professor_id: 1
+  p1_price: 1
+  p2_price: 1
+  p3_price: 1
+  p4_price: 1
+  new_student_p1_price: 1
+  new_student_p2_price: 1

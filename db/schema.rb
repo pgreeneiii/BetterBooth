@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124202813) do
+ActiveRecord::Schema.define(version: 20171128031130) do
+
+  create_table "bids", force: :cascade do |t|
+    t.integer  "section_id"
+    t.integer  "quarter_id"
+    t.integer  "year"
+    t.integer  "day_id"
+    t.integer  "time_id"
+    t.integer  "p1_price"
+    t.integer  "p2_price"
+    t.integer  "p3_price"
+    t.integer  "p4_price"
+    t.integer  "new_student_p1_price"
+    t.integer  "new_student_p2_price"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
 
   create_table "classes", force: :cascade do |t|
     t.integer  "course_id"
@@ -60,6 +76,12 @@ ActiveRecord::Schema.define(version: 20171124202813) do
     t.string   "photo_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "quarter_tables", force: :cascade do |t|
+    t.string   "quarter_output"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "schedules", force: :cascade do |t|

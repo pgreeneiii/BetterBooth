@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require_tree .
-//= require courses
-
-
+//= require highcharts
+//= require chartkick
 //= require turbolinks

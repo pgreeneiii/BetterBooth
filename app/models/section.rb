@@ -3,5 +3,6 @@ class Section < ApplicationRecord
    belongs_to(:professor, :class_name => "Professor", :foreign_key => "professor_id")
    has_one(:evaluation, :class_name => "Evaluation", :foreign_key => "section_id")
    has_many(:schedules, :class_name => "Schedule", :foreign_key => "section_id")
+   has_many(:bids, :class_name => "Bid", :foreign_key => "section_id")
 
 end

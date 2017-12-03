@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+   resources :charts, only: [] do
+      collection do
+         get 'p1_price_by_year'
+      end
+   end
   # Routes for the Schedule resource:
   # CREATE
   get "/schedules/new", :controller => "schedules", :action => "new"
@@ -25,9 +31,10 @@ Rails.application.routes.draw do
   get "/sections", :controller => "sections", :action => "index"
   get "/sections/:id", :controller => "sections", :action => "show"
 
+
   # UPDATE
-  get "/sections/:id/edit", :controller => "sections", :action => "edit"
-  post "/update_section/:id", :controller => "sections", :action => "update"
+  # get "/sections/:id/edit", :controller => "sections", :action => "edit"
+  # post "/update_section/:id", :controller => "sections", :action => "update"
 
   # DELETE
   get "/delete_section/:id", :controller => "sections", :action => "destroy"
