@@ -26,17 +26,17 @@
      <% if @section.bids.empty? %>
       <p>No bid data</p>
      <% else %>
-         <table>
+         <table class='table table-hover'>
             <tr>
                <th>
                   Year
                </th>
-               <!-- <th> -->
-                  <!-- Quarter -->
-               <!-- </th> -->
-               <!-- <th> -->
-                  <!-- Time -->
-               <!-- </th> -->
+               <th>
+                  Quarter
+               </th>
+               <th>
+                  Time
+               </th>
                <th>
                Phase 1
                </th>
@@ -51,10 +51,16 @@
                </th>
             </tr>
 
-            <% @section.bids.order(year: :desc).each do |bid| %>
+            <% @section.bids.order(year: :desc, quarter_id: :asc, time_id: :asc).each do |bid| %>
                <tr>
                   <td>
                      <%= bid.year %>
+                  </td>
+                  <td>
+                     <%= bid.quartertable.quarter_output %>
+                  </td>
+                  <td>
+                     <%= convert_time(bid.time_id) %>
                   </td>
 
                   <td>
@@ -63,7 +69,7 @@
                      <% elsif bid.p1_price == -2 %>
                      N/A
                      <% else %>
-                        <%= bid.p1_price %>
+                        <%= number_with_delimiter(bid.p1_price, :delimiter => ',') %>
                      <% end %>
                   </td>
 
@@ -73,16 +79,19 @@
                      <% elsif bid.p2_price == -2 %>
                      N/A
                      <% else %>
-                        <%= bid.p2_price %>
-                     <% end %>                  </td>
+                        <%= number_with_delimiter(bid.p2_price, :delimiter => ',') %>
+                     <% end %>
+                  </td>
+
                   <td>
                      <% if bid.p3_price == -1 %>
                      Closed
                      <% elsif bid.p3_price == -2 %>
                      N/A
                      <% else %>
-                        <%= bid.p3_price %>
-                     <% end %>                  </td>
+                        <%= number_with_delimiter(bid.p3_price, :delimiter => ',') %>
+                     <% end %>
+                  </td>
 
                   <td>
                      <% if bid.p4_price == -1 %>
@@ -90,35 +99,13 @@
                      <% elsif bid.p4_price == -2 %>
                      N/A
                      <% else %>
-                        <%= bid.p4_price %>
-                     <% end %>                  </td>
+                        <%= number_with_delimiter(bid.p4_price, :delimiter => ',') %>
+                     <% end %>
+                  </td>
                </tr>
             <% end %>
          </table>
     <% end %>
-
-    <%= bar_chart prices_data %>
-
-    <!-- Identify where the chart should be drawn. -->
-    <div id="series_chart_div" style="width: 900px; height: 500px;"></div>
-
-    <div class="row">
-      <div class = "col-md-6">
-
-      </div>
-      <div class = "col-md-6">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class = "col-md-6">
-
-      </div>
-      <div class = "col-md-6">
-
-      </div>
-    </div>
-
 
 
     <div class="btn-group btn-group-justified">
