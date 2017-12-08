@@ -13,6 +13,8 @@ gem 'seed_dump'
 
 gem 'chartkick'
 
+gem 'devise'
+
 gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

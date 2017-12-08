@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
 
-   resources :charts, only: [] do
-      collection do
-         get 'p1_price_by_year'
-      end
-   end
+   root 'courses#index'
+
   # Routes for the Schedule resource:
   # CREATE
   get "/schedules/new", :controller => "schedules", :action => "new"
@@ -76,8 +73,6 @@ Rails.application.routes.draw do
 
   # Routes for the Course resource:
   # CREATE
-
-  root to: 'courses#index'
 
   get "/courses/new", :controller => "courses", :action => "new"
   post "/create_course", :controller => "courses", :action => "create"
