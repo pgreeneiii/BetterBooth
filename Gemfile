@@ -9,6 +9,8 @@ gem "starter_generators", :git => "https://github.com/raghubetina/starter_genera
 
 gem  'pry-rails'
 
+gem 'figaro'
+
 gem 'seed_dump'
 
 gem 'chartkick'

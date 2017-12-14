@@ -24,3 +24,6 @@
 # Ignore CSV files that include database info
 /*.csv
 /lib/csvs/*
+
+# Ignore application configuration
+/config/application.yml

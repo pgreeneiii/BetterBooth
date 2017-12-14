@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+   devise_for :users, controllers: {
+      sessions: 'users/registrations'
+   }
+
    root 'courses#index'
 
   # Routes for the Schedule resource:
