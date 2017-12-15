@@ -4,5 +4,6 @@ class Section < ApplicationRecord
    has_one(:evaluation, :class_name => "Evaluation", :foreign_key => "section_id")
    has_many(:schedules, :class_name => "Schedule", :foreign_key => "section_id")
    has_many(:bids, :class_name => "Bid", :foreign_key => "section_id")
+   has_many(:ratings, :class_name => "Rating", :foreign_key => "section_id")
 
 end

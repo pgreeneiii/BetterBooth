@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  section_id: 1
+  quarter_id: 1
+  year: 1
+  section_number: MyString
+  responses: 1
+  enrollment: 1
+  avg_hours: 1.5
+  comms_mean: 1.5
+  engaging_mean: 1.5
+  practical_mean: 1.5
+  amt_learned_mean: 1.5
+  recommend_mean: 1.5
+  comms_median: 1
+  engaging_median: 1
+  practical_median: 1
+  amt_learned_median: 1
+  recommend_median: 1
+
+two:
+  section_id: 1
+  quarter_id: 1
+  year: 1
+  section_number: MyString
+  responses: 1
+  enrollment: 1
+  avg_hours: 1.5
+  comms_mean: 1.5
+  engaging_mean: 1.5
+  practical_mean: 1.5
+  amt_learned_mean: 1.5
+  recommend_mean: 1.5
+  comms_median: 1
+  engaging_median: 1
+  practical_median: 1
+  amt_learned_median: 1
+  recommend_median: 1

@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def index
-    @q = Course.joins(:schedules).where('schedules.quarter = 1').distinct.ransack(params[:q])
+    @q = Course.joins(:schedules).where('schedules.quarter = 4').distinct.ransack(params[:q])
     @courses = @q.result(distinct: true).includes(:professors, :schedules)
 
     render("courses/index.html.erb")

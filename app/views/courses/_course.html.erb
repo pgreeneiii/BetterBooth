@@ -19,9 +19,9 @@
          <h5 class="card-title"><%= course.course_name %></h5>
 
          <!-- Identify Winter Sections for Course Card and Store as sections -->
-         <% sections = course.sections.joins(:schedules).where('schedules.quarter = 1').distinct %>
+         <% sections = course.sections.joins(:schedules).where('schedules.quarter = 4').distinct %>
 
-         <!-- Label and input for professor_id -->
+         <!-- Label and <input type="text" name="" value=""> for professor_id -->
          <div class="form-group">
             <select class="form-control">
 

@@ -106,18 +106,16 @@
             <% end %>
          </table>
     <% end %>
-
-
-    <div class="btn-group btn-group-justified">
-      <a href="/sections" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/sections/<%= @section.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_section/<%= @section.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
   </div>
+   <div class="row">
+      <div class="col-md-12">
+         <%= line_chart @mean_data, discrete: true, min: @minimum, max: nil %>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-12">
+         <%= line_chart @hours_data, discrete: true, min: nil, max: nil %>
+      </div>
+   </div>
+
 </div>

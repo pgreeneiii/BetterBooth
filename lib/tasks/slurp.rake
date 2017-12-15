@@ -87,4 +87,35 @@ namespace :slurp do
      puts "There are now #{Bid.count} rows in the bid table"
   end
 
+  task ratings: :environment do
+     require "csv"
+
+     csv_text = File.read(Rails.root.join("lib", "csvs", "rating.csv"))
+     # puts csv_text
+     csv = CSV.parse(csv_text, :headers => true, :header_converters => :symbol, :encoding => 'ISO-8859-1')
+     csv.each do |row|
+        t = Rating.new
+        t.section_id = row[:section_id]
+        t.quarter_id = row[:quarter_id]
+        t.year = row[:year]
+        t.section_number = row[:section_number]
+        t.responses = row[:responses]
+        t.enrollment = row[:enrollment]
+        t.avg_hours = row[:avg_hours]
+        t.comms_mean = row[:comms_mean]
+        t.engaging_mean = row[:engaging_mean]
+        t.practical_mean = row[:practical_mean]
+        t.amt_learned_mean = row[:amt_learned_mean]
+        t.recommend_mean = row[:recommend_mean]
+        t.comms_median = row[:comms_median]
+        t.engaging_median = row[:engaging_median]
+        t.practical_median = row[:practical_median]
+        t.amt_learned_median = row[:amt_learned_median]
+        t.recommend_median = row[:recommend_median]
+        t.save
+     end
+
+     puts "There are now #{Rating.count} rows in the bid table"
+  end
+
 end
