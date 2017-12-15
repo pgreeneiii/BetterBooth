@@ -1,0 +1,71 @@
+<% if bids.empty? %>
+   <p>No bid data</p>
+<% else %>
+   <table class='table table-hover'>
+      <!-- Set table headings -->
+      <tr>
+         <th>Year</th>
+         <th>Quarter</th>
+         <th>Time</th>
+         <th>Phase 1</th>
+         <th>Phase 2</th>
+         <th>Phase 3</th>
+         <th>Phase 4</th>
+      </tr>
+
+      <!-- Order bids in chronological order (most recent at top) -->
+      <% bids.order(year: :desc, quarter_id: :asc, time_id: :asc).each do |bid| %>
+         <tr>
+            <td>
+               <%= bid.year %>
+            </td>
+            <td>
+               <%= bid.quartertable.quarter_output %>
+            </td>
+            <td>
+               <%= convert_time(bid.time_id) %>
+            </td>
+
+            <td>
+               <% if bid.p1_price == -1 %>
+                  Closed
+               <% elsif bid.p1_price == -2 %>
+                  N/A
+               <% else %>
+                  <%= number_with_delimiter(bid.p1_price, :delimiter => ',') %>
+               <% end %>
+            </td>
+
+            <td>
+               <% if bid.p2_price == -1 %>
+                  Closed
+               <% elsif bid.p2_price == -2 %>
+                  N/A
+               <% else %>
+                  <%= number_with_delimiter(bid.p2_price, :delimiter => ',') %>
+               <% end %>
+            </td>
+
+            <td>
+               <% if bid.p3_price == -1 %>
+                  Closed
+               <% elsif bid.p3_price == -2 %>
+                  N/A
+               <% else %>
+                  <%= number_with_delimiter(bid.p3_price, :delimiter => ',') %>
+               <% end %>
+            </td>
+
+            <td>
+               <% if bid.p4_price == -1 %>
+                  Closed
+               <% elsif bid.p4_price == -2 %>
+                  N/A
+               <% else %>
+                  <%= number_with_delimiter(bid.p4_price, :delimiter => ',') %>
+               <% end %>
+            </td>
+         </tr>
+      <% end %> <!-- Close bid.each function -->
+   </table>
+<% end %>

@@ -1,20 +1,34 @@
 <!-- UI Testing -->
 
 <div class="col-md-4 mb-2">
+   <!-- Build card container -->
    <div class="card" id="<%= course.id %>">
+
+      <!-- Card Header and Navigation -->
       <div class="card-header">
          <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item" id="schedule">
-               <a class="nav-link" href="javascript:void(0);"><i class="fa fa-calendar-o" aria-hidden="true"></i> Schedule</a>
+               <a class="nav-link" href="javascript:void(0);">
+                  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                   Schedule
+               </a>
             </li>
             <li class="nav-item" id="rating">
-               <a class="nav-link" href="javascript:void(0);"><i class="fa fa-star" aria-hidden="true"></i> Ratings</a>
+               <a class="nav-link" href="javascript:void(0);">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                   Ratings
+                </a>
             </li>
             <li class="nav-item" id="bid">
-               <a class="nav-link" href="javascript:void(0);"><i class="fa fa-btc" aria-hidden="true"></i> Bid Data</a>
+               <a class="nav-link" href="javascript:void(0);">
+                  <i class="fa fa-btc" aria-hidden="true"></i>
+                   Bid Data
+                </a>
             </li>
          </ul>
       </div>
+
+      <!-- Card Body -->
       <div class="card-body">
          <h5 class="card-title"><%= course.course_name %></h5>
 
@@ -22,9 +36,9 @@
          <% sections = course.sections.joins(:schedules).where('schedules.quarter = 4').distinct %>
 
          <!-- Label and <input type="text" name="" value=""> for professor_id -->
+         <!-- Create selection form for professor for each section -->
          <div class="form-group">
             <select class="form-control">
-
                <% sections.each do |section| %>
                   <% prof = Professor.find(section.professor_id) %>
 
@@ -39,20 +53,26 @@
          <!-- For each section, print schedule, rating, and bid data -->
          <% sections.each do |section| %>
 
+            <!-- Contain all data in div with id=section_id for jquery selection -->
             <div class="section" id="<%= section.id %>">
+               <!-- Contain all data in div with id=prof_id for jquery selection -->
                <div class="prof" id="<%= section.professor_id %>">
 
+                  <!-- Create schedule view for all sections -->
                   <div class="schedule">
                      <div class="row">
                         <div class="col-md-12">
+                           <!-- Load schedule data using fetch_schedules function defined in Course Model -->
                            <% schedules = course.fetch_schedules(section.professor_id) %>
 
+                           <!-- Create view for each schedule -->
                            <% schedules.each do |schedule| %>
 
                               <div class="chip" title='Course Number: <%= course.course_number %>-<%= schedule.section_number %>'>
                                  <div class="chip-dot">
                                     <%= schedule.daytable.day_output %>
                                  </div>
+
                                  <%= schedule.timetable.time_output %>
                               </div>
 
@@ -60,9 +80,10 @@
 
                         </div>
                      </div>
-                  </div>
+                  </div> <!-- Close Schedule div -->
 
 
+                  <!-- Create bid view of all sections -->
                   <div class="bid">
                      <div class="row">
                         <table class="table table-condensed">
@@ -73,6 +94,7 @@
                                  <th scope="col">Max Recorded Bid</th>
                               </tr>
                            </thead>
+
                            <tbody>
                               <tr>
                                  <th scope="row">1</th>
@@ -100,251 +122,68 @@
                            </tbody>
                         </table>
                      </div>
-                  </div>
+                  </div> <!-- Close Bid div -->
 
 
+                  <!-- Create rating view for all sections -->
                   <div class="rating">
                      <div class="center row mb-2">
+
+                        <!-- Communication Ratings -->
                         <div class="col-xs-4">
-                           <!-- Communication Ratings -->
                            <p class="mb-0">Communication:</p>
 
-                           <% if section.evaluation.communication == 0 %>
-                              <p class="mb-0">No Data</p>
-
-                           <% elsif section.evaluation.communication == 1 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.communication == 2 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.communication == 3 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.communication == 4 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.communication == 5 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                           <% end %>
-
+                           <!-- Use partial to render stars data -->
+                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.communication} %>
                         </div>
 
+                        <!-- Engagement Ratings -->
                         <div class="col-xs-4">
-                           <!-- Engagement Ratings -->
                            <p class="mb-0">Engagement:</p>
 
-                           <% if section.evaluation.engagement == 0 %>
-                              <p class="mb-0">No Data</p>
-
-                           <% elsif section.evaluation.engagement == 1 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.engagement == 2 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.engagement == 3 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.engagement == 4 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.engagement == 5 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                           <% end %>
+                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.engagement} %>
                         </div>
 
+                        <!-- Practical Ratings -->
                         <div class="col-xs-4">
-                           <!-- Practical Ratings -->
                            <p class="mb-0">Practical:</p>
 
-                           <% if section.evaluation.practical == 0 %>
-                              <p class="mb-0">No Data</p>
-
-                           <% elsif section.evaluation.practical == 1 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.practical == 2 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.practical == 3 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.practical == 4 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.practical == 5 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                           <% end %>
+                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.practical} %>
                         </div>
                      </div>
+
+                     <!-- New row in card -->
                      <div class="center row mb-2">
+
+                        <!-- Learning Ratings -->
                         <div class="col-xs-6">
-                           <!-- Learning Ratings -->
                            <p class="mb-0">Learning:</p>
 
-                           <% if section.evaluation.learning == 0 %>
-                              <p class="mb-0">No Data</p>
-
-                           <% elsif section.evaluation.learning == 1 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.learning == 2 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.learning == 3 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.learning == 4 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.learning == 5 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                           <% end %>
+                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.learning} %>
                         </div>
 
-
+                        <!-- Recommendation Ratings -->
                         <div class="col-xs-6">
-                           <!-- Recommendation Ratings -->
-                           <p class="mb-0">
-                              Recommendation:
-                           </p>
+                           <p class="mb-0">Recommendation:</p>
 
-                           <% if section.evaluation.recommendation == 0 %>
-                              <p class="mb-0">No Data</p>
-
-                           <% elsif section.evaluation.recommendation == 1 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.recommendation == 2 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.recommendation == 3 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.recommendation == 4 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star-o" aria-hidden="true"></i>
-
-                           <% elsif section.evaluation.recommendation == 5 %>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                              <i class="fa fa-star" aria-hidden="true"></i>
-                           <% end %>
+                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.recommendation} %>
                         </div>
                      </div>
 
                      <div class="center row">
                         <div class="col-xs-12">
-                           <p><strong>Avg. Hours:  <%= section.evaluation.avg_hours %></strong></p>
+                           <p>
+                              <strong>
+                                 Avg. Hours: <%= section.evaluation.avg_hours %>
+                              </strong>
+                           </p>
                         </div>
                      </div>
-                  </div>
 
-               </div>
-            </div>
-
-         <% end %>
-
-      </div>
-
-   </div>
-
-</div>
+                  </div> <!-- Close Rating div -->
+               </div> <!-- Close Prof div -->
+            </div> <!-- Close Section div -->
+         <% end %> <!-- Close section.each function -->
+      </div> <!-- Close Card Body div -->
+   </div> <!-- Close Card div -->
+</div> <!-- Close column div -->

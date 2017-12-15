@@ -1,8 +1,7 @@
 class UserMailer < ApplicationMailer
 
    def welcome_email(user)
-     @user = user
-     mail(to: @user.email, subject: 'Welcome to BetterBooth!')
+      @user = user
+      mail(to: @user.email, subject: 'Welcome to BetterBooth!')
    end
-
 end
