@@ -35,7 +35,7 @@
 <div class="row">
    <!-- Render line chart of mean ratings data -->
    <div class="col-md-6">
-      <%= line_chart @mean_data, discrete: true, min: @minimum, max: nil, ytitle: "Rating", title: "Student Ratings (Means)" %>
+      <%= line_chart @mean_data, discrete: true, min: @minimum, max: 5, ytitle: "Rating", title: "Student Ratings (Means)" %>
    </div>
 
    <!-- Render line chart of avg. hours data -->

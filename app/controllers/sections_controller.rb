@@ -58,11 +58,11 @@ class SectionsController < ApplicationController
 
          # Create mean data table for Chartkick High Charts line chart
          @mean_data = [
-            {name: "Avg. Communication Score", data: comms},
-            {name: "Avg. Engagement Score", data: engage},
-            {name: "Avg. Practicality Score", data: prac},
-            {name: "Avg. Amount Learned Score", data: learn},
-            {name: "Avg. Recommendation Score", data: rec}
+            {name: "Communication Score", data: comms},
+            {name: "Engagement Score", data: engage},
+            {name: "Practicality Score", data: prac},
+            {name: "Amount Learned Score", data: learn},
+            {name: "Recommendation Score", data: rec}
          ]
 
          # Create avg. hours data table for Chartkick High Charts line chart

@@ -95,6 +95,18 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -213,6 +225,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
+  kaminari
   pg
   pry-rails
   puma (~> 3.0)

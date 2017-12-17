@@ -9,6 +9,8 @@ $( document ).on('turbolinks:load', function() {
    // Show all first sections for each card
    $('.card').each(function(){
       $(this).find('div.section:first').show();
+      var section_id = $(this).find('div.section:first').attr('id')
+      $(this).find('#more a').attr('href', '/sections/' + section_id);
    })
 
    // Change which section data is shown based on professor selection
@@ -17,6 +19,7 @@ $( document ).on('turbolinks:load', function() {
       var prof_id = $(this).val();
       var section_id = $(this).parents('div.card').find('div.prof#' + prof_id).parent().attr('id');
       $('#' + section_id).show();
+      $(this).parents('div.card').find('#more a').attr('href', '/sections/' + section_id);
    });
 
    // Show Schedule data when schedule is clicked

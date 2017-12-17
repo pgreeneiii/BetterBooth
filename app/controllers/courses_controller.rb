@@ -7,7 +7,7 @@ class CoursesController < ApplicationController
          ).distinct.ransack(params[:q])
 
       # Load selected courses
-      @courses = @q.result(distinct: true).includes(:professors, :schedules)
+      @courses = @q.result(distinct: true).includes(:professors, :schedules).page(params[:page]).per(24)
 
       render("courses/index.html.erb")
   end
