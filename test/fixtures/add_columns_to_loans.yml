@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  term: 1
+  orig_principal: 1.5
+
+two:
+  term: 1
+  orig_principal: 1.5

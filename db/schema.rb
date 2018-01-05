@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215002421) do
+ActiveRecord::Schema.define(version: 20171221192906) do
 
   create_table "bids", force: :cascade do |t|
     t.integer  "section_id"
@@ -67,6 +67,18 @@ ActiveRecord::Schema.define(version: 20171215002421) do
     t.integer  "p3_bid_max"
     t.integer  "p4_bid_min"
     t.integer  "p4_bid_max"
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.string   "name"
+    t.float    "principal"
+    t.date     "due_date"
+    t.float    "apr"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "term"
+    t.float    "orig_principal"
   end
 
   create_table "professors", force: :cascade do |t|
