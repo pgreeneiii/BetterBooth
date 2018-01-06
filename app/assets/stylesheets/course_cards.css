@@ -7,7 +7,7 @@ html, body {
 }
 
 #container {
-   padding-bottom: 125px;
+   padding-bottom: 135px;
 }
 
 #footer {
@@ -153,11 +153,16 @@ label {
    font-size: 12px;
 }
 
+/* * { outline: 2px dotted red } */
+
 .welcome {
    font-size: 13px;
+   display: flex;
+   align-items: center;
 }
 .welcome .img {
-   height: 125px;
+   max-height: 100px;
+   margin: auto;
 }
 
 @media screen and (max-width: 768px) {

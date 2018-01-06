@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
    root 'welcome#welcome'
 
+   # Routes for Landing Page of Unauthenticated Users
    get '/welcome', :controller => 'welcome', :action => 'welcome'
    get '/acknowledgements', :controller => 'welcome', :action => 'ack'
    get '/about', :controller => 'welcome', :action => 'about'
@@ -92,7 +93,7 @@ Rails.application.routes.draw do
 
   # READ
   get "/courses", :controller => "courses", :action => "index"
-  get "/courses/:id", :controller => "courses", :action => "show"
+  get "/courses/:quarter", :controller => "courses", :action => "index"
 
   # UPDATE
   get "/courses/:id/edit", :controller => "courses", :action => "edit"

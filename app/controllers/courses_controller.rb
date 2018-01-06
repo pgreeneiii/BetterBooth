@@ -1,10 +1,32 @@
 class CoursesController < ApplicationController
 
   def index
-      # Select winter courses
+     default = 3
+
+     if params[:quarter].nil?
+        quarter = default
+     elsif params[:quarter].length > 1
+        if params[:quarter] == 'winter'
+           quarter = 4
+        elsif params[:quarter] == 'spring'
+           quarter = 3
+        elsif params[:quarter] == 'summer'
+           quarter = 2
+        elsif params[:quarter] == 'fall'
+           quarter = 1
+        elsif params[:quarter] == 'autumn'
+           quarter = 1
+        else
+           quarter = default
+        end
+     elsif ((params[:quarter].to_i < 1) || (params[:quarter].to_i > 4))
+        quarter = default
+     else
+        quarter = params[:quarter].to_i
+     end
+      # Load selected courses
       @q = Course.joins(:schedules).where(
-         'schedules.quarter = 4'
-         ).distinct.ransack(params[:q])
+         'schedules.quarter = ?', quarter).distinct.ransack(params[:q])
 
       # Load selected courses
       @courses = @q.result(distinct: true).includes(:professors, :schedules).page(params[:page]).per(24)
