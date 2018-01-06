@@ -11,6 +11,9 @@ Rails.application.routes.draw do
    root 'welcome#welcome'
 
    get '/welcome', :controller => 'welcome', :action => 'welcome'
+   get '/acknowledgements', :controller => 'welcome', :action => 'ack'
+   get '/about', :controller => 'welcome', :action => 'about'
+
 
   # Routes for the Schedule resource:
   # CREATE

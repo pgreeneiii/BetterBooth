@@ -29,6 +29,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 <body>
+<div id='wrap'>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -77,7 +78,7 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container" id='container'>
     <% if notice.present? %>
       <div class="alert alert-dismissable alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -93,6 +94,9 @@
     <% end %>
 
     <%= yield %>
+
   </div>
+</div>
+<%= render 'shared/footer' %>
 </body>
 </html>

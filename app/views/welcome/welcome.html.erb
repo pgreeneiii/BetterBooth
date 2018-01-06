@@ -1,40 +1,43 @@
-<div class="row">
+<div class="row mb-3">
    <div class="col-md-6">
-      <h1>Welcome to BetterBooth!</h1>
       <div class="row welcome">
          <div class="col-md-12">
-            <p>
-               As the name suggests, this site aims to provide better services to Booth students. The initial version of this was built in less than a week, and was created out of frustration with our Intranet options. Given the cost of tuition, I believe it could be better.
-            </p>
-         </div>
-         <div class="col-md-4">
-
+            <h3>
+               <strong>Simple</strong>
+            </h3>
+            <h4>
+               Search classes and see ratings / bid history, all on the same page!
+            </h4>
          </div>
       </div>
 
       <div class="row welcome">
          <div class="col-md-8">
-            <p>
-               Today, my goal is to offer a course search tool that is simple and seamless - search classes and see the ratings / bid history all on the same page. Eventually, I'd love to add GTS info, employment report analytics, and other tools I think you'd find useful. If you have ideas or questions, email me at
-               <a href="mailto:pgreene@chicagobooth.edu">
-                  pgreene@chicagobooth.edu
-               </a>
-               .
-            </p>
+            <h3>
+               <strong>Insightful</strong>
+            </h3>
+            <h4>
+               See course-specific data in a useful, graphical format
+            </h4>
          </div>
          <div class="col-md-4">
             <%= image_tag "analytics.svg", :class => 'img' %>
          </div>
       </div>
 
-      <p>
-         Today, my goal is to offer a course search tool that is simple and seamless - search classes and see the ratings / bid history all on the same page. Eventually, I'd love to add GTS info, employment report analytics, and other tools I think you'd find useful. If you have ideas or questions, email me at pgreene@chicagobooth.edu.
-      </p>
-      <p>
-         Unfortunately, the data I use is supposed to be for Booth students only. So please register to the right with a ChicagoBooth.edu email so we don't get shut down.
-      </p>
-
-      <div>Icons made by <a href="https://www.flaticon.com/authors/maxim-basinski" title="Maxim Basinski">Maxim Basinski</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      <div class="row welcome">
+         <div class="col-md-8">
+            <h3>
+               <strong>Dynamic</strong>
+            </h3>
+            <h4>
+               Updates planned! <a href='mailto:pgreene@chicagobooth.edu'>Email me</a> with suggestions.
+            </h4>
+         </div>
+         <div class="col-md-4">
+            <%= image_tag "rating.svg", :class => 'img' %>
+         </div>
+      </div>
    </div>
    <div class="col-md-offset-1 col-md-4">
       <%= render 'welcome/sign_up' %>

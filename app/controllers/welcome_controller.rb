@@ -4,4 +4,13 @@ class WelcomeController < ApplicationController
    def welcome
       render ('welcome/welcome.html.erb')
    end
+
+   # Acknowledgements
+   def ack
+      render ('welcome/acknowledgements.html.erb')
+   end
+
+   def about
+      render ('welcome/about.html.erb')
+   end
 end

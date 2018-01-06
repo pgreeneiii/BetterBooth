@@ -1,3 +1,28 @@
+html, body {
+   height: 100%;
+}
+
+#wrap {
+   min-height: 100%;
+}
+
+#container {
+   padding-bottom: 125px;
+}
+
+#footer {
+   position: relative;
+   clear:both;
+   height:125px;
+   margin-top: -125px;
+   background: #F0F0F0;
+   color: #404040;
+}
+
+#footer a {
+   color: #404040;
+}
+
 td, th {
    text-align: center;
 }
@@ -105,7 +130,6 @@ label {
 .search_button {
    width: 50%;
 }
-
 
 .form-control {
    font-size: 14px;
