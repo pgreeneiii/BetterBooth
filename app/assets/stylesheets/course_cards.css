@@ -129,6 +129,13 @@ label {
    font-size: 12px;
 }
 
+.welcome {
+   font-size: 13px;
+}
+.welcome .img {
+   height: 125px;
+}
+
 @media screen and (max-width: 768px) {
    .card {
       /* Add shadows to create the "card" effect */

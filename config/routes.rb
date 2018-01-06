@@ -1,28 +1,16 @@
 Rails.application.routes.draw do
 
-  # Routes for the Loan resource:
-  # CREATE
-  get "/loans/new", :controller => "loans", :action => "new"
-  post "/create_loan", :controller => "loans", :action => "create"
-
-  # READ
-  get "/loans", :controller => "loans", :action => "index"
-  get "/loans/:id", :controller => "loans", :action => "show"
-  get "/loans/calc/:id", :controller => "loans", :action => "calc"
-
-  # UPDATE
-  get "/loans/:id/edit", :controller => "loans", :action => "edit"
-  post "/update_loan/:id", :controller => "loans", :action => "update"
-
-  # DELETE
-  get "/delete_loan/:id", :controller => "loans", :action => "destroy"
-  #------------------------------
-
    devise_for :users, controllers: {
       registrations: 'users/registrations'
    }
 
-   root 'courses#index'
+   authenticated :user do
+      root 'courses#index', as: :authenticated_root
+   end
+
+   root 'welcome#welcome'
+
+   get '/welcome', :controller => 'welcome', :action => 'welcome'
 
   # Routes for the Schedule resource:
   # CREATE

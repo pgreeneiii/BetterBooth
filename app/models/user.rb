@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
    has_many(:loans, :class_name => "Loan", :foreign_key => "user_id")
+
+   validates_format_of :email, with: /\@chicagobooth\.edu/, message: 'You should have an email from chicagobooth.edu'
 end
