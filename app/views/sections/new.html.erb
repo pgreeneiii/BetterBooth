@@ -27,7 +27,7 @@
         <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :course_name, @section.course_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for rofessor_id -->
+      <!-- Label and input for Professor_id -->
       <div class="form-group">
         <label for="professor_id" class="control-label">
           Professor
@@ -35,6 +35,16 @@
 
         <%= select_tag(:professor_id, options_from_collection_for_select(Professor.all, :id, :last_name, @section.professor_id), :class => "form-control") %>
       </div>
+
+      <!-- Label and input for Content -->
+      <div class="form-group">
+        <label for="content" class="control-label">
+          Content
+        </label>
+
+        <input type='text' id='content' name='content' class='form-control' value="<%= @section.content %>">
+      </div>
+
 
 
       <button class="btn btn-success">

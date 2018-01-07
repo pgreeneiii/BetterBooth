@@ -57,7 +57,7 @@ namespace :slurp do
         puts "#{t.section_id}, #{t.section_number}, #{t.quarter}, #{t.day}, #{t.time}, #{t.half_credit} saved"
      end
 
-     puts "There are now #{Schedule.count} rows in the schedule table"
+     puts "#{Schedule.count} rows added to the schedule table"
   end
 
   task bids: :environment do

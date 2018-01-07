@@ -145,27 +145,27 @@ class SectionsController < ApplicationController
       render("sections/show.html.erb")
    end
 
-   # def new
-   #    @section = Section.new
-   #
-   #    render("sections/new.html.erb")
-   # end
+   def new
+      @section = Section.new
 
-   # def create
-   #    @section = Section.new
-   #
-   #    @section.course_id = params[:course_id]
-   #    @section.professor_id = params[:professor_id]
-   #    @section.content = params[:content]
-   #
-   #    save_status = @section.save
-   #
-   #    if save_status == true
-   #       redirect_to("/sections/#{@section.id}", :notice => "Section created successfully.")
-   #    else
-   #       render("sections/new.html.erb")
-   #    end
-   # end
+      render("sections/new.html.erb")
+   end
+
+   def create
+      @section = Section.new
+
+      @section.course_id = params[:course_id]
+      @section.professor_id = params[:professor_id]
+      @section.content = params[:content]
+
+      save_status = @section.save
+
+      if save_status == true
+         redirect_to("/sections/#{@section.id}", :notice => "Section created successfully.")
+      else
+         render("sections/new.html.erb")
+      end
+   end
 
    # def edit
    #    @section = Section.find(params[:id])

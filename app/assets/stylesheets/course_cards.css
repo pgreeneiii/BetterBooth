@@ -27,6 +27,11 @@ html, body {
    color: #404040;
 }
 
+#rating_header {
+   font-weight: bold;
+   text-align: center;
+}
+
 td, th {
    text-align: center;
 }

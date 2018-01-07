@@ -1,5 +1,4 @@
 <!-- UI Testing -->
-
 <div class="col-md-4 mb-2">
    <!-- Build card container -->
    <div class="card" id="<%= course.id %>">
@@ -97,59 +96,7 @@
 
                   <!-- Create rating view for all sections -->
                   <div class="rating">
-                     <div class="center row mb-2">
-
-                        <!-- Communication Ratings -->
-                        <div class="col-xs-4">
-                           <p class="mb-0">Communication:</p>
-
-                           <!-- Use partial to render stars data -->
-                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.communication} %>
-                        </div>
-
-                        <!-- Engagement Ratings -->
-                        <div class="col-xs-4">
-                           <p class="mb-0">Engagement:</p>
-
-                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.engagement} %>
-                        </div>
-
-                        <!-- Practical Ratings -->
-                        <div class="col-xs-4">
-                           <p class="mb-0">Practical:</p>
-
-                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.practical} %>
-                        </div>
-                     </div>
-
-                     <!-- New row in card -->
-                     <div class="center row mb-2">
-
-                        <!-- Learning Ratings -->
-                        <div class="col-xs-6">
-                           <p class="mb-0">Learning:</p>
-
-                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.learning} %>
-                        </div>
-
-                        <!-- Recommendation Ratings -->
-                        <div class="col-xs-6">
-                           <p class="mb-0">Recommendation:</p>
-
-                           <%= render partial:  'shared/stars', locals: {stars: section.evaluation.recommendation} %>
-                        </div>
-                     </div>
-
-                     <div class="center row">
-                        <div class="col-xs-12">
-                           <p>
-                              <strong>
-                                 Avg. Hours: <%= section.evaluation.avg_hours %>
-                              </strong>
-                           </p>
-                        </div>
-                     </div>
-
+                     <%= render partial: 'ratings', locals: {ratings: section.ratings.order(year: :desc, quarter_id: :asc)} %>
                   </div> <!-- Close Rating div -->
                </div> <!-- Close Prof div -->
             </div> <!-- Close Section div -->
