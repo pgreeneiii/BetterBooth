@@ -1,40 +1,16 @@
 <div class="page-header">
    <h1>
-      Winter Courses
+      <%= @title %> Courses
    </h1>
-
-   <div class="row">
-
-      <!-- Generate search form with ransack -->
-      <%= search_form_for @q do |f| %>
-
-         <div class="col-md-3">
-            <%= f.label :course_name_cont, 'Course Name:', :class => 'search_label' %>
-            <%= f.search_field :course_name_cont, :class => 'search' %>
-         </div>
-
-         <div class="col-md-3">
-            <%= f.label :professors_first_name_or_professors_last_name_cont, 'Professor Name:', :class => 'search_label' %>
-            <%= f.search_field :professors_first_name_or_professors_last_name_cont, :class => 'search' %>
-         </div>
-
-         <div class="col-md-3">
-            <%= f.label :schedules_day_eq, 'Class Day:' %>
-
-            <!-- Create custom select field -->
-            <%= f.select :schedules_day_eq, [['Monday', '1'],['Tuesday','2'],['Wednesday','3'],['Thursday','4'],['Friday','5'],['Saturday','6'],['MWF','7']], {:include_blank => 'Select'} %>
-         </div>
-
-         <div class="col-md-3">
-            <%= f.submit "search", :class => 'search_button' %>
-         </div>
-
-      <% end %>
-
-   </div>
 </div>
+
+<!-- Render Course Search Forms -->
+<%= render 'courses/search.html.erb' %>
+<hr>
 
 <!-- Render partial view for every course from ransack search - creates card-effect -->
 <%= render @courses %>
+
+<!-- Pagination -->
 <%= paginate @courses %>
 <%= page_entries_info @courses %>

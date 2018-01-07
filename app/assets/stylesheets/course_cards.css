@@ -2,6 +2,10 @@ html, body {
    height: 100%;
 }
 
+.coursepage {
+   background-color: #FFFFFF;
+}
+
 #wrap {
    min-height: 100%;
 }
@@ -42,7 +46,7 @@ label {
 
 .card {
    /* Add shadows to create the "card" effect */
-   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
    transition: 0.3s;
    border-radius: 5px; /* 5px rounded corners */
    width: 100%;
@@ -52,7 +56,7 @@ label {
 }
 
 .card:hover {
-   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 
 .card-body{
@@ -133,6 +137,10 @@ label {
 
 .form-control {
    font-size: 14px;
+}
+
+.page-header {
+   margin: 21px 0 21px;
 }
 
 .professor_box{

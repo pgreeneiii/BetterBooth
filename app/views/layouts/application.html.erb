@@ -28,7 +28,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
-<body>
+<body class="<%= @course_page ? 'coursepage' : ''%>">
 <div id='wrap'>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -47,7 +47,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
            <% if current_user != nil %> <!-- If Signed In -->
-               <li><a href="/courses">Winter Courses</a></li>
+               <li><a href="/courses/winter">Winter Courses</a></li>
+               <li><a href="/courses/spring">Spring Courses</a></li>
             <% end %>
         </ul>
 

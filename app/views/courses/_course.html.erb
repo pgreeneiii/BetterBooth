@@ -37,7 +37,7 @@
          </h5>
 
          <!-- Identify Winter Sections for Course Card and Store as sections -->
-         <% sections = course.sections.joins(:schedules).where('schedules.quarter = 4').distinct %>
+         <% sections = course.sections.joins(:schedules).where('schedules.quarter = ?', @quarter).distinct %>
 
          <!-- Label and <input type="text" name="" value=""> for professor_id -->
          <!-- Create selection form for professor for each section -->
@@ -90,41 +90,7 @@
                   <!-- Create bid view of all sections -->
                   <div class="bid">
                      <div class="row">
-                        <table class="table table-condensed">
-                           <thead>
-                              <tr>
-                                 <th scope="col">Phase</th>
-                                 <th scope="col">Min Recorded Bid</th>
-                                 <th scope="col">Max Recorded Bid</th>
-                              </tr>
-                           </thead>
-
-                           <tbody>
-                              <tr>
-                                 <th scope="row">1</th>
-                                 <td><%= section.evaluation.p1_bid_min %></td>
-                                 <td><%= section.evaluation.p1_bid_max %></td>
-                              </tr>
-
-                              <tr>
-                                 <th scope="row">2</th>
-                                 <td><%= section.evaluation.p2_bid_min %></td>
-                                 <td><%= section.evaluation.p2_bid_max %></td>
-                              </tr>
-
-                              <tr>
-                                 <th scope="row">3</th>
-                                 <td><%= section.evaluation.p3_bid_min %></td>
-                                 <td><%= section.evaluation.p3_bid_max %></td>
-                              </tr>
-
-                              <tr>
-                                 <th scope="row">4</th>
-                                 <td><%= section.evaluation.p4_bid_min %></td>
-                                 <td><%= section.evaluation.p4_bid_max %></td>
-                              </tr>
-                           </tbody>
-                        </table>
+                        <%= render partial: 'condensed_bid_table', locals: {bids: section.bids.order(year: :desc, quarter_id: :asc, time_id: :asc)} %>
                      </div>
                   </div> <!-- Close Bid div -->
 

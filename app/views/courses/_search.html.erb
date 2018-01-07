@@ -1,0 +1,68 @@
+<div class="row">
+   <div class='form-group'>
+      <!-- Generate search form with ransack -->
+      <%= search_form_for(@q, format: :json) do |f| %>
+
+            <!-- Save Quarter-selected data, or else it resets to default -->
+            <input type="hidden" id="quarter" name="quarter" placeholder="Quarter" class="form-control" value="<%= @quarter %>">
+
+            <!-- Search by Course Name -->
+            <div class="col-md-offset-1 col-md-2">
+               <%= f.label :course_name_cont, 'Course Name:', :class => 'sr-only' %>
+               <%= f.search_field :course_name_cont, :class => 'form-control', placeholder: 'Course Name' %>
+            </div>
+
+            <!-- Search by Professor Name -->
+            <div class="col-md-2">
+               <%= f.label :professors_first_name_or_professors_last_name_cont, 'Professor Name:', :class => 'sr-only' %>
+               <%= f.search_field :professors_first_name_or_professors_last_name_cont, :class => 'form-control', placeholder: 'Professor Name' %>
+            </div>
+
+            <!-- Search by Day of the Week -->
+            <div class="col-md-2">
+               <label for="q_schedules_day_eq" class='sr-only'>Class Day:</label>
+
+               <!-- Create custom select field -->
+               <select name="q[schedules_day_eq]" id="q_schedules_day_eq" class='form-control'>
+                  <option value="">Select Class Day</option>
+                  <option value="1">Monday</option>
+                  <option value="2">Tuesday</option>
+                  <option value="3">Wednesday</option>
+                  <option value="4">Thursday</option>
+                  <option value="5">Friday</option>
+                  <option value="6">Saturday</option>
+                  <option value="7">MWF</option>
+                  <option value="8">Other</option>
+               </select>
+            </div>
+
+            <!-- Search by Subject -->
+            <div class='col-md-2'>
+               <label for="q_subject_eq" class='sr-only'>Subject:</label>
+
+               <!-- Create custom select field -->
+               <select name="q[subject_eq]" id="q_subject_eq" class='form-control'>
+                  <option value="">Select Subject</option>
+                  <option value="Financial Management">Financial Management</option>
+                  <option value="Accounting">Accounting</option>
+                  <option value="Microeconomics">Microeconomics</option>
+                  <option value="Macro/International Business">Macro/International Business</option>
+                  <option value="Entrepreneurship">Entrepreneurship</option>
+                  <option value="Strategic Management">Strategic Management</option>
+                  <option value="Operations Management">Operations Management</option>
+                  <option value="Marketing Management">Marketing Management</option>
+                  <option value="Managerial and Organizational Behavior">Managerial and Organizational Behavior</option>
+                  <option value="Organizations and Markets">Organizations and Markets</option>
+                  <option value="Statistics">Statistics</option>
+               </select>
+            </div>
+
+            <!-- Search Button -->
+            <div class="col-md-2">
+               <%= f.submit "search", :class => 'btn btn-primary btn-block' %>
+            </div>
+
+
+      <% end %>
+   </div>
+</div>
