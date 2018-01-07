@@ -1,20 +1,42 @@
-<div class="row">
-   <div class="col-md-offset-1 col-md-8">
-      <h1>Welcome to BetterBooth!</h1>
+<div class="row" id='about'>
+   <div class="col-md-4">
+      <h2>Welcome to BetterBooth!</h2>
       <p>
          As the name suggests, this site aims to provide better services to Booth students. The initial version of this was built in less than a week, and was created out of frustration with our Intranet options. Given the cost of tuition, I believe it could be better.
       </p>
 
       <p>
-         Today, my goal is to offer a course search tool that is simple and seamless - search classes and see the ratings / bid history all on the same page. Eventually, I'd love to add GTS info, employment report analytics, and other tools I think you'd find useful. If you have ideas or questions, email me at
-         <a href="mailto:betterboothgroup@gmail.com">
-            pgreene@chicagobooth.edu
+         Today, my goal is to offer a course search tool that is simple and seamless - search classes and see the ratings / bid history all on the same page. Eventually, I'd love to add:</p>
+         <ul>
+            <li>GTS Feed</li>
+            <li>Employment Report Visualizations</li>
+            <li>Course Planner</li>
+            <li>and any other tools I think you'd find useful</li>
+         </ul>
+         <p>If you have ideas or questions, don't hesitate to reach out at
+            <a href="mailto:betterboothgroup@gmail.com">
+            betterboothgroup@gmail.com
          </a>
          .
       </p>
+   </div>
+   <div class="col-md-offset-1 col-md-7 pt-1">
+      <div class='row vertical-align mb-4'>
+         <div class='col-md-7'>
+            <%= image_tag "course_index.gif", :class => 'example_img' %>
+         </div>
+         <div class='col-md-5'>
+            <h4 class='center'>Schedules, bid prices, and evalutions on one page</h4>
+         </div>
+      </div>
+      <div class='row vertical-align mb-1'>
 
-      <p>
-         Unfortunately, the data I use is supposed to be for Booth students only. So please register to the right with a ChicagoBooth.edu email so we don't get shut down.
-      </p>
+         <div class='col-md-5'>
+            <h4 class='center'>Historical course trends to help you make an informed decision</h4>
+         </div>
+         <div class='col-md-7'>
+            <%= image_tag "section_details.gif", :class => 'example_img' %>
+         </div>
+      </div>
    </div>
 </div>

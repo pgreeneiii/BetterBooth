@@ -6,6 +6,11 @@ html, body {
    background-color: #FFFFFF;
 }
 
+#about p {
+   font-size: 16px;
+   line-height: 175%
+}
+
 #wrap {
    min-height: 100%;
 }
@@ -96,6 +101,10 @@ label {
    font-weight: bold;
 }
 
+.example_img {
+   width: 100%
+}
+
 .course_content {
    box-sizing: border-box;
    font-size: 12px;
@@ -164,6 +173,11 @@ label {
 
 .rating {
    font-size: 12px;
+}
+
+.vertical-align {
+   display: flex;
+   align-items: center;
 }
 
 /* * { outline: 2px dotted red } */
