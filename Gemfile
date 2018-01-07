@@ -9,8 +9,6 @@ gem "starter_generators", :git => "https://github.com/raghubetina/starter_genera
 
 gem 'kaminari'
 
-gem 'jquery-infinite-pages'
-
 gem  'pry-rails'
 
 gem 'figaro'
