@@ -7,19 +7,19 @@
             <input type="hidden" id="quarter" name="quarter" placeholder="Quarter" class="form-control" value="<%= @quarter %>">
 
             <!-- Search by Course Name -->
-            <div class="col-md-offset-1 col-md-2">
+            <div class="col-md-offset-1 col-md-2 mb-1">
                <%= f.label :course_name_cont, 'Course Name:', :class => 'sr-only' %>
                <%= f.search_field :course_name_cont, :class => 'form-control', placeholder: 'Course Name' %>
             </div>
 
             <!-- Search by Professor Name -->
-            <div class="col-md-2">
+            <div class="col-md-2 mb-1">
                <%= f.label :professors_first_name_or_professors_last_name_cont, 'Professor Name:', :class => 'sr-only' %>
                <%= f.search_field :professors_first_name_or_professors_last_name_cont, :class => 'form-control', placeholder: 'Professor Name' %>
             </div>
 
             <!-- Search by Day of the Week -->
-            <div class="col-md-2">
+            <div class="col-md-2 mb-1">
                <label for="q_schedules_day_eq" class='sr-only'>Class Day:</label>
 
                <!-- Create custom select field -->
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Search by Subject -->
-            <div class='col-md-2'>
+            <div class='col-md-2 mb-1'>
                <label for="q_subject_eq" class='sr-only'>Subject:</label>
 
                <!-- Create custom select field -->
@@ -58,7 +58,7 @@
             </div>
 
             <!-- Search Button -->
-            <div class="col-md-2">
+            <div class="col-md-2 mb-1">
                <%= f.submit "search", :class => 'btn btn-primary btn-block' %>
             </div>
 

@@ -55,7 +55,7 @@
          <ul class="nav navbar-nav navbar-right">
             <% if current_user != nil %> <!-- If signed in -->
                <li>
-                  <a href="/users/edit"><%= current_user.username %></a>
+                  <a href="/users/edit"><%= current_user.email %></a>
                </li>
                <li>
                   <a href="/users/sign_out" data-method="delete" rel="nofollow">
