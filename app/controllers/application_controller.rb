@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
      include Singleton
      include ActionView::Helpers::TextHelper
   end
+
+  private
+   def authorize_admin
+      redirect_to(root_path) unless current_user && current_user.admin?
+   end
 end

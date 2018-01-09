@@ -1,4 +1,6 @@
 class SectionsController < ApplicationController
+   before_filter :authorize_admin, only: :new
+   
    # def index
    #    @sections = Section.all
    #
