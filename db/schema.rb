@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108233206) do
+ActiveRecord::Schema.define(version: 20180112202820) do
 
   create_table "bids", force: :cascade do |t|
     t.integer  "section_id"
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 20180108233206) do
     t.integer  "p4_bid_max"
   end
 
+  create_table "plans", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "schedule_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "bid"
+  end
+
   create_table "professors", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -120,9 +128,24 @@ ActiveRecord::Schema.define(version: 20180108233206) do
   create_table "sections", force: :cascade do |t|
     t.integer  "course_id"
     t.integer  "professor_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.text     "content"
+    t.boolean  "lectures"
+    t.boolean  "discussions"
+    t.boolean  "cases"
+    t.boolean  "group_projects"
+    t.boolean  "group_presentations"
+    t.boolean  "ethics"
+    t.boolean  "graded_homework"
+    t.boolean  "graded_participation"
+    t.boolean  "quizzes"
+    t.boolean  "midterm"
+    t.boolean  "midterm_optional"
+    t.boolean  "final_sit"
+    t.boolean  "final_take"
+    t.boolean  "canvas"
+    t.boolean  "sample_exam"
   end
 
   create_table "time_tables", force: :cascade do |t|

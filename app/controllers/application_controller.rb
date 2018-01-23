@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
 
   private
    def authorize_admin
-      redirect_to(root_path) unless current_user && current_user.admin?
+      redirect_to(root_path, alert: 'Whoops! That route is for admins only.') unless current_user && current_user.admin?
    end
 end

@@ -1,0 +1,52 @@
+<div class='row'>
+   <div class='col-md-12'>
+      <table class='table'>
+         <thead>
+            <tr>
+               <th>
+                  Course Number
+               </th>
+               <th>
+                  Course Name
+               </th>
+               <th>
+                  Professor
+               </th>
+               <th>
+                  Avg. Hours
+               </th>
+               <th>
+                  Schedule
+               </th>
+               <th>
+                  Planned Bid
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <% plans.each do |plan| %>
+            <tr>
+               <td>
+                  <p><%= plan.schedule.section.course.course_number %>-<%= plan.schedule.section_number %></p>
+               </td>
+               <td>
+                  <p><%= plan.schedule.section.course.course_name %></p>
+               </td>
+               <td>
+                  <p><%= plan.schedule.section.professor.first_name %> <%= plan.schedule.section.professor.last_name %></p>
+               </td>
+               <td>
+                  <p><%= plan.schedule.section.evaluation.avg_hours %></p>
+               </td>
+               <td>
+                  <p><%= plan.schedule.daytable.day_output %> <%= plan.schedule.timetable.time_output %></p>
+               </td>
+               <td>
+                  <p><%= plan.bid %></p>
+               </td>
+            </tr>
+            <% end %>
+         </tbody>
+      </table>
+   </div>
+</div>

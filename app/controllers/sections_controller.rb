@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
-   before_filter :authorize_admin, only: :new
-   
+   before_filter :authorize_admin, only: [:new, :edit]
+
    # def index
    #    @sections = Section.all
    #
@@ -169,27 +169,42 @@ class SectionsController < ApplicationController
       end
    end
 
-   # def edit
-   #    @section = Section.find(params[:id])
-   #
-   #    render("sections/edit.html.erb")
-   # end
+   def edit
+      @section = Section.find(params[:id])
 
-   # def update
-   #    @section = Section.find(params[:id])
-   #
-   #    @section.course_id = params[:course_id]
-   #    @section.professor_id = params[:professor_id]
-   #    @section.content = params[:content]
-   #
-   #    save_status = @section.save
-   #
-   #    if save_status == true
-   #       redirect_to("/sections/#{@section.id}", :notice => "Section updated successfully.")
-   #    else
-   #       render("sections/edit.html.erb")
-   #    end
-   # end
+      render("sections/edit.html.erb")
+   end
+
+   def update
+      @section = Section.find(params[:id])
+
+      @section.course_id = params[:course_id]
+      @section.professor_id = params[:professor_id]
+      @section.content = params[:content]
+      @section.lectures = params[:lectures]
+      @section.discussions = params[:discussions]
+      @section.cases = params[:cases]
+      @section.group_projects = params[:group_projects]
+      @section.group_presentations = params[:group_presentations]
+      @section.ethics = params[:ethics]
+      @section.graded_homework = params[:graded_homework]
+      @section.graded_participation = params[:graded_participation]
+      @section.quizzes = params[:quizzes]
+      @section.midterm = params[:midterm]
+      @section.midterm_optional = params[:midterm_optional]
+      @section.final_sit = params[:final_sit]
+      @section.final_take = params[:final_take]
+      @section.canvas = params[:canvas]
+      @section.sample_exam = params[:sample_exam]
+
+      save_status = @section.save
+
+      if save_status == true
+         redirect_to("/sections/#{@section.id}", :notice => "Section updated successfully.")
+      else
+         render("sections/edit.html.erb")
+      end
+   end
 
    # def destroy
    #    @section = Section.find(params[:id])

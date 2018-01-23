@@ -15,41 +15,200 @@
 <div class="row">
   <div class="col-md-12">
     <form action="/update_section/<%= @section.id %>" method="post">
-      <!-- Hidden input for authenticity token to protect from forgery -->
-      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for course_id -->
-      <div class="form-group">
-        <label for="course_id" class="control-label">
-          Course
-        </label>
+      <div class='row'>
+         <div class='col'>
+            <!-- Hidden input for authenticity token to protect from forgery -->
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-        <input type="text" id="course_id" name="course_id" placeholder="Course" class="form-control" value="<%= @section.course_id %>">
+            <!-- Label and input for course_id -->
+            <div class="form-group">
+              <label for="course_id" class="control-label">
+                Course
+              </label>
+
+              <input type="text" id="course_id" name="course_id" placeholder="Course" class="form-control" value="<%= @section.course_id %>">
+            </div>
+         </div>
+
+         <div class='col'>
+            <!-- Label and input for professor_id -->
+            <div class="form-group">
+              <label for="professor_id" class="control-label">
+                Professor
+              </label>
+
+              <input type="text" id="professor_id" name="professor_id" placeholder="Professor" class="form-control" value="<%= @section.professor_id %>">
+            </div>
+         </div>
       </div>
 
-      <!-- Label and input for professor_id -->
-      <div class="form-group">
-        <label for="professor_id" class="control-label">
-          Professor
-        </label>
+      <div class='row'>
+         <div class='col'>
+            <!-- Label and input for content -->
+            <div class="form-group">
+              <label for="content" class="control-label">
+                Content
+              </label>
 
-        <input type="text" id="professor_id" name="professor_id" placeholder="Professor" class="form-control" value="<%= @section.professor_id %>">
+              <input type="text" id="content" name="content" placeholder="Content" class="form-control" value="<%= @section.content %>">
+            </div>
+         </div>
       </div>
 
-      <!-- Label and input for content -->
-      <div class="form-group">
-        <label for="professor_id" class="control-label">
-          Content
-        </label>
+      <div class='row'>
+         <!-- Label and input for lectures -->
+         <div class="form-group col-xs-3">
+           <label for="lectures" class="control-label">
+             Lectures
+           </label>
 
-        <input type="text" id="content" name="content" placeholder="Content" class="form-control" value="<%= @section.content %>">
+           <input type="checkbox" id="lectures" name="lectures" class="form-control">
+         </div>
+
+         <!-- Label and input for discussions -->
+         <div class="form-group col-xs-3">
+           <label for="discussions" class="control-label">
+             Discussions
+           </label>
+
+           <input type="checkbox" id="discussions" name="discussions" class="form-control">
+         </div>
+
+         <!-- Label and input for cases -->
+         <div class="form-group col-xs-3">
+           <label for="cases" class="control-label">
+             Cases
+           </label>
+
+           <input type="checkbox" id="cases" name="cases" class="form-control">
+         </div>
+
+         <!-- Label and input for group_projects -->
+         <div class="form-group col-xs-3">
+           <label for="group_projects" class="control-label">
+             Group Projects
+           </label>
+
+           <input type="checkbox" id="group_projects" name="group_projects" class="form-control">
+         </div>
       </div>
 
-      <button class="btn btn-warning">
-        Update Section
-      </button>
-      or
-      <a href="/sections/<%= @section.id %>">Cancel</a>
+      <div class='row'>
+         <!-- Label and input for group_presentations -->
+         <div class="form-group col-xs-3">
+           <label for="group_presentations" class="control-label">
+             Group Presentations
+           </label>
+
+           <input type="checkbox" id="group_presentations" name="group_presentations" class="form-control">
+         </div>
+
+         <!-- Label and input for ethics -->
+         <div class="form-group col-xs-3">
+           <label for="ethics" class="control-label">
+             Ethics
+           </label>
+
+           <input type="checkbox" id="ethics" name="ethics" class="form-control">
+         </div>
+
+         <!-- Label and input for graded_homework -->
+         <div class="form-group col-xs-3">
+           <label for="graded_homework" class="control-label">
+             Graded Homework
+           </label>
+
+           <input type="checkbox" id="graded_homework" name="graded_homework" class="form-control">
+         </div>
+
+         <!-- Label and input for graded_participation -->
+         <div class="form-group col-xs-3">
+           <label for="graded_participation" class="control-label">
+             Graded Participation
+           </label>
+
+           <input type="checkbox" id="graded_participation" name="graded_participation" class="form-control">
+         </div>
+      </div>
+
+      <div class='row'>
+         <!-- Label and input for quizzes -->
+         <div class="form-group col-xs-3">
+           <label for="quizzes" class="control-label">
+             Quizzes
+           </label>
+
+           <input type="checkbox" id="quizzes" name="quizzes" class="form-control">
+         </div>
+
+         <!-- Label and input for midterm -->
+         <div class="form-group col-xs-3">
+           <label for="midterm" class="control-label">
+             Midterm
+           </label>
+
+           <input type="checkbox" id="midterm" name="midterm" class="form-control">
+         </div>
+
+         <!-- Label and input for midterm_optional -->
+         <div class="form-group col-xs-3">
+           <label for="midterm_optional" class="control-label">
+             Optional Midterm
+           </label>
+
+           <input type="checkbox" id="midterm_optional" name="midterm_optional" class="form-control">
+         </div>
+
+         <!-- Label and input for final_sit -->
+         <div class="form-group col-xs-3">
+           <label for="final_sit" class="control-label">
+             Final (In Class)
+           </label>
+
+           <input type="checkbox" id="final_sit" name="final_sit" class="form-control">
+         </div>
+      </div>
+
+      <div class='row'>
+         <!-- Label and input for final_take -->
+         <div class="form-group col-xs-3">
+           <label for="final_take" class="control-label">
+             Final (Take Home)
+           </label>
+
+           <input type="checkbox" id="final_take" name="final_take" class="form-control">
+         </div>
+
+         <!-- Label and input for canvas -->
+         <div class="form-group col-xs-3">
+           <label for="canvas" class="control-label">
+             Canvas
+           </label>
+
+           <input type="checkbox" id="canvas" name="canvas" class="form-control">
+         </div>
+
+         <!-- Label and input for sample_exam -->
+         <div class="form-group col-xs-3">
+           <label for="sample_exam" class="control-label">
+             Sample Exam
+           </label>
+
+           <input type="checkbox" id="sample_exam" name="sample_exam" class="form-control">
+         </div>
+      </div>
+
+      <div class='row'>
+         <div class='col-xs-12'>
+
+            <button class="btn btn-warning">
+              Update Section
+            </button>
+            or
+            <a href="/sections/<%= @section.id %>">Cancel</a>
+         </div>
+      </div>
     </form>
   </div>
 </div>

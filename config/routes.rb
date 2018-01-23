@@ -1,15 +1,33 @@
 Rails.application.routes.draw do
+   devise_for :admins
+    devise_for :users, controllers: {
+       registrations: 'users/registrations'
+    }
 
-  devise_for :admins
-   devise_for :users, controllers: {
-      registrations: 'users/registrations'
-   }
+    authenticated :user do
+       root 'courses#index', as: :authenticated_root
+    end
 
-   authenticated :user do
-      root 'courses#index', as: :authenticated_root
-   end
+    root 'welcome#welcome'
 
-   root 'welcome#welcome'
+   # Routes for the Plan resource:
+   # CREATE
+   get "/plans/new", :controller => "plans", :action => "new"
+   post "/create_plan", :controller => "plans", :action => "create"
+
+   # READ
+   get "/plans", :controller => "plans", :action => "index"
+   get "/plans/:id", :controller => "plans", :action => "show"
+   get "generate_plan", :controller => 'plans', :action => 'mail'
+   post '/add', :controller => 'plans', :action => 'create'
+
+   # UPDATE
+   get "/plans/:id/edit", :controller => "plans", :action => "edit"
+   post "/update_plan/:id", :controller => "plans", :action => "update"
+
+   # DELETE
+   get "/delete_plan/:id", :controller => "plans", :action => "destroy"
+   #------------------------------
 
    # Routes for Landing Page of Unauthenticated Users
    get '/welcome', :controller => 'welcome', :action => 'welcome'
@@ -45,8 +63,8 @@ Rails.application.routes.draw do
 
 
   # UPDATE
-  # get "/sections/:id/edit", :controller => "sections", :action => "edit"
-  # post "/update_section/:id", :controller => "sections", :action => "update"
+  get "/sections/:id/edit", :controller => "sections", :action => "edit"
+  post "/update_section/:id", :controller => "sections", :action => "update"
 
   # DELETE
   get "/delete_section/:id", :controller => "sections", :action => "destroy"
@@ -103,6 +121,11 @@ Rails.application.routes.draw do
   # DELETE
   get "/delete_course/:id", :controller => "courses", :action => "destroy"
   #------------------------------
+
+  #-------------------------------------------
+  # API Calls
+
+  #-------------------------------------------
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

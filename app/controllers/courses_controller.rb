@@ -1,5 +1,4 @@
 class CoursesController < ApplicationController
-   before_action :set_course_page
 
   def index
      default = 3
@@ -30,15 +29,11 @@ class CoursesController < ApplicationController
          'schedules.quarter = ?', @quarter).distinct.ransack(params[:q])
 
       # Load selected courses
-      @courses = @q.result(distinct: true).includes(:professors, :schedules).page(params[:page]).per(24)
+      @courses = @q.result(distinct: true).includes(:professors, :schedules, :sections).page(params[:page]).per(24)
 
       @title = QuarterTable.find(@quarter).quarter_output
 
       render("courses/index.html.erb")
-  end
-
-  def set_course_page
-     @course_page = true
   end
 
   # def show

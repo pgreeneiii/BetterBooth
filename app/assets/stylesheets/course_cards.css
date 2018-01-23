@@ -33,7 +33,13 @@ html, body {
 }
 
 #rating_header {
+   font-size: 14px;
    font-weight: bold;
+   text-align: center;
+}
+
+#no_data {
+   font-size: 14px;
    text-align: center;
 }
 
@@ -82,10 +88,11 @@ label {
    line-height: 40px;
    border-radius: 25px;
    background-color: #f1f1f1;
-   width: 80%;
+   width: 100%;
    text-align: center;
    margin-left: 10%;
-   margin-bottom: 10px;
+   margin-top: 5px;
+   margin-bottom: 5px;
 }
 
 .chip-dot{
@@ -99,6 +106,10 @@ label {
    color: white;
    font-size: 14px;
    font-weight: bold;
+}
+
+.fa-minus-square-o {
+   color: #D00000 ;
 }
 
 .example_img {

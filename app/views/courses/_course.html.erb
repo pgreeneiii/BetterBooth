@@ -9,20 +9,20 @@
             <li class="nav-item" id="schedule">
                <a class="nav-link" href="javascript:void(0);">
                   <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                   Schedule
+                  Schedule
                </a>
             </li>
             <li class="nav-item" id="rating">
                <a class="nav-link" href="javascript:void(0);">
                   <i class="fa fa-star" aria-hidden="true"></i>
-                   Ratings
-                </a>
+                  Ratings
+               </a>
             </li>
             <li class="nav-item" id="bid">
                <a class="nav-link" href="javascript:void(0);">
                   <i class="fa fa-btc" aria-hidden="true"></i>
-                   Bid Data
-                </a>
+                  Bid Data
+               </a>
             </li>
          </ul>
       </div>
@@ -43,11 +43,11 @@
          <div class="form-group">
             <select class="form-control">
                <% sections.each do |section| %>
-                  <% prof = Professor.find(section.professor_id) %>
+               <% prof = Professor.find(section.professor_id) %>
 
-                  <option value="<%= prof.id %>">
-                     <%= prof.first_name %> <%= prof.last_name %>
-                  </option>
+               <option value="<%= prof.id %>">
+                  <%= prof.first_name %> <%= prof.last_name %>
+               </option>
 
                <% end %>
             </select>
@@ -56,50 +56,75 @@
          <!-- For each section, print schedule, rating, and bid data -->
          <% sections.each do |section| %>
 
-            <!-- Contain all data in div with id=section_id for jquery selection -->
-            <div class="section" id="<%= section.id %>">
-               <!-- Contain all data in div with id=prof_id for jquery selection -->
-               <div class="prof" id="<%= section.professor_id %>">
+         <!-- Contain all data in div with id=section_id for jquery selection -->
+         <div class="section" data-section_id="<%= section.id %>">
+            <!-- Contain all data in div with id=prof_id for jquery selection -->
+            <div class="prof" id="<%= section.professor_id %>">
 
-                  <!-- Create schedule view for all sections -->
-                  <div class="schedule">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <!-- Load schedule data using fetch_schedules function defined in Course Model -->
-                           <% schedules = course.fetch_schedules(section.professor_id) %>
+               <!-- Create schedule view for all sections -->
+               <div class="schedule">
 
-                           <!-- Create view for each schedule -->
-                           <% schedules.each do |schedule| %>
+                  <!-- Load schedule data using fetch_schedules function defined in Course Model -->
+                  <% schedules = course.fetch_schedules(section.professor_id, @quarter) %>
 
-                              <div class="chip" title='Course Number: <%= course.course_number %>-<%= schedule.section_number %>'>
-                                 <div class="chip-dot">
-                                    <%= schedule.daytable.day_output %>
-                                 </div>
+                  <!-- Create view for each schedule -->
+                  <% schedules.each do |schedule| %>
+                  <div class="row vertical-align">
+                     <div class="col-xs-9">
+                        <div class="chip" title='Course Number: <%= course.course_number %>-<%= schedule.section_number %>'>
+                           <div class="chip-dot">
+                              <%= schedule.daytable.day_output %>
+                           </div>
 
-                                 <%= schedule.timetable.time_output %>
-                              </div>
-
-                           <% end %>
-
+                           <%= schedule.timetable.time_output %>
+                        </div>
+                        <div class='plan_form'>
+                           <%= render partial: 'plan', locals: {schedule_id: schedule.id} %>
                         </div>
                      </div>
-                  </div> <!-- Close Schedule div -->
-
-
-                  <!-- Create bid view of all sections -->
-                  <div class="bid">
-                     <div class="row">
-                        <%= render partial: 'condensed_bid_table', locals: {bids: section.bids.order(year: :desc, quarter_id: :asc, time_id: :asc)} %>
+                     <div class='col-xs-3'>
+                        <div class='plan'>
+                           <% if current_user.schedules.where(id: schedule.id).empty? %>
+                           <div class='add_plan'>
+                              <div class='btn btn-link'>
+                                 <i class="fa fa-plus-square-o fa-lg" aria-hidden="true"></i>
+                              </div>
+                              <div class='see_schedule btn btn-link'>
+                                 <i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
+                              </div>
+                           </div>
+                           <% else %>
+                           <% id = current_user.plans.find_by(schedule_id: schedule.id).id %>
+                           <div class='remove_plan'>
+                              <a href="/delete_plan/<%= id %>">
+                                 <button type='submit' class='btn btn-link'>
+                                    <i class="fa fa-minus-square-o fa-lg" aria-hidden="true"></i>
+                                 </button>
+                              </a>
+                           </div>
+                           <% end %>
+                        </div>
                      </div>
-                  </div> <!-- Close Bid div -->
+                  </div>
+                  <% end %>
+               </div> <!-- Close Schedule div -->
 
 
-                  <!-- Create rating view for all sections -->
-                  <div class="rating">
-                     <%= render partial: 'ratings', locals: {ratings: section.ratings.order(year: :desc, quarter_id: :asc)} %>
-                  </div> <!-- Close Rating div -->
-               </div> <!-- Close Prof div -->
-            </div> <!-- Close Section div -->
+               <!-- Create bid view of all sections -->
+               <div class="bid">
+                  <div class="row">
+                     <%= render partial: 'condensed_bid_table', locals: {bids: section.bids.order(year: :desc, quarter_id: :asc, time_id: :asc)} %>
+                  </div>
+               </div> <!-- Close Bid div -->
+
+
+               <!-- Create rating view for all sections -->
+               <div class="rating">
+                  <%= render partial: 'ratings', locals: {ratings: section.ratings.order(year: :desc, quarter_id: :asc)} %>
+               </div> <!-- Close Rating div -->
+
+            </div> <!-- Close Prof div -->
+         </div> <!-- Close Section div -->
          <% end %> <!-- Close section.each function -->
       </div> <!-- Close Card Body div -->
    </div> <!-- Close Card div -->
