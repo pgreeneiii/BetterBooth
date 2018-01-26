@@ -1,64 +1,36 @@
-<% if bids.empty? %>
-   <div class='col-md-12'>
-      <div id='rating_header'>
-         <p>No bid data</p>
-      </div>
-   </div>
-<% else %>
-   <div class='col-md-12'>
-      <table class="table table-condensed">
-         <thead>
-            <tr>
-               <th scope="col">Phase</th>
-               <th scope="col">Latest Bids (<%= bids.first.quartertable.quarter_output %> <%= bids.first.year %>)</th>
-            </tr>
-         </thead>
+<div class='col-md-12'>
+   <table class="table table-condensed">
+      <thead>
+         <tr>
+            <th scope="col">Phase</th>
+            <th id="qrt_year" scope="col"></th>
+         </tr>
+      </thead>
 
-         <tbody>
-            <tr>
-               <th scope="row">1</th>
-               <td>
-                  <% if bids.first.p1_price < 0 %>
-                     Closed
-                  <% else %>
-                     <%= bids.first.p1_price %>
-                  <% end %>
-               </td>
-            </tr>
+      <tbody>
+         <tr>
+            <th scope="row">1</th>
+            <td id="p1">
+            </td>
+         </tr>
 
-            <tr>
-               <th scope="row">2</th>
-               <td>
-                  <% if bids.first.p2_price < 0 %>
-                     Closed
-                  <% else %>
-                     <%= bids.first.p2_price %>
-                  <% end %>
-               </td>
-            </tr>
+         <tr>
+            <th scope="row">2</th>
+            <td id="p2">
+            </td>
+         </tr>
 
-            <tr>
-               <th scope="row">3</th>
-               <td>
-                  <% if bids.first.p3_price < 0 %>
-                     Closed
-                  <% else %>
-                     <%= bids.first.p3_price %>
-                  <% end %>
-               </td>
-            </tr>
+         <tr>
+            <th scope="row">3</th>
+            <td id="p3">
+            </td>
+         </tr>
 
-            <tr>
-               <th scope="row">4</th>
-               <td>
-                  <% if bids.first.p4_price < 0 %>
-                     Closed
-                  <% else %>
-                     <%= bids.first.p4_price %>
-                  <% end %>
-               </td>
-            </tr>
-         </tbody>
-      </table>
-   </div>
-<% end %>
+         <tr>
+            <th scope="row">4</th>
+            <td id="p4">
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>

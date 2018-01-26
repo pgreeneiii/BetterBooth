@@ -1,40 +1,95 @@
 $( document ).on('turbolinks:load', function() {
+   $('div.rating').hide();
+   $('div.bid').hide();
+   // $('.card').click(function(){
+   //    var prof_id = $(this).find('select').val();
+   //    var course_id = $(this).attr('data-course_id');
+   //    alert(prof_id);
+   //    alert(course_id);
+   //    $.ajax({
+   //       type: "POST",
+   //       url: "/api",
+   //       data: {prof_id: prof_id, course_id: course_id},
+   //       success: pushData,
+   //       error: buttonError
+   //    });
+   // });
+
+
+
 
    $('select').change(function() {
-      $(this)
-      alert('Success');
+      // alert('selectChanged!');
+      var prof_id = $(this).val();
+      var course_id = $(this).parents('.card').attr('data-course_id');
+
       $.ajax({
-         type: "POST",
+         type: "GET",
          url: "/api",
+         data: {prof_id: prof_id, course_id: course_id},
          success: pushData,
          error: buttonError
       });
    });
 
    var pushData = function (jsonData) {
-      var section_id = jsonData.section_id;
-      var section_dom = $('[data-section_id='+ section_id +']');
+      // alert('pushData');
+      $(this);
+      var course_id = jsonData.course_id;
+      var course_dom = $('[data-course_id=' + course_id + ']');
+      var section_dom = $(course_dom).find('.section');
 
       var course_number = jsonData.course_number;
       var schedules = jsonData.schedules;
-      buildSchedules(course_number, schedules, section_dom);
+      var course_sched_count = jsonData.course_sched_count;
+      buildSchedules(course_number, schedules, course_sched_count, section_dom);
 
-      var bids = jsonData.bids;
-      buildBids(bids, section_dom);
+      if (jsonData.bid_status == 1) {
+         var bids = jsonData.bids;
+         buildBids(bids, section_dom);
+      } else {
+         noBids();
+      }
 
-      var ratings = jsonData.ratings;
-      buildRatings(ratings, section_dom);
+      if (jsonData.rating_status == 1) {
+         var ratings = jsonData.ratings;
+         buildRatings(ratings, section_dom);
+      } else {
+         noRatings();
+      }
+      setLinks(jsonData.section_id, course_dom);
    };
 
-   var buildSchedules = function (course_number, schedules, section_dom) {
-      count = schedules.length;
-      var output = "";
-      for (i = 0; i < count; i++) {
-         output += "<div class='row vertical-align'><div class='col-xs-9'><div class='chip' title='" + course_number +"-" + schedules[i].section_number + "'><div class='chip-dot'>" + schedules[i].day + "</div>" + schedules[i].time + "</div></div><div class='col-xs-3'><div class='plan'><div class='add_plan'><div class='btn btn-link'><i class='fa fa-plus-square-o fa-lg' aria-hidden='true'></i></div></div></div></div></div>";
-      };
+   var setLinks = function (section_id, course_dom) {
+      $(course_dom).find('h5#more a').attr('href', '/sections/' + section_id);
+   };
 
-      var schedule_div = $(section_dom).find('.schedule');
-      $(schedule_div).html(output);
+   var noRatings = function () {
+      // alert('No Ratings');
+   };
+
+   var noBids = function () {
+      // alert('No Bids');
+   };
+
+   var buildSchedules = function (course_number, schedules, course_sched_count, section_dom) {
+      count = schedules.length;
+      // var output = "";
+      for (i = 0; i < count; i++) {
+         var schedule_div = $(section_dom).find('[data-schedule_count='+ i +']');
+         $(schedule_div).show();
+         title = "Course Number: " + course_number + "-" + schedules[i].section_number;
+         $(schedule_div).find('.chip').attr("title", title);
+         $(schedule_div).find('.chip-dot').text(schedules[i].day);
+         $(schedule_div).find('.time-dot').text(schedules[i].time);
+         //
+         // output += "<div class='row vertical-align'><div class='col-xs-9'><div class='chip' title='Course Number: " + course_number +"-" + schedules[i].section_number + "'><div class='chip-dot'>" + schedules[i].day + "</div>" + schedules[i].time + "</div></div><div class='col-xs-3'><div class='plan'><div class='add_plan'><div class='btn btn-link'><i class='fa fa-plus-square-o fa-lg' aria-hidden='true'></i></div></div></div></div></div>";
+      };
+      // var schedule_div = $(section_dom).find('.schedule');
+      // $(schedule_div).html(output);
+      for (i = course_sched_count; i >= count; i--) {
+         $(section_dom).find('[data-schedule_count='+ i + ']').hide();
+      };
    };
 
    var buildBids = function(bids, section_dom) {
@@ -81,11 +136,11 @@ $( document ).on('turbolinks:load', function() {
       var div_rating = $(section_dom).find('.rating');
 
       $(div_rating).find('div#rating_header').html(header);
-      $(div_rating).find('p#comms').after(comms);
-      $(div_rating).find('p#engaging').after(engaging);
-      $(div_rating).find('p#practical').after(practical);
-      $(div_rating).find('p#amt_learned').after(amt_learned);
-      $(div_rating).find('p#recommend').after(recommend);
+      $(div_rating).find('#comms').html(comms);
+      $(div_rating).find('#engaging').html(engaging);
+      $(div_rating).find('#practical').html(practical);
+      $(div_rating).find('#amt_learned').html(amt_learned);
+      $(div_rating).find('#recommend').html(recommend);
       $(div_rating).find('strong#avg_hours').text(avg_hours);
 
    };
@@ -104,40 +159,19 @@ $( document ).on('turbolinks:load', function() {
       return (output);
    };
 
-
-   var buttonSuccess = function (jsonData) {
-      alert('Success');
-      var output = "<div class=\"row\"><div class=\"name col-md-3\">" + jsonData.name + "</div><div class=\"age\">" + jsonData.age + "</div></div>";
-
-      $('#api_row').after(output);
-   };
-
    var buttonError = function () {
-      alert("There was an error!");
+      // alert("There was an error making the ajax request!");
    };
+
+   $('.card').each(function() {
+      var prof_id = $(this).find('select').val();
+      var course_id = $(this).attr('data-course_id');
+      $.ajax({
+         type: "GET",
+         url: "/api",
+         data: {prof_id: prof_id, course_id: course_id},
+         success: pushData,
+         error: buttonError
+      });
+   });
 });
-
-var buildCard = function(cardData) {
-
-   var output1 = "<div class=\"col-md-4 mb-2\"><div class=\"card\"><div class=\"card-header\"><ul class=\"nav nav-tabs card-header-tabs\"><li class=\"nav-item\" id=\"schedule\"><a class=\"nav-link\" href=\"javascript:void(0);\"><i class=\"fa fa-calendar-o\" aria-hidden=\"true\"></i>Schedule</a></li><li class=\"nav-item\" id=\"rating\"><a class=\"nav-link\" href=\"javascript:void(0);\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i>Ratings</a></li><li class=\"nav-item\" id=\"bid\"><a class=\"nav-link\" href=\"javascript:void(0);\"><i class=\"fa fa-btc\" aria-hidden=\"true\"></i>Bid Data</a></li></ul></div><div class=\"card-body\"><h5 class=";
-
-
-   var output2 = "\"card-title\" id=\"more\"><a href=\"javascript:void(0);\">COURSE NAME</a></h5><div class=\"section\" id=\"" + cardData.section_id + "\"><div class=\"prof\"><div class=\"schedule list-group list-group-flush\">";
-
-   var count = cardData.schedules.length;
-
-   var schedule_output = [];
-   var output3;
-
-   for (i=0; i < count; i++) {
-      schedule_output[i] = "<div class=\"row vertical-align\"><div class=\"col-xs-9\"><div class=\"chip\" title=\"Course Number: " + cardData.schedules[i].section_number + "\"><div class=\"chip-dot\">" + cardData.schedules[i].day + "</div>" + cardData.schedules[i].time + "</div><div class=\"plan_form\"></div></div></div>";
-      output3 += schedule_output[i];
-   };
-   var output4 = "</div>";
-
-   var finalOutput = output1+output2+output3+output4;
-
-   $('#api_row').after(finalOutput);
-
-
-};

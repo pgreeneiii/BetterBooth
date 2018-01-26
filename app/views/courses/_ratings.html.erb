@@ -1,64 +1,48 @@
-<% if ratings.empty? %>
-   <div class='col-md-12'>
-      <div id='rating_header'>
-         <p>No rating data</p>
-      </div>
+<div class='col-xs-12'>
+   <div id='rating_header'>
    </div>
-<% else %>
-   <div class='col-xs-12'>
-      <div id='rating_header'>
-         <p>Latest Ratings Data (<%= ratings.first.quartertable.quarter_output %> <%= ratings.first.year %>)</p>
-      </div>
-   </div>
-   <div class="center row mb-2">
-      <!-- Communication Ratings -->
-      <div class="col-xs-4">
-         <p class="mb-0">Communication:</p>
-
-         <!-- Use partial to render stars data -->
-         <%= render partial: 'stars', locals: {stars: ratings.first.comms_median} %>
-      </div>
-
-      <!-- Engagement Ratings -->
-      <div class="col-xs-4">
-         <p class="mb-0">Engagement:</p>
-
-         <%= render partial: 'stars', locals: {stars: ratings.first.engaging_median} %>
-      </div>
-      <!-- Practical Ratings -->
-      <div class="col-xs-4">
-         <p class="mb-0">Practical:</p>
-
-         <%= render partial: 'stars', locals: {stars: ratings.first.practical_median} %>
-      </div>
+</div>
+<div class="center row mb-2">
+   <!-- Communication Ratings -->
+   <div class="col-xs-4">
+      <p class="mb-0">Communication:</p>
+      <div id="comms"></div>
    </div>
 
-   <!-- New row in card -->
-   <div class="center row mb-2">
-
-      <!-- Learning Ratings -->
-      <div class="col-xs-6">
-         <p class="mb-0">Learning:</p>
-
-         <%= render partial: 'stars', locals: {stars: ratings.first.amt_learned_median} %>
-      </div>
-
-      <!-- Recommendation Ratings -->
-      <div class="col-xs-6">
-         <p class="mb-0">Recommendation:</p>
-
-         <%= render partial: 'stars', locals: {stars: ratings.first.recommend_median} %>
-      </div>
+   <!-- Engagement Ratings -->
+   <div class="col-xs-4">
+      <p class="mb-0">Engagement:</p>
+      <div id="engaging"></div>
    </div>
 
-   <div class="center row">
-      <div class="col-xs-12">
-         <p>
-            <strong>
-               Avg. Hours: <%= ratings.first.avg_hours %>
-            </strong>
-         </p>
-      </div>
+   <!-- Practical Ratings -->
+   <div class="col-xs-4">
+      <p class="mb-0">Practical:</p>
+      <div id="practical"></div>
+   </div>
+</div>
+
+<!-- New row in card -->
+<div class="center row mb-2">
+
+   <!-- Learning Ratings -->
+   <div class="col-xs-6">
+      <p class="mb-0">Learning:</p>
+      <div id="amt_learned"></div>
    </div>
 
-<% end %>
+   <!-- Recommendation Ratings -->
+   <div class="col-xs-6">
+      <p class="mb-0">Recommendation:</p>
+      <div id="recommend"></div>
+   </div>
+</div>
+
+<div class="center row">
+   <div class="col-xs-12">
+      <p>
+         <strong id="avg_hours">
+         </strong>
+      </p>
+   </div>
+</div>

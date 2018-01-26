@@ -124,7 +124,7 @@ Rails.application.routes.draw do
 
   #-------------------------------------------
   # API Calls
-
+  get "/api", controller: "api", action: "provide_data"
   #-------------------------------------------
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
