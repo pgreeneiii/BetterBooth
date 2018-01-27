@@ -125,6 +125,11 @@ label {
    height: 300px;
 }
 
+.no-rating-data, .no-bid-data {
+   text-align: center;
+   /* margin-top: 10%; */
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     background-color: #F5F5F5;

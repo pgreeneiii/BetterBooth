@@ -125,6 +125,7 @@ Rails.application.routes.draw do
   #-------------------------------------------
   # API Calls
   get "/api", controller: "api", action: "provide_data"
+  get "/init_api", controller: "api", action: "multi_load"
   #-------------------------------------------
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

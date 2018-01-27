@@ -48,14 +48,14 @@ $( document ).on('turbolinks:load', function() {
          var bids = jsonData.bids;
          buildBids(bids, section_dom);
       } else {
-         noBids();
+         noBids(section_dom);
       }
 
       if (jsonData.rating_status == 1) {
          var ratings = jsonData.ratings;
          buildRatings(ratings, section_dom);
       } else {
-         noRatings();
+         noRatings(section_dom);
       }
       setLinks(jsonData.section_id, course_dom);
    };
@@ -64,12 +64,17 @@ $( document ).on('turbolinks:load', function() {
       $(course_dom).find('h5#more a').attr('href', '/sections/' + section_id);
    };
 
-   var noRatings = function () {
+   var noRatings = function (section_dom) {
       // alert('No Ratings');
+      $(section_dom).find('.rating .no-rating-data').show();
+      $(section_dom).find('.rating .rating-data').hide();
+
    };
 
-   var noBids = function () {
+   var noBids = function (section_dom) {
       // alert('No Bids');
+      $(section_dom).find('.bid .no-bid-data').show();
+      $(section_dom).find('.bid .bid-data').hide();
    };
 
    var buildSchedules = function (course_number, schedules, course_sched_count, section_dom) {
@@ -93,6 +98,8 @@ $( document ).on('turbolinks:load', function() {
    };
 
    var buildBids = function(bids, section_dom) {
+      $(section_dom).find('.bid .no-bid-data').hide();
+      $(section_dom).find('.bid .bid-data').show();
       header = 'Latest Bids (' + bids.quarter + ' ' + bids.year + ')';
       var bid_div = $(section_dom).find('.bid');
       $(bid_div).find('th#qrt_year').text(header);
@@ -125,6 +132,9 @@ $( document ).on('turbolinks:load', function() {
    };
 
    var buildRatings = function(ratings, section_dom) {
+      $(section_dom).find('.rating .no-rating-data').hide();
+      $(section_dom).find('.rating .rating-data').show();
+
       var header = '<p>Latest Ratings Data (' + ratings.quarter + ' ' + ratings.year + ')</p>';
       var comms = buildStars(ratings.comms_median);
       var engaging = buildStars(ratings.engaging_median);
@@ -160,7 +170,7 @@ $( document ).on('turbolinks:load', function() {
    };
 
    var buttonError = function () {
-      // alert("There was an error making the ajax request!");
+      alert("There was an error making the ajax request!");
    };
 
    $('.card').each(function() {
@@ -174,4 +184,29 @@ $( document ).on('turbolinks:load', function() {
          error: buttonError
       });
    });
+
+   $('.page-header').click(function(){
+      alert("Page Header clicked!");
+      data = {};
+      card_count = 0;
+      $('.card').each(function(index) {
+         var prof_id = $(this).find('select').val();
+         var course_id = $(this).attr('data-course_id');
+         data[index] = [prof_id, course_id];
+         card_count++;
+      });
+      data.card_count = card_count;
+      $.ajax({
+         type: "GET",
+         url: "/init_api",
+         data: data,
+         success: successAlert,
+         error: buttonError
+      });
+   });
+
+   var successAlert = function(jsonData) {
+      var course_id = jsonData.card_0.course_id;
+      alert(course_id);
+   };
 });
