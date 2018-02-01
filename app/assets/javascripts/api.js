@@ -207,17 +207,7 @@ var buildSchedules = function (course_number, schedules, course_sched_count, sec
             $(schedule_div).addClass("hidden");
          };
       };
-
-      //
-      // output += "<div class='row vertical-align'><div class='col-xs-9'><div class='chip' title='Course Number: " + course_number +"-" + schedules[i].section_number + "'><div class='chip-dot'>" + schedules[i].day + "</div>" + schedules[i].time + "</div></div><div class='col-xs-3'><div class='plan'><div class='add_plan'><div class='btn btn-link'><i class='fa fa-plus-square-o fa-lg' aria-hidden='true'></i></div></div></div></div></div>";
    };
-   // var schedule_div = $(section_dom).find('.schedule');
-   // $(schedule_div).html(output);
-   // for (j = course_sched_count; j >= count; j--) {
-   //    $(section_dom).find('[data-schedule_count='+ j + ']').addClass("hidden");
-   //    // $(section_dom).find('[data-schedule_count='+ j + ']').hide();
-   // };
-
 };
 
 

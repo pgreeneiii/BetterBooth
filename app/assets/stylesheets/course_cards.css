@@ -108,11 +108,7 @@ label {
    font-weight: bold;
 }
 
-.fa-minus-square-o {
-   color: #D00000 ;
-}
-
-.fa-times {
+.btn-link .fa-times {
    color: #D00000;
 }
 
