@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
      end
       # Load selected courses
       @q = Course.joins(:schedules).where(
-         'schedules.quarter = ?', @quarter).distinct.ransack(params[:q])
+         'schedules.quarter = ?', @quarter).ransack(params[:q])
 
       # Load selected courses
       @courses = @q.result(distinct: true).includes(:professors, :schedules, :sections).page(params[:page]).per(24)

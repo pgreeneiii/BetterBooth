@@ -1,8 +1,8 @@
 class ApiController < ApplicationController
 
    def multi_load
-      puts "There are #{params[:card_count]} cards."
-      zero_index_count = params[:card_count].to_i-1
+      card_count = params[:card_count].to_i
+      zero_index_count = card_count-1
 
       response_data = {}
 
@@ -19,7 +19,14 @@ class ApiController < ApplicationController
          schedules = []
 
          section.schedules.each do |schedule|
-            temp_hash = {id: schedule.id, section_number: schedule.section_number, day: schedule.daytable.day_output, time: schedule.timetable.time_output}
+            plans = current_user.plans.where(schedule_id: schedule.id)
+            if plans.empty?
+               plan_status = 0
+            else
+               plan_status = plans.first.id
+            end
+
+            temp_hash = {id: schedule.id, section_number: schedule.section_number, day: schedule.daytable.day_output, time: schedule.timetable.time_output, plan: plan_status}
 
             schedules.push(temp_hash)
          end
@@ -51,13 +58,23 @@ class ApiController < ApplicationController
          puts key
          puts "*****************************************"
 
-         response_data[key] = {course_id: course_id}
+         response_data[key] = {
+            section_id: section.id,
+            course_id: course_id,
+            course_number: section.course.course_number,
+            course_sched_count: course_sched_count,
+            schedules: schedules,
+            bid_status: bid_status,
+            bids: bids,
+            rating_status: rating_status,
+            ratings: ratings
+         }
       end
 
       status = :ok
       response = {
          status: 'ok',
-         alert: "Success",
+         card_count: card_count,
          card_0: response_data["card_0"],
          card_1: response_data["card_1"],
          card_2: response_data["card_2"],
@@ -93,9 +110,23 @@ class ApiController < ApplicationController
 
       course_sched_count = Course.find(course_id).schedules.count
 
+      puts "Section: #{section}"
+
       schedules = []
       section.schedules.each do |schedule|
-         temp_hash = {id: schedule.id, section_number: schedule.section_number, day: schedule.daytable.day_output, time: schedule.timetable.time_output}
+         plans = Plan.where(user_id: current_user.id, schedule_id: schedule.id)
+         if plans.empty?
+            plan_status = 0
+         else
+            plan_status = plans.first.id
+         end
+
+         puts "********************************************************"
+         puts "User: #{current_user.id}"
+         puts "Schedule: #{schedule.id} | Plan: #{plan_status}"
+         puts "********************************************************"
+
+         temp_hash = {id: schedule.id, section_number: schedule.section_number, day: schedule.daytable.day_output, time: schedule.timetable.time_output, plan: plan_status}
 
          schedules.push(temp_hash)
       end

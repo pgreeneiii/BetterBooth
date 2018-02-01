@@ -8,19 +8,19 @@
          <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item" id="schedule">
                <a class="nav-link" href="javascript:void(0);">
-                  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                  <i class="far fa-calendar"></i>
                   Schedule
                </a>
             </li>
             <li class="nav-item" id="rating">
                <a class="nav-link" href="javascript:void(0);">
-                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fas fa-star"></i>
                   Ratings
                </a>
             </li>
             <li class="nav-item" id="bid">
                <a class="nav-link" href="javascript:void(0);">
-                  <i class="fa fa-btc" aria-hidden="true"></i>
+                  <i class="fab fa-btc"></i>
                   Bid Data
                </a>
             </li>
@@ -41,7 +41,7 @@
          <!-- Label and <input type="text" name="" value=""> for professor_id -->
          <!-- Create selection form for professor for each section -->
          <div class="form-group" id="prof-form">
-            <select class="form-control">
+            <select class="form-control prof_select">
                <% sections.each do |section| %>
                <% prof = Professor.find(section.professor_id) %>
 
@@ -57,7 +57,7 @@
          <div class="section">
             <% course.schedules.each_with_index do |sched, index| %>
             <!-- Create schedule skeletons -->
-            <div class="schedule" data-schedule_count="<%= index %>">
+            <div class="schedule" data-schedule_id="<%=sched.id %>" data-schedule_count="<%= index %>">
                <div class="schedule_data">
                   <div class="row">
                      <div class="col-xs-9">
@@ -72,19 +72,8 @@
 
                      <div class='col-xs-3'>
                         <div class='plan'>
-                           <% if current_user.plans.where(schedule_id: sched.id).empty? %>
-                           <div class='toggle_plan'>
-                              <div class='btn btn-link'>
-                                 <i class='fa fa-plus-square-o fa-lg' aria-hidden='true'></i>
+                              <div class='toggle_plan btn btn-link'>
                               </div>
-                           </div>
-                           <% else %>
-                           <div class="remove_plan">
-                              <a href="/delete_plan/<%= Plan.find_by(schedule_id: sched.id, user_id: current_user.id).id %>" class="btn btn-link">
-                                 <i class="fa fa-times fa-lg" aria-hidden="true"></i>
-                              </a>
-                           </div>
-                           <% end %>
                         </div>
                      </div>
                   </div>
@@ -96,10 +85,8 @@
                         <%= render partial: "plan", locals: {schedule_id: sched.id} %>
                      </div>
                      <div class="col-xs-3">
-                        <div class='toggle_plan'>
-                           <div class='btn btn-link'>
-                              <i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
-                           </div>
+                        <div class='toggle_plan btn btn-link'>
+                              <i class="far fa-calendar-alt"></i>
                         </div>
                      </div>
                   </div>

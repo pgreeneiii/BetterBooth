@@ -36,6 +36,7 @@ class PlansController < ApplicationController
 
      @plan.user_id = params[:user_id]
      @plan.schedule_id = params[:schedule_id]
+     @course_name = Schedule.find(@plan.schedule_id).course.course_name
 
      if params[:bid].empty?
         @plan.bid = 1
@@ -46,8 +47,10 @@ class PlansController < ApplicationController
      save_status = @plan.save
 
      if save_status == true
-        redirect_back(fallback_location: root_path)
-        flash[:notice] = 'Added to plan!'
+        respond_to do |format|
+            format.html {redirect_to :back, :notice => "Your planned bid was saved!"}
+            format.js
+         end
      else
         redirect_to(:back, :alert => "Sorry! There was an issue.")
      end

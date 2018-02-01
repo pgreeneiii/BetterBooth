@@ -1,7 +1,7 @@
 <!-- Generate search form with ransack -->
 <%= search_form_for(@q, format: :json) do |f| %>
 <div class='row'>
-   <div class='form-group'>         
+   <div class='form-group'>
       <!-- Save Quarter-selected data, or else it resets to default -->
       <input type="hidden" id="quarter" name="quarter" placeholder="Quarter" class="form-control" value="<%= @quarter %>">
 

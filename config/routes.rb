@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     root 'welcome#welcome'
 
+
    # Routes for the Plan resource:
    # CREATE
    get "/plans/new", :controller => "plans", :action => "new"
@@ -113,6 +114,7 @@ Rails.application.routes.draw do
   # READ
   get "/courses", :controller => "courses", :action => "index"
   get "/courses/:quarter", :controller => "courses", :action => "index"
+  # post "/search_courses", :controller => "courses", :action => "index"
 
   # UPDATE
   get "/courses/:id/edit", :controller => "courses", :action => "edit"

@@ -1,0 +1,23 @@
+var text = "Added to your plan: <%= @plan.bid %> points on <%= @course_name %>"
+alert = "<div class='alert alert-dismissable alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><div class='alert-text'>" + text + "</div></div>";
+$('.page-header').before(alert);
+
+var dom = $('#latest_plan')
+$(dom).find('.schedule_data').slideToggle(500);
+$(dom).find('.plan_form').slideToggle(500);
+
+var prof_id = $(dom).parents('.card').find('select').val();
+var course_id = $(dom).parents('.card').attr('data-course_id');
+
+$(dom).removeAttr("id");
+
+console.log(prof_id);
+console.log(course_id);
+
+$.ajax({
+   type: "GET",
+   url: "/api",
+   data: {prof_id: prof_id, course_id: course_id},
+   success: pushData,
+   error: buttonError
+});
