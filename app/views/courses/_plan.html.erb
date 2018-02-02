@@ -1,17 +1,19 @@
-<form id="form_<%= schedule_id %>" action="/add" method="post" class='mt-1 mb-1' data-remote="true">
-   <div class='form-group form-group-sm col-xs-offset-1 col-xs-6'>
-      <!-- Hidden input for authenticity token to protect from forgery -->
-      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+   <form id="form_<%= schedule_id %>" action="/add" method="post" class="mt-1 mb-1" data-remote="true">
+      <div class="row">
+      <div class="col-xs-offset-1 col-xs-6">
+         <!-- Hidden input for authenticity token to protect from forgery -->
+         <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <input name="user_id" type="hidden" value="<%= current_user.id %>">
+         <input name="user_id" type="hidden" value="<%= current_user.id %>">
 
-      <input name="schedule_id" type="hidden" value="<%= schedule_id %>">
+         <input name="schedule_id" type="hidden" value="<%= schedule_id %>">
 
-      <input name='bid' type='number' min='1' step='1' class='form-control' placeholder='Enter Bid'>
+         <input name='bid' type='number' min='1' step='1' class='form-control input-sm' placeholder='Enter Bid'>
+      </div>
+      <div class="col-xs-5">
+         <button type="submit" class="btn btn-sm btn-block btn-primary plan_submit" data-confirm_plan="<%= schedule_id %>">
+            Confirm
+         </button>
+      </div>
    </div>
-   <div class='form-group form-group-sm col-xs-5'>
-      <button type="submit" class="btn btn-sm btn-primary plan_submit" data-confirm_plan="<%= schedule_id %>">
-         Confirm Bid
-      </button>
-   </div>
-</form>
+   </form>

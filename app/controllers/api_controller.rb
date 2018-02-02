@@ -1,28 +1,35 @@
 class ApiController < ApplicationController
 
    def multi_load
+      # Use number of cards on page to determine how much data to create
       card_count = params[:card_count].to_i
+      # Set card count to a zero index
       zero_index_count = card_count-1
 
+      # Create empty hash to store data
       response_data = {}
 
       # Create array using card count
       loop_array=*(0..zero_index_count)
 
+      # Build a unique hash of hashes for each card and store as card_index
       loop_array.each do |index|
          prof_id = params[index.to_s][0].to_i
          course_id = params[index.to_s][1].to_i
-         puts "Prof ID: #{prof_id} | Course ID: #{course_id}"
 
+         # Query for Section
          section = Section.find_by(course_id: course_id, professor_id: prof_id)
          course_sched_count = Course.find(course_id).schedules.count
-         schedules = []
 
+         # For each schedule in section, build schedule data
+         schedules = []
          section.schedules.each do |schedule|
+            # Determine if user already has plan stored for this schedule
             plans = current_user.plans.where(schedule_id: schedule.id)
             if plans.empty?
                plan_status = 0
             else
+               # if plan exists, store plan.id as plan_status
                plan_status = plans.first.id
             end
 
@@ -31,6 +38,7 @@ class ApiController < ApplicationController
             schedules.push(temp_hash)
          end
 
+         # Check if bid data exists and build bid object
          if section.bids.empty?
             bid_status = 0
             bid = "No Bid Data"
@@ -42,6 +50,7 @@ class ApiController < ApplicationController
                year: bid.year, p1_price: bid.p1_price, p2_price: bid.p2_price, p3_price: bid.p3_price, p4_price: bid.p4_price}
          end
 
+         # Check if rating data exists and build rating object
          if section.ratings.empty?
             rating_status = 0
             rating = "No Rating Data"
@@ -52,12 +61,11 @@ class ApiController < ApplicationController
             ratings = {id: rating.id, quarter:
                rating.quartertable.quarter_output, year: rating.year, avg_hours: rating.avg_hours, comms_median: rating.comms_median, engaging_median: rating.engaging_median, practical_median: rating.practical_median, amt_learned_median: rating.amt_learned_median, recommend_median: rating.recommend_median}
          end
+
+         # Set object key so there is consistent syntax for jquery functions
          key = "card_#{index}"
 
-         puts "*****************************************"
-         puts key
-         puts "*****************************************"
-
+         # Store hash in response data using set key
          response_data[key] = {
             section_id: section.id,
             course_id: course_id,
@@ -71,6 +79,7 @@ class ApiController < ApplicationController
          }
       end
 
+      # Build json response (max cards is 24)
       status = :ok
       response = {
          status: 'ok',
@@ -106,31 +115,29 @@ class ApiController < ApplicationController
    def provide_data
       course_id = params[:course_id]
       professor_id = params[:prof_id]
-      section = Section.find_by(course_id: course_id, professor_id: professor_id)
 
+      # Query for Section
+      section = Section.find_by(course_id: course_id, professor_id: professor_id)
       course_sched_count = Course.find(course_id).schedules.count
 
-      puts "Section: #{section}"
-
+      # For each schedule in section, build schedule data
       schedules = []
       section.schedules.each do |schedule|
+         # Determine if user already has plan stored for this schedule
          plans = Plan.where(user_id: current_user.id, schedule_id: schedule.id)
          if plans.empty?
             plan_status = 0
          else
+            # if plan exists, store plan.id as plan_status
             plan_status = plans.first.id
          end
-
-         puts "********************************************************"
-         puts "User: #{current_user.id}"
-         puts "Schedule: #{schedule.id} | Plan: #{plan_status}"
-         puts "********************************************************"
 
          temp_hash = {id: schedule.id, section_number: schedule.section_number, day: schedule.daytable.day_output, time: schedule.timetable.time_output, plan: plan_status}
 
          schedules.push(temp_hash)
       end
 
+      # Check if bid data exists and build bid object
       if section.bids.empty?
          bid_status = 0
          bid = "No Bid Data"
@@ -142,6 +149,7 @@ class ApiController < ApplicationController
          year: bid.year, p1_price: bid.p1_price, p2_price: bid.p2_price, p3_price: bid.p3_price, p4_price: bid.p4_price}
       end
 
+      # Check if rating data exists and build rating object
       if section.ratings.empty?
          rating_status = 0
          rating = "No Rating Data"
@@ -153,6 +161,7 @@ class ApiController < ApplicationController
          rating.quartertable.quarter_output, year: rating.year, avg_hours: rating.avg_hours, comms_median: rating.comms_median, engaging_median: rating.engaging_median, practical_median: rating.practical_median, amt_learned_median: rating.amt_learned_median, recommend_median: rating.recommend_median}
       end
 
+      # Store hash in response data
       status = :ok
       response = {
          status: 'ok',
@@ -170,6 +179,7 @@ class ApiController < ApplicationController
       render_json(response, status)
    end
 
+   # Function to render json data
    def render_json(response, status)
       render json: response, status: status
    end

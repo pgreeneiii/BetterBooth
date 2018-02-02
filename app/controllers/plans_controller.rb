@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
 
+   # Mail function to generate and email plan to current_user
    def mail
       @plans = current_user.plans
       if @plans.empty?
@@ -31,6 +32,7 @@ class PlansController < ApplicationController
     render("plans/new.html.erb")
   end
 
+  # Create function responds to format.js on index page of course
   def create
      @plan = Plan.new
 
@@ -49,7 +51,7 @@ class PlansController < ApplicationController
      if save_status == true
         respond_to do |format|
             format.html {redirect_to :back, :notice => "Your planned bid was saved!"}
-            format.js
+            format.js # directs to /views/plans/create.js.erb
          end
      else
         redirect_to(:back, :alert => "Sorry! There was an issue.")

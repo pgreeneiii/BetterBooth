@@ -1,5 +1,5 @@
 <!-- UI Testing -->
-<div class="col-md-4 mb-2">
+<div class="col-sm-6 col-lg-4 mb-2">
    <!-- Build card container -->
    <div class="card" data-course_id="<%= course.id %>">
 
@@ -59,8 +59,8 @@
             <!-- Create schedule skeletons -->
             <div class="schedule" data-schedule_id="<%=sched.id %>" data-schedule_count="<%= index %>">
                <div class="schedule_data">
-                  <div class="row">
-                     <div class="col-xs-9">
+                  <div class="row vertical-align">
+                     <div class="col-xs-8 col-xs-offset-1 px-0">
                         <div class="chip">
                            <div class="chip-dot">
                            </div>
@@ -80,13 +80,13 @@
                </div>
 
                <div hidden class="plan_form">
-                  <div class="row">
+                  <div class="row vertical-align">
                      <div class="col-xs-9">
                         <%= render partial: "plan", locals: {schedule_id: sched.id} %>
                      </div>
                      <div class="col-xs-3">
                         <div class='toggle_plan btn btn-link'>
-                              <i class="far fa-calendar-alt"></i>
+                           <i class="far fa-caret-square-up"></i>
                         </div>
                      </div>
                   </div>

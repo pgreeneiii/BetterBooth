@@ -1,3 +1,4 @@
+# Pulled from tutorial on implementing google analytics for rails
 class @GoogleAnalytics
 
   @load: ->
