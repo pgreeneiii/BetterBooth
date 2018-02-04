@@ -114,7 +114,7 @@ Rails.application.routes.draw do
   # READ
   get "/courses", :controller => "courses", :action => "index"
   get "/courses/:quarter", :controller => "courses", :action => "index"
-  # post "/search_courses", :controller => "courses", :action => "index"
+  get "/query_courses", :controller => "courses", :action => "index"
 
   # UPDATE
   get "/courses/:id/edit", :controller => "courses", :action => "edit"

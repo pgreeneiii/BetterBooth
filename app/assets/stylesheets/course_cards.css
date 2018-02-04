@@ -11,6 +11,10 @@ label {
    margin-right: 5px;
 }
 
+table {
+   font-size: 9px;
+}
+
 td, th {
    text-align: center;
 }
@@ -118,10 +122,15 @@ td, th {
 .course_content {
    box-sizing: border-box;
    font-size: 12px;
-   white-space: pre-line;
    overflow-x: auto;
    overflow-y: auto;
    height: 300px;
+}
+
+.description {
+   white-space: pre-line;
+   margin-top: -12px;
+   padding-right: 15px;
 }
 
 .example_img {
@@ -153,7 +162,10 @@ td, th {
 .professor_box{
    background-color: white;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   margin-bottom: 25px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+   width: 25%;
+   float:left;
 }
 .professor_img {
    width: 100%;
@@ -161,7 +173,13 @@ td, th {
 
 .professor_tagline {
    text-align: center;
-   padding: 10px 20px;
+   font-size: 8px;
+   /* padding: 10px 20px; */
+}
+
+.professor_tagline p {
+   margin-top: 5px;
+   margin-bottom: 5px;
 }
 
 .rating {
@@ -189,6 +207,10 @@ td, th {
 
 .search_button {
    width: 50%;
+}
+
+.table {
+   margin-bottom: 5px;
 }
 
 .table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {
@@ -263,18 +285,42 @@ td, th {
    .account {
       display: none;
    }
+
+   .professor_box {
+      width: 15%;
+      margin-right: 15px;
+      margin-bottom: 15px;
+   }
+
 }
 
 /* Small Devices, Tablets */
 @media screen and (min-width: 768px) {
+   table {
+      font-size: 18px;
+   }
 
+}
 
+@media screen and (min-width: 480px) and (max-width: 765px) {
+   table {
+      font-size: 12px;
+   }
 }
 
 /* Extra Small Devices, Phones */
 @media screen and (min-width: 480px) {
+
    .card-header {
       font-size: 14px;
+   }
+
+   .course_content p {
+      font-size: 14px;
+   }
+
+   .professor_tagline p {
+      font-size: 12px;
    }
 
    .stars {
@@ -286,6 +332,8 @@ td, th {
       font-size: 10px;
       line-height: inherit;
    }
+
+
 }
 
 /* Customer iPhone retina */

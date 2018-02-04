@@ -1,28 +1,37 @@
 <!-- Generate search form with ransack -->
-<%= search_form_for(@q, format: :json) do |f| %>
-<div class='row'>
-   <div class='form-group'>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/query_courses" method="get">
+
       <!-- Save Quarter-selected data, or else it resets to default -->
       <input type="hidden" id="quarter" name="quarter" placeholder="Quarter" class="form-control" value="<%= @quarter %>">
 
       <!-- Search by Course Name -->
-      <div class="col-md-offset-1 col-md-2 mb-1">
-         <%= f.label :course_name_cont, 'Course Name:', :class => 'sr-only' %>
-         <%= f.search_field :course_name_cont, :class => 'form-control', placeholder: 'Course Name' %>
+      <div class="form-group col-md-offset-1 col-md-2 mb-1">
+         <label for="course_name_cont" class="control-label sr-only">
+            Course Name
+         </label>
+         <input type="text" id="course_name_cont" name="course_name_cont" placeholder="Course Name" class="form-control" value="<%= @query['course_name_cont'] %>">
       </div>
 
       <!-- Search by Professor Name -->
-      <div class="col-md-2 mb-1">
-         <%= f.label :professors_first_name_or_professors_last_name_cont, 'Professor Name:', :class => 'sr-only' %>
-         <%= f.search_field :professors_first_name_or_professors_last_name_cont, :class => 'form-control', placeholder: 'Professor Name' %>
+      <div class="form-group col-md-2 mb-1">
+         <label for="prof_name_cont" class="control-label sr-only">
+            Professor Name
+         </label>
+         <input type="text" id="prof_name_cont" name="prof_name_cont" placeholder="Professor Name" class="form-control" value="<%= @query['prof_name_cont'] %>">
       </div>
 
       <!-- Search by Day of the Week -->
-      <div class="col-md-2 mb-1">
-         <label for="q_schedules_day_eq" class='sr-only'>Class Day:</label>
+      <div class="form-group col-md-2 mb-1">
+         <label for="schedules_day" class='sr-only'>
+            Class Day
+         </label>
 
          <!-- Create custom select field -->
-         <select name="q[schedules_day_eq]" id="q_schedules_day_eq" class='form-control'>
+         <select name="schedules_day" id="schedules_day" class='form-control'>
             <option value="">Select Class Day</option>
             <option value="1">Monday</option>
             <option value="2">Tuesday</option>
@@ -36,11 +45,13 @@
       </div>
 
       <!-- Search by Subject -->
-      <div class='col-md-2 mb-1'>
-         <label for="q_subject_eq" class='sr-only'>Subject:</label>
+      <div class='form-group col-md-2 mb-1'>
+         <label for="subject" class='sr-only'>
+            Subject
+         </label>
 
          <!-- Create custom select field -->
-         <select name="q[subject_eq]" id="q_subject_eq" class='form-control'>
+         <select name="subject" id="subject" class='form-control'>
             <option value="">Select Subject</option>
             <option value="Financial Management">Financial Management</option>
             <option value="Accounting">Accounting</option>
@@ -55,11 +66,11 @@
             <option value="Statistics">Statistics</option>
          </select>
       </div>
-
-      <!-- Search Button -->
       <div class="col-md-2 mb-1">
-         <%= f.submit "search", :class => 'btn btn-primary btn-block' %>
+         <button class="btn btn-block btn-primary">
+           Search
+         </button>
       </div>
-   </div>
+    </form>
+  </div>
 </div>
-<% end %>

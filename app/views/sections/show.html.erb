@@ -4,50 +4,92 @@
 
 <div class="row">
    <!-- Professor photo & name, and course description -->
-   <div class="col-md-6 mb-2">
+   <div class="col-lg-8 col-sm-6 mb-2">
       <div class="row" id='course_desc'>
          <h5 style="text-align: center;">Course Description</h5>
-         <div class="col-xs-3">
-            <div class="professor_box">
-               <img class="professor_img" src="<%= @section.professor.photo_url %>" alt="<%= @section.professor.last_name %>">
-               <div class="professor_tagline">
-                  <p><%= @section.professor.first_name %> <%= @section.professor.last_name %></p>
-               </div>
-            </div>
-         </div>
-         <div class="col-xs-9">
+         <div class="col-xs-12">
             <div class="course_content">
-               <%= simple_format(@section.content, {}, {}) %>
+               <div class="professor_box">
+                  <img class="professor_img" src="<%= @section.professor.photo_url %>" alt="<%= @section.professor.last_name %>">
+                  <div class="professor_tagline">
+                     <p><%= @section.professor.first_name %> <%= @section.professor.last_name %></p>
+                  </div>
+               </div>
+               <div class="description">
+                  <%= simple_format(@section.content, {}, {}) %>
+               </div>
             </div>
          </div>
       </div>
    </div>
-
-   <!-- Bid Price History Table -->
-   <div class="col-md-6 mb-2">
-      <h5 style="text-align: center;">Full Bid History</h5>
-      <!-- Render bid table -->
-      <%= render partial: 'bid_table', locals: {bids: @section.bids} %>
-   </div>
-</div> <!-- Close first row -->
-
-<!-- Mean ratings and avg. hours historic data -->
-<div class="row">
-   <!-- Render line chart of mean ratings data -->
-   <div class="col-md-6">
-      <%= line_chart @mean_data, discrete: true, min: @minimum, max: 5, ytitle: "Rating", title: "Student Ratings (Means)" %>
+   <div class="section_card mt-2">
+      <% if @section.schedules.present? %>
+         <%= render partial: "/courses/course", locals: {course: @course} %>
+      <% else %>
+         <div class="col-sm-6 col-lg-4 mb-2">
+            <h4 class="center">No schedule data</h4>
+         </div>
+      <% end %>
    </div>
 
-   <!-- Render line chart of avg. hours data -->
-   <div class="col-md-6">
-      <%= line_chart @hours_data, discrete: true, min: nil, max: nil, ytitle: "Hours", title: "Average Hours per Week" %>
-   </div>
-</div>
 
-<!-- Bid Points Historic Data -->
-<div class="row">
-   <!-- Render column chart of historic bid data -->
-   <div class="col-md-12">
-      <%= column_chart @bid_data, discrete: true, min: 0, max: nil, ytitle: "Bid Points", title: "Bid Points by Phase" %>
+<!-- Carousel Row -->
+
+   <div class="col-xs-12">
+      <div class="carousel">
+         <div class="carousel-links">
+            <div class="row">
+               <div class="col-xs-3 pr-0">
+                  <div class="car-link">
+                     <i class="fas fa-table"></i> <br>Bids
+                  </div>
+               </div>
+               <div class="col-xs-3 px-0">
+                  <div class="car-link">
+                     <i class="far fa-chart-bar"></i> <br>Bids
+                  </div>
+               </div>
+               <div class="col-xs-3 px-0">
+                  <div class="car-link">
+                     <i class="fas fa-star"></i> <br>Ratings
+                  </div>
+               </div>
+               <div class="col-xs-3 pl-0">
+                  <div class="car-link">
+                     <i class="far fa-clock"></i> <br>Hours
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xs-12">
+               <div class="carousel-items">
+                  <!-- Bid Price History Table -->
+                  <div class="carousel-item">
+                     <!-- Render bid table -->
+                     <%= render partial: 'bid_table', locals: {bids: @section.bids} %>
+                  </div>
+
+                  <!-- Bid Points Historic Data -->
+                  <div class="carousel-item">
+                     <!-- Render column chart of historic bid data -->
+                     <%= column_chart @bid_data, discrete: true, min: 0, max: nil, ytitle: "Bid Points", title: "Bid Points by Phase" %>
+                  </div>
+
+                  <!-- Mean ratings historic data -->
+                  <div class="carousel-item">
+                     <!-- Render line chart of mean ratings data -->
+                     <%= line_chart @mean_data, discrete: true, min: @minimum, max: 5, ytitle: "Rating", title: "Student Ratings (Means)" %>
+                  </div>
+
+                  <!-- Avg. hours historic data -->
+                  <div class="carousel-item">
+                     <!-- Render line chart of avg. hours data -->
+                     <%= line_chart @hours_data, discrete: true, min: nil, max: nil, ytitle: "Hours", title: "Average Hours per Week" %>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
-</div>
+</div> <!-- Close Carousel Row -->

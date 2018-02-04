@@ -41,27 +41,40 @@ $( document ).on('turbolinks:load', function() {
       $(sched_dom).attr("id", "latest_plan");
    });
 
-   // On course index load, initialize data for cards on page
-   data = {};
-   card_count = 0;
-   $('.card').each(function(index) {
+   $('.card').each(function() {
       var prof_id = $(this).find('select').val();
       var course_id = $(this).attr('data-course_id');
-      data[index] = [prof_id, course_id];
-      card_count++;
-   });
-   data.card_count = card_count;
-
-   // Only make ajax call if there are cards on the page
-   if (card_count > 0) {
       $.ajax({
          type: "GET",
-         url: "/init_api",
-         data: data,
-         success: multi_alert,
+         url: "/api",
+         data: {prof_id: prof_id, course_id: course_id},
+         success: pushData,
          error: buttonError
       });
-   };
+   });
+
+   // // On course index load, initialize data for cards on page
+   // data = {};
+   // card_count = 0;
+   // $('.card').each(function(index) {
+   //    var prof_id = $(this).find('select').val();
+   //    var course_id = $(this).attr('data-course_id');
+   //    data[index] = [prof_id, course_id];
+   //    card_count++;
+   // });
+   // data.card_count = card_count;
+   // console.log(card_count);
+   //
+   // // Only make ajax call if there are cards on the page
+   // if (card_count > 0) {
+   //    $.ajax({
+   //       type: "GET",
+   //       url: "/init_api",
+   //       data: data,
+   //       success: multi_alert,
+   //       error: buttonError
+   //    });
+   // };
 
    // When professor is changed, display new section data with ajax
    $('select.prof_select').change(function() {
@@ -304,18 +317,6 @@ var buttonError = function () {
    alert("There was an error making the ajax request!");
 };
 
-// $('.card').each(function() {
-//    var prof_id = $(this).find('select').val();
-//    var course_id = $(this).attr('data-course_id');
-//    $.ajax({
-//       type: "GET",
-//       url: "/api",
-//       data: {prof_id: prof_id, course_id: course_id},
-//       success: pushData,
-//       error: buttonError
-//    });
-// });
-
 
 // ********************************************
 // Initial page load of cards data
@@ -337,4 +338,20 @@ var multi_alert = function(jsonData) {
 var successAlert = function(jsonData) {
    var course_id = jsonData.card_0.course_id;
    alert(course_id);
+};
+
+// ********************************************
+// Function to build array
+// ********************************************
+var buildArray = function(start, count) {
+    if(arguments.length == 1) {
+        count = start;
+        start = 0;
+    }
+
+    var foo = [];
+    for (var i = 0; i < count; i++) {
+        foo.push(start + i);
+    }
+    return foo;
 };

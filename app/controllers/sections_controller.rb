@@ -9,6 +9,7 @@ class SectionsController < ApplicationController
 
    def show
       @section = Section.find(params[:id])
+      @course = @section.course
       @ratings = @section.ratings
       @bids = @section.bids
 
