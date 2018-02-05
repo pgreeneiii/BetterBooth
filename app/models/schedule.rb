@@ -19,40 +19,48 @@ class Schedule < ApplicationRecord
       else
          day = arg0
       end
+
       if day.present?
          where("day = :day", {day: day})
       else
-         where.not("day = :day", {day: day})
+         all
       end
    end
 
    def self.q_sched_quarter(*args)
       quarter_id = args[0] || ""
+
       if quarter_id.present?
          where("quarter = :quarter", {quarter: quarter_id})
       else
-         where.not("quarter = :quarter", {quarter: quarter_id})
+         all
       end
    end
 
    def self.q_course(*args)
       course_id = args[0] || ""
+
       if course_id.present?
          where("sections.course_id = :course", {course: course_id})
       else
-         where.not("sections.course_id = :course", {course: course_id})
+         all
       end
    end
 
    def self.q_prof_name(*args)
       arg0 = args[0] || ""
+
       if arg0.present?
          name = arg0["prof_name_cont"] || ""
       else
          name = arg0
       end
 
-      where("professors.first_name LIKE :name OR professors.last_name LIKE :name", {name: "%#{name}%"})
+      if name.present?
+         where("professors.first_name LIKE :name OR professors.last_name LIKE :name", {name: "%#{name}%"})
+      else
+         all
+      end
    end
 
 end

@@ -14,10 +14,11 @@ class Professor < ApplicationRecord
       else
          day = arg0
       end
+
       if day.present?
          where("schedules.day = :day", {day: day})
       else
-         where.not("schedules.day = :day", {day: day})
+         all
       end
    end
 
@@ -26,7 +27,7 @@ class Professor < ApplicationRecord
       if quarter_id.present?
          where("schedules.quarter = :quarter", {quarter: quarter_id})
       else
-         where.not("schedules.quarter = :quarter", {quarter: quarter_id})
+         all
       end
    end
 
@@ -35,7 +36,7 @@ class Professor < ApplicationRecord
       if course_id.present?
          where("course_id = :course", {course: course_id})
       else
-         where.not("course_id = :course", {course: course_id})
+         all
       end
    end
 
@@ -47,7 +48,11 @@ class Professor < ApplicationRecord
          name = arg0
       end
 
-      where("first_name LIKE :name OR last_name LIKE :name", {name: "%#{name}%"})
+      if name.present?
+         where("first_name LIKE :name OR last_name LIKE :name", {name: "%#{name}%"})
+      else
+         all
+      end
    end
 
 end

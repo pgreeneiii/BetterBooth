@@ -26,7 +26,7 @@ class Course < ApplicationRecord
       if day.present?
          where("schedules.day = :day", {day: day})
       else
-         where.not("schedules.day = :day", {day: day})
+         all
       end
    end
 
@@ -35,7 +35,7 @@ class Course < ApplicationRecord
       if quarter_id.present?
          where("schedules.quarter = :quarter", {quarter: quarter_id})
       else
-         where.not("schedules.quarter = :quarter", {quarter: quarter_id})
+         all
       end
    end
 
@@ -47,7 +47,12 @@ class Course < ApplicationRecord
          name = arg0
       end
 
-      where("course_name LIKE :name", {name: "%#{name}%"})
+      if name.present?
+         where("course_name LIKE :name", {name: "%#{name}%"})
+      else
+         all
+      end
+
    end
 
    def self.q_prof_name(*args)
@@ -58,7 +63,11 @@ class Course < ApplicationRecord
          name = arg0
       end
 
-      where("professors.first_name LIKE :name OR professors.last_name LIKE :name", {name: "%#{name}%"})
+      if name.present?
+         where("professors.first_name LIKE :name OR professors.last_name LIKE :name", {name: "%#{name}%"})
+      else
+         all
+      end
    end
 
    def self.q_course_subject(*args)
@@ -72,9 +81,8 @@ class Course < ApplicationRecord
       if subject.present?
          where("subject = :subject", {subject: subject})
       else
-         where.not("subject = :subject", {subject: subject})
+         all
       end
    end
-
 
 end
