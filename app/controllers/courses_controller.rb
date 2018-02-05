@@ -33,7 +33,7 @@
          "subject" => params[:subject]
       }
 
-      @courses = Course.query_ready.q_sched_quarter(@quarter).q_course_name(@query).q_prof_name(@query).q_sched_day(@query).q_course_subject(@query).page(params[:page]).per(24)
+      @courses = Course.query_ready.q_sched_quarter(@quarter).q_course_name(@query).q_prof_name(@query).q_sched_day(@query).q_course_subject(@query).order(course_name: :asc).page(params[:page]).per(24)
 
 
       # @q = Course.joins(:schedules).where(
