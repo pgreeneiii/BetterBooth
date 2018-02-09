@@ -11,6 +11,10 @@ label {
    margin-right: 5px;
 }
 
+.plan table {
+   font-size: 12px;
+}
+
 table {
    font-size: 9px;
 }
@@ -78,6 +82,11 @@ td, th {
 .card-header {
    font-size: 12px;
    background-color: #f1f1f1;
+}
+
+
+.card-footer-link:hover {
+   background-color: #e6e6e6;
 }
 
 .card-body{
@@ -306,11 +315,14 @@ td, th {
    table {
       font-size: 12px;
    }
+
 }
 
 /* Extra Small Devices, Phones */
 @media screen and (min-width: 480px) {
-
+   .plan table {
+      font-size: 16px;
+   }
    .card-header {
       font-size: 14px;
    }

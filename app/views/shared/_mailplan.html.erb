@@ -1,52 +1,57 @@
-<div class='row'>
-   <div class='col-md-12'>
-      <table class='table'>
-         <thead>
-            <tr>
-               <th>
-                  Course Number
-               </th>
-               <th>
-                  Course Name
-               </th>
-               <th>
-                  Professor
-               </th>
-               <th>
-                  Avg. Hours
-               </th>
-               <th>
-                  Schedule
-               </th>
-               <th>
-                  Planned Bid
-               </th>
-            </tr>
-         </thead>
-         <tbody>
-            <% plans.each do |plan| %>
-            <tr>
-               <td>
-                  <p><%= plan.schedule.section.course.course_number %>-<%= plan.schedule.section_number %></p>
-               </td>
-               <td>
-                  <p><%= plan.schedule.section.course.course_name %></p>
-               </td>
-               <td>
-                  <p><%= plan.schedule.section.professor.first_name %> <%= plan.schedule.section.professor.last_name %></p>
-               </td>
-               <td>
-                  <p><%= plan.schedule.section.evaluation.avg_hours %></p>
-               </td>
-               <td>
-                  <p><%= plan.schedule.daytable.day_output %> <%= plan.schedule.timetable.time_output %></p>
-               </td>
-               <td>
-                  <p><%= plan.bid %></p>
-               </td>
-            </tr>
-            <% end %>
-         </tbody>
-      </table>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <style type="text/css" media="screen">
+   
+   </style>
+</head>
+<body>
+   <div class='row'>
+      <div class='col-md-12'>
+         <div class="plan">
+            <table class='table'>
+               <thead>
+                  <tr>
+                     <th style="vertical-align: middle;">
+                        Planned Bid
+                     </th>
+                     <th style="vertical-align: middle;">
+                        Course Details
+                     </th>
+                     <th style="vertical-align: middle;">
+                        Actions
+                     </th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <% plans.each do |plan| %>
+                  <tr>
+                     <td style="vertical-align: middle;">
+                        <p><%= plan.bid %></p>
+                     </td>
+                     <td style="text-align: left; vertical-align: middle;">
+                        <ul style="padding-left: 10px;list-style-type:none">
+                           <li><strong><%= plan.schedule.section.course.course_number %>-<%= plan.schedule.section_number %></strong></li>
+                           <li><%= plan.schedule.section.course.course_name %></li>
+                           <li><%= plan.schedule.section.professor.first_name %> <%= plan.schedule.section.professor.last_name %></li>
+                           <li><%= plan.schedule.daytable.day_output %> <%= plan.schedule.timetable.time_output %></li>
+                        </ul>
+                     </td>
+                     <td style="vertical-align: middle;">
+                        <ul style="padding-left: 10px;list-style-type:none">
+                           <li>
+                              <a href="http://betterbooth.herokuapp.com/sections/<%= plan.section.id %>"> See Course Details</a>
+                           </li>
+                        </ul>
+                     </td>
+                  </tr>
+                  <% end %>
+               </tbody>
+            </table>
+         </div>
+      </div>
    </div>
-</div>
+</body>
+</html>

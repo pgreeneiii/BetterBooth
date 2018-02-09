@@ -1,118 +1,118 @@
 <!-- UI Testing -->
 <div class="col-sm-6 col-lg-4 mb-2">
    <!-- Build card container -->
-   <div class="card" data-course_id="<%= course.id %>">
+      <div class="card" data-course_id="<%= course.id %>">
 
-      <!-- Card Header and Navigation -->
-      <div class="card-header">
-         <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item" id="schedule">
-               <a class="nav-link" href="javascript:void(0);">
-                  <i class="far fa-calendar"></i>
-                  Schedule
-               </a>
-            </li>
-            <li class="nav-item" id="rating">
-               <a class="nav-link" href="javascript:void(0);">
-                  <i class="fas fa-star"></i>
-                  Ratings
-               </a>
-            </li>
-            <li class="nav-item" id="bid">
-               <a class="nav-link" href="javascript:void(0);">
-                  <i class="fab fa-btc"></i>
-                  Bid Data
-               </a>
-            </li>
-         </ul>
-      </div>
-
-      <!-- Card Body -->
-      <div class="card-body">
-         <h5 class="card-title" id="more">
-            <a href="javascript:void(0);">
-               <%= course.course_name %>
-            </a>
-         </h5>
-
-         <!-- Identify Winter Sections for Course Card and Store as sections -->
-         <% sections = course.fetch_sections(@quarter) %>
-
-         <!-- Label and <input type="text" name="" value=""> for professor_id -->
-         <!-- Create selection form for professor for each section -->
-         <div class="form-group" id="prof-form">
-            <select class="form-control prof_select">
-               <% Professor.query_ready.q_course(course.id).q_sched_quarter(@quarter).q_sched_day(@query).q_prof_name(@query).each do |prof| %>
-
-               <option value="<%= prof.id %>">
-                  <%= prof.first_name %> <%= prof.last_name %>
-               </option>
-
-               <% end %>
-            </select>
+         <!-- Card Header and Navigation -->
+         <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+               <li class="nav-item" id="schedule">
+                  <a class="nav-link" href="javascript:void(0);">
+                     <i class="far fa-calendar"></i>
+                     Schedule
+                  </a>
+               </li>
+               <li class="nav-item" id="rating">
+                  <a class="nav-link" href="javascript:void(0);">
+                     <i class="fas fa-star"></i>
+                     Ratings
+                  </a>
+               </li>
+               <li class="nav-item" id="bid">
+                  <a class="nav-link" href="javascript:void(0);">
+                     <i class="fab fa-btc"></i>
+                     Bid Data
+                  </a>
+               </li>
+            </ul>
          </div>
 
-         <!-- Contain all data in div with id=section_id for jquery selection -->
-         <div class="section">
-            <% Schedule.query_ready.q_course(course.id).q_sched_quarter(@quarter).q_prof_name(@query).q_sched_day(@query).each_with_index do |sched, index| %>
+         <!-- Card Body -->
+         <div class="card-body">
+            <h5 class="card-title" id="more">
+               <a href="javascript:void(0);">
+                  <%= course.course_name %>
+               </a>
+            </h5>
 
-            <%# course.schedules.each_with_index do |sched, index| %>
-            <!-- Create schedule skeletons -->
-            <div class="schedule" data-schedule_id="<%=sched.id %>" data-schedule_count="<%= index %>">
-               <div class="schedule_data">
-                  <div class="row vertical-align">
-                     <div class="col-xs-8 col-xs-offset-1 px-0">
-                        <div class="chip">
-                           <div class="chip-dot">
-                           </div>
-                           <div class='time-dot'>
-                              Loading...
+            <!-- Identify Winter Sections for Course Card and Store as sections -->
+            <% sections = course.fetch_sections(@quarter) %>
+
+            <!-- Label and <input type="text" name="" value=""> for professor_id -->
+            <!-- Create selection form for professor for each section -->
+            <div class="form-group" id="prof-form">
+               <select class="form-control prof_select">
+                  <% Professor.query_ready.q_course(course.id).q_sched_quarter(@quarter).q_sched_day(@query).q_prof_name(@query).each do |prof| %>
+
+                  <option value="<%= prof.id %>">
+                     <%= prof.first_name %> <%= prof.last_name %>
+                  </option>
+
+                  <% end %>
+               </select>
+            </div>
+
+            <!-- Contain all data in div with id=section_id for jquery selection -->
+            <div class="section">
+               <% Schedule.query_ready.q_course(course.id).q_sched_quarter(@quarter).q_prof_name(@query).q_sched_day(@query).each_with_index do |sched, index| %>
+
+               <%# course.schedules.each_with_index do |sched, index| %>
+               <!-- Create schedule skeletons -->
+               <div class="schedule" data-schedule_id="<%=sched.id %>" data-schedule_count="<%= index %>">
+                  <div class="schedule_data">
+                     <div class="row vertical-align">
+                        <div class="col-xs-8 col-xs-offset-1 px-0">
+                           <div class="chip">
+                              <div class="chip-dot">
+                              </div>
+                              <div class='time-dot'>
+                                 Loading...
+                              </div>
                            </div>
                         </div>
-                     </div>
 
-                     <div class='col-xs-3'>
-                        <div class='plan'>
+                        <div class='col-xs-3'>
+                           <div class='plan'>
                               <div class='toggle_plan btn btn-link'>
                               </div>
+                           </div>
                         </div>
                      </div>
                   </div>
-               </div>
 
-               <div hidden class="plan_form">
-                  <div class="row vertical-align">
-                     <div class="col-xs-9">
-                        <%= render partial: "/courses/plan", locals: {schedule_id: sched.id} %>
-                     </div>
-                     <div class="col-xs-3">
-                        <div class='toggle_plan btn btn-link'>
-                           <i class="far fa-caret-square-up"></i>
+                  <div hidden class="plan_form">
+                     <div class="row vertical-align">
+                        <div class="col-xs-9">
+                           <%= render partial: "/courses/plan", locals: {schedule_id: sched.id} %>
+                        </div>
+                        <div class="col-xs-3">
+                           <div class='toggle_plan btn btn-link'>
+                              <i class="far fa-caret-square-up"></i>
+                           </div>
                         </div>
                      </div>
                   </div>
-               </div>
-            </div> <!-- Close Schedule div -->
-            <% end %>
+               </div> <!-- Close Schedule div -->
+               <% end %>
 
 
 
-            <!-- Create bid view of all sections -->
-            <div class="bid">
-               <div class="row">
-                  <%= render partial: '/courses/condensed_bid_table' %>
-               </div>
-            </div> <!-- Close Bid div -->
+               <!-- Create bid view of all sections -->
+               <div class="bid">
+                  <div class="row">
+                     <%= render partial: '/courses/condensed_bid_table' %>
+                  </div>
+               </div> <!-- Close Bid div -->
 
 
-            <!-- Create rating view for all sections -->
-            <div class="rating">
-               <div class="row">
-                  <%= render partial: '/courses/ratings' %>
-               </div>
-            </div> <!-- Close Rating div -->
+               <!-- Create rating view for all sections -->
+               <div class="rating">
+                  <div class="row">
+                     <%= render partial: '/courses/ratings' %>
+                  </div>
+               </div> <!-- Close Rating div -->
 
-         </div> <!-- Close Section div -->
-      </div> <!-- Close Card Body div -->
-   </div> <!-- Close Card div -->
+            </div> <!-- Close Section div -->
+         </div> <!-- Close Card Body div -->
+      </div> <!-- Close Card div -->
 </div> <!-- Close column div -->
