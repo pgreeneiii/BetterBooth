@@ -49,7 +49,7 @@ class Professor < ApplicationRecord
       end
 
       if name.present?
-         where("first_name LIKE :name OR last_name LIKE :name", {name: "%#{name}%"})
+         where("lower(first_name) LIKE lower(:name) OR lower(last_name) LIKE lower(:name)", {name: "%#{name}%"})
       else
          all
       end
