@@ -1,4 +1,4 @@
-   class CoursesController < ApplicationController
+class CoursesController < ApplicationController
 
   def index
      default = 3

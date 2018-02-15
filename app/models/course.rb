@@ -48,7 +48,7 @@ class Course < ApplicationRecord
       end
 
       if name.present?
-         where("course_name LIKE :name", {name: "%#{name}%"})
+         where("lower(course_name) LIKE lower(:name)", {name: "%#{name}%"})
       else
          all
       end
@@ -64,7 +64,7 @@ class Course < ApplicationRecord
       end
 
       if name.present?
-         where("professors.first_name LIKE :name OR professors.last_name LIKE :name", {name: "%#{name}%"})
+         where("lower(professors.first_name) LIKE lower(:name) OR lower(professors.last_name) LIKE lower(:name)", {name: "%#{name}%"})
       else
          all
       end

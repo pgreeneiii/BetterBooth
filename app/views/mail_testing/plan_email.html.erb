@@ -3,11 +3,20 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
    <style type="text/css" media="screen">
-
+   body {
+      font-family: "Source Sans Pro",Calibri,Candara,Arial,sans-serif; font-weight: 300;
+      color: #333333;
+   }
+      h1 {
+         font-size: 39px;
+         margin-top: 21px;
+         margin-bottom: 10.5px;
+         line-height: 1.1;
+      }
    </style>
 </head>
 <body>
-   <h2>Here's your Bid Plan!</h2>
+   <h1>Here's your Bid Plan!</h1>
    <p>Thanks for using BetterBooth! If you think this was a better experience, we'd love your ideas and feedback on how we can keep making your time at Booth better. <a href="mailto:betterboothgroup@gmail.com">Email us!</a></p>
    <hr>
    <%= render partial: 'shared/mailplan', locals: {plans: @plans} %>
