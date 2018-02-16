@@ -58,9 +58,11 @@
                   </li>
                   <li>
                      <a href="/plans">
-                        <i class="far fa-calendar-check"></i> 
-                        <%#= pluralize(current_user.plans.count, 'Bid') %>
-                         My Bid Plan
+                        <i class="far fa-calendar-check fa-fw"></i>
+                        <span id="planCount">
+                        <%= pluralize(current_user.plans.count, 'Bid') %>
+                     </span>
+                     Planned
                      </a>
                   </li>
                   <% end %>

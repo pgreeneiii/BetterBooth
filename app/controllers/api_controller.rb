@@ -45,7 +45,7 @@ class ApiController < ApplicationController
          else
             bid_status = 1
 
-            bid = section.bids.order(year: :desc, quarter_id: :asc).first
+            bid = section.bids.order(year: :desc, quarter_id: :asc, time_id: :asc).first
             bids = {id: bid.id, quarter: bid.quartertable.quarter_output,
                year: bid.year, p1_price: bid.p1_price, p2_price: bid.p2_price, p3_price: bid.p3_price, p4_price: bid.p4_price}
          end
@@ -57,7 +57,7 @@ class ApiController < ApplicationController
          else
             rating_status = 1
 
-            rating = section.ratings.order(year: :desc, quarter_id: :asc).first
+            rating = section.ratings.order(year: :desc, quarter_id: :asc, section_number: :asc).first
             ratings = {id: rating.id, quarter:
                rating.quartertable.quarter_output, year: rating.year, avg_hours: rating.avg_hours, comms_median: rating.comms_median, engaging_median: rating.engaging_median, practical_median: rating.practical_median, amt_learned_median: rating.amt_learned_median, recommend_median: rating.recommend_median}
          end
@@ -144,7 +144,7 @@ class ApiController < ApplicationController
       else
          bid_status = 1
 
-      bid = section.bids.order(year: :desc, quarter_id: :asc).first
+      bid = section.bids.order(year: :desc, quarter_id: :asc, time_id: :asc).first
       bids = {id: bid.id, quarter: bid.quartertable.quarter_output,
          year: bid.year, p1_price: bid.p1_price, p2_price: bid.p2_price, p3_price: bid.p3_price, p4_price: bid.p4_price}
       end
@@ -156,7 +156,7 @@ class ApiController < ApplicationController
       else
       rating_status = 1
 
-      rating = section.ratings.order(year: :desc, quarter_id: :asc).first
+      rating = section.ratings.order(year: :desc, quarter_id: :asc, section_number: :asc).first
       ratings = {id: rating.id, quarter:
          rating.quartertable.quarter_output, year: rating.year, avg_hours: rating.avg_hours, comms_median: rating.comms_median, engaging_median: rating.engaging_median, practical_median: rating.practical_median, amt_learned_median: rating.amt_learned_median, recommend_median: rating.recommend_median}
       end

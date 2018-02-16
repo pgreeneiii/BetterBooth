@@ -16,7 +16,11 @@ label {
 }
 
 table {
-   font-size: 9px;
+   font-size: 14px;
+}
+
+.card table {
+   margin-top: -4px;
 }
 
 td, th {
@@ -77,6 +81,10 @@ td, th {
 
 .card:hover {
    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+
+.card .form-group {
+   margin-bottom: 10px;
 }
 
 .card-header {
@@ -312,16 +320,6 @@ td, th {
 
 /* Small Devices, Tablets */
 @media screen and (min-width: 768px) {
-   table {
-      font-size: 18px;
-   }
-
-}
-
-@media screen and (min-width: 480px) and (max-width: 765px) {
-   table {
-      font-size: 12px;
-   }
 
 }
 
@@ -343,7 +341,7 @@ td, th {
    }
 
    .stars {
-      font-size: 16px;
+      font-size: 14px;
       margin-bottom: 5px;
    }
 
