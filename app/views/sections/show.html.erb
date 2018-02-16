@@ -52,15 +52,15 @@
                      <label for="scheduleSelect">Select Schedule:</label>
                      <select id="scheduleSelect" class="form-control" name="schedule_id">
                         <% @section.schedules.each do |schedule| %>
-                           <% if @plans.find_by(schedule_id: schedule.id).nil? %>
-                           <option value="<%= schedule.id %>">
-                              <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %> (<%= schedule.quartertable.quarter_output %>)
-                           </option>
-                           <% else %>
-                           <option value="<%= schedule.id %>" disabled>
-                              <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %> (<%= schedule.quartertable.quarter_output %>) - Already in Plan!
-                           </option>
-                           <% end %>
+                        <% if @plans.find_by(schedule_id: schedule.id).nil? %>
+                        <option value="<%= schedule.id %>">
+                           <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %> (<%= schedule.quartertable.quarter_output %>)
+                        </option>
+                        <% else %>
+                        <option value="<%= schedule.id %>" disabled>
+                           <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %> (<%= schedule.quartertable.quarter_output %>) - Already in Plan!
+                        </option>
+                        <% end %>
                         <% end %>
                      </select>
                   </div>
@@ -82,7 +82,7 @@
             </button>
          </div>
          <div hidden class="buttonDisplay">
-            <button class="bidFormToggle btn btn-secondary btn-block">
+            <button class="bidFormToggle btn btn-block">
                <i class="far fa-caret-square-up fa-fw"></i> Show Schedules
             </button>
          </div>
