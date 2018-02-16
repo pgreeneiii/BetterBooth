@@ -6,8 +6,10 @@
 
 <%= render partial: 'plan', locals: {plans: @plans} %>
 
-<div class='row'>
+<div class='row mt-2 mb-1'>
    <div class='col-md-offset-3 col-md-6'>
-      <%= link_to 'Send Plan to your Inbox', 'generate_plan', class: 'btn btn-success btn-block btn-lg' %>
+      <%= link_to 'generate_plan', class: 'btn btn-success btn-block btn-lg' do %>
+         <i class="fas fa-share-square"></i> Send Plan to Inbox
+      <% end %>
    </div>
 </div>

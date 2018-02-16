@@ -1,5 +1,21 @@
-<p>Welcome <%= @email %>!</p>
+<h1 style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333; font-size: 39px; margin-top: 10.5px; margin-bottom: 10.5px; line-height: 1.1;">
+   Welcome to BetterBooth!
+</h1>
 
-<p>You can confirm your account email through the link below:</p>
+<p style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333;">
+   Please confirm your account through the link below:
+</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<div style="margin-left: 10px;">
+   <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), {style: "font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; background-color: #2780E3; border-radius: 5px; min-width: 20%; margin-bottom: 20px;"} %></p>
+</div>
+
+<div style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333; background: #f9f9f9; border-left: 10px solid #ccc; margin: 1.5em 10px; padding: 0.5em 10px;">
+   <p style="margin-top: 5px;">
+      Thanks for signing up with BetterBooth. Today, the goal is to offer a course search tool that is simple and seamless - search classes and see the ratings / bid history all on the same page.
+   </p>
+   <p>
+      I'm working to bring new features to the platform, so if you like the experience or have feedback, please shoot me an <a href="mailto:betterboothgroup@gmail.com">email</a>.
+   </p>
+</div>
+<hr>

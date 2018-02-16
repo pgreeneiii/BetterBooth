@@ -11,9 +11,6 @@ var course_id = $(dom).parents('.card').attr('data-course_id');
 
 $(dom).removeAttr("id");
 
-console.log(prof_id);
-console.log(course_id);
-
 $.ajax({
    type: "GET",
    url: "/api",

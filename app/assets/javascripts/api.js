@@ -314,7 +314,7 @@ var buildStars = function(score) {
 // Error function if AJAX fails
 // ********************************************
 var buttonError = function () {
-   alert("There was an error making the ajax request!");
+   alert("Whoops! There may have been an issue loading some of the data on this page.");
 };
 
 

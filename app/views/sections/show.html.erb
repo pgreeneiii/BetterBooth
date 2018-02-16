@@ -4,9 +4,9 @@
 
 <div class="row">
    <!-- Professor photo & name, and course description -->
-   <div class="col-lg-8 col-sm-6 mb-2">
+   <div class="col-sm-8 mb-2">
       <div class="row" id='course_desc'>
-         <h5 style="text-align: center;">Course Description</h5>
+         <h4 style="text-align: center;">Course Description</h4>
          <div class="col-xs-12">
             <div class="course_content">
                <div class="professor_box">
@@ -22,20 +22,88 @@
          </div>
       </div>
    </div>
-   <div class="section_card mt-2">
-      <% if @section.schedules.present? %>
-         <%= render partial: "/courses/course", locals: {course: @course} %>
-      <% else %>
-         <div class="col-sm-6 col-lg-4 mb-2">
-            <h4 class="center">No schedule data</h4>
+   <div class="col-sm-4 mb-2">
+      <div class="section_schedules">
+         <% if @section.schedules.present? %>
+         <div class="schedule_list">
+            <h4 class="center">
+               2017-2018 Schedules
+            </h4>
+            <ul class="list-group">
+               <% @section.schedules.each do |schedule| %>
+               <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %>
+                  <span class="badge badge-primary badge-pill">
+                     <%= schedule.quartertable.quarter_output %>
+                  </span>
+               </li>
+               <% end %>
+            </ul>
          </div>
-      <% end %>
+         <div hidden class="sectionPlanForm">
+            <form action="/add" method="post" class="mt-1 mb-1">
+               <div class="form-group">
+
+                  <!-- Hidden input for authenticity token to protect from forgery -->
+                  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+                  <input name="user_id" type="hidden" value="<%= current_user.id %>">
+                  <div class="form-group">
+                     <label for="scheduleSelect">Select Schedule:</label>
+                     <select id="scheduleSelect" class="form-control" name="schedule_id">
+                        <% @section.schedules.each do |schedule| %>
+                           <% if @plans.find_by(schedule_id: schedule.id).nil? %>
+                           <option value="<%= schedule.id %>">
+                              <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %> (<%= schedule.quartertable.quarter_output %>)
+                           </option>
+                           <% else %>
+                           <option value="<%= schedule.id %>" disabled>
+                              <%= schedule.daytable.day_output %> <%= schedule.timetable.time_output %> (<%= schedule.quartertable.quarter_output %>) - Already in Plan!
+                           </option>
+                           <% end %>
+                        <% end %>
+                     </select>
+                  </div>
+                  <div class="form-group">
+                     <label for="bidInput">Planned Bid:</label>
+                     <input id="bidInput" name='bid' type='number' min='1' step='1' class="form-control" placeholder='Enter Bid'>
+                  </div>
+
+                  <button type="submit" class="btn btn-block btn-primary plan_submit">
+                     Confirm
+                  </button>
+
+               </div>
+            </form>
+         </div>
+         <div class="buttonDisplay">
+            <button class="bidFormToggle btn btn-primary btn-block">
+               <i class="far fa-calendar-plus fa-fw"></i> Add a Schedule to Bid Plan
+            </button>
+         </div>
+         <div hidden class="buttonDisplay">
+            <button class="bidFormToggle btn btn-secondary btn-block">
+               <i class="far fa-caret-square-up fa-fw"></i> Show Schedules
+            </button>
+         </div>
+
+
+         <% else %>
+         <h1 class="center pt-1">
+            <i class="far fa-calendar-times"></i>
+         </h4>
+         <h4 class="center">
+            No schedule data
+         </h4>
+         <% end %>
+      </div>
    </div>
 
 
-<!-- Carousel Row -->
+   <!-- Carousel Row -->
 
    <div class="col-xs-12">
+      <hr>
       <div class="carousel">
          <div class="carousel-links">
             <div class="row">

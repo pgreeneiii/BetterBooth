@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-   <style type="text/css" media="screen">
+<ul style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333">
+   <li style="float: left;">
+      <a style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;" href="http://betterbooth.herokuapp.com">
+         BetterBooth
+      </a>
+   </li>
+   <li style="float: left;">
+      <a style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;" href="http://betterbooth.herokuapp.com/courses">
+         Courses
+      </a>
+   </li>
+   <li style="float: left;">
+      <a style="display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none;" href="http://betterbooth.herokuapp.com/plans">
+         Bid Plan
+      </a>
+   </li>
+</ul>
+<h1 style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333; font-size: 39px; margin-top: 20px; margin-bottom: 10.5px; line-height: 1.1;">
+   Here's your Bid Plan!
+</h1>
+<p style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333;">Thanks for using BetterBooth! If you think this was a better experience, we'd love your ideas and feedback on how we can keep making your time at Booth better. <a href="mailto:betterboothgroup@gmail.com">Email us!</a></p>
+<hr>
 
-   </style>
-</head>
-<body>
-   <h2>Here's your Bid Plan!</h2>
-   <p>Thanks for using BetterBooth! If you think this was a better experience, we'd love your ideas and feedback on how we can keep making your time at Booth better. <a href="mailto:betterboothgroup@gmail.com">Email us!</a></p>
-   <hr>
-   <%= render partial: 'shared/mailplan', locals: {plans: @plans} %>
-</body>
-</html>
+<%= render partial: 'shared/mailplan', locals: {plans: @plans} %>
+
+<div style="margin-top: 20px; padding-left: 2vw;">
+   <a style="font-family: 'Source Sans Pro',Calibri,Candara,Arial,sans-serif; font-weight: 300; color: #333333; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; background-color: #2780E3; border-radius: 5px; min-width: 20%; margin-bottom: 20px;" href="https://appcenter.chicagobooth.edu/Apps/BoothSSO/iBid/goiBid.aspx">
+      iBid Portal
+   </a>
+</div>
+<hr>

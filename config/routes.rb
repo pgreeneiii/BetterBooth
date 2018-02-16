@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
     root 'welcome#welcome'
 
-    get "/test/mailplan", :controller => "mailtesting", :action => "test_plan"
+   get "/test/plan", :controller => "mailtesting", :action => "test_plan"
+   get "/test/welcome", :controller => "mailtesting", :action => "test_welcome"
+   get "/test/confirm", :controller => "mailtesting", :action => "test_confirm"
    # Routes for the Plan resource:
    # CREATE
    get "/plans/new", :controller => "plans", :action => "new"

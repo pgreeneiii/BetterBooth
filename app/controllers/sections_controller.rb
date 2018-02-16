@@ -12,6 +12,7 @@ class SectionsController < ApplicationController
       @course = @section.course
       @ratings = @section.ratings
       @bids = @section.bids
+      @plans = current_user.plans
 
       # If there are ratings, load rating data
       if @ratings.empty?

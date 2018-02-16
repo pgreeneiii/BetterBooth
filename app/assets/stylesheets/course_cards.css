@@ -218,6 +218,13 @@ td, th {
    width: 50%;
 }
 
+.section_schedules {
+
+}
+.section_schedules .fa-calendar-times {
+   color: #D00000;
+}
+
 .table {
    margin-bottom: 5px;
 }
