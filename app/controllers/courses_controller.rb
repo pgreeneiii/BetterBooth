@@ -25,22 +25,29 @@ class CoursesController < ApplicationController
         @quarter = params[:quarter].to_i
      end
 
+     if params[:half].blank?
+        half = ""
+     elsif params[:half] = "on"
+        half = true
+     end
+
+     if params[:take].blank?
+        take = ""
+     elsif params[:take] = "on"
+        take = true
+     end
+
       # Load Custom Query
       @query = {
          "course_name_cont" => params[:course_name_cont],
          "prof_name_cont" => params[:prof_name_cont],
          "schedules_day" => params[:schedules_day],
-         "subject" => params[:subject]
+         "subject" => params[:subject],
+         "half" => half,
+         "take" => take
       }
 
-      @courses = Course.query_ready.q_sched_quarter(@quarter).q_course_name(@query).q_prof_name(@query).q_sched_day(@query).q_course_subject(@query).order(course_name: :asc).page(params[:page]).per(24)
-
-
-      # @q = Course.joins(:schedules).where(
-      #    'schedules.quarter = ?', @quarter).ransack(params[:q])
-
-      # Load selected courses
-      # @courses = @q.result(distinct: true).includes(:professors, :schedules, :sections).page(params[:page]).per(24)
+      @courses = Course.query_ready.q_sched_quarter(@quarter).q_course_name(@query).q_prof_name(@query).q_sched_day(@query).q_course_subject(@query).q_half(@query).q_take_home(@query).order(course_name: :asc).page(params[:page]).per(24)
 
       @title = QuarterTable.find(@quarter).quarter_output
 

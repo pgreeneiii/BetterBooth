@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112202820) do
+ActiveRecord::Schema.define(version: 20180217154716) do
 
   create_table "bids", force: :cascade do |t|
     t.integer  "section_id"
@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20180112202820) do
 
   create_table "day_tables", force: :cascade do |t|
     t.string   "day_output"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "long_output"
   end
 
   create_table "evaluations", force: :cascade do |t|

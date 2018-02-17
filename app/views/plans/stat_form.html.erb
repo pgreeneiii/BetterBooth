@@ -1,0 +1,64 @@
+<div class="page-header">
+   <h1>
+      Set Statistics Filters
+   </h1>
+</div>
+<div class="row mb-2">
+   <div class="col-md-offset-4 col-md-4">
+      <form action="/plans/build_stats">
+         <div class="form-group">
+            <label for="subject">
+               Subject
+            </label>
+            <select id="subject" name="subject" class="form-control">
+               <option value="">Select Subject</option>
+               <option value="Financial Management">Financial Management</option>
+               <option value="Accounting">Accounting</option>
+               <option value="Microeconomics">Microeconomics</option>
+               <option value="Macro/International Business">Macro/International Business</option>
+               <option value="Entrepreneurship">Entrepreneurship</option>
+               <option value="Strategic Management">Strategic Management</option>
+               <option value="Operations Management">Operations Management</option>
+               <option value="Marketing Management">Marketing Management</option>
+               <option value="Managerial and Organizational Behavior">Managerial and Organizational Behavior</option>
+               <option value="Organizations and Markets">Organizations and Markets</option>
+               <option value="Statistics">Statistics</option>
+            </select>
+         </div>
+         <div class="form-group">
+            <label for="day">Day of the Week</label>
+            <select id="day" name="day" class="form-control">
+               <option value="">Select Class Day</option>
+               <option value="1">Monday</option>
+               <option value="2">Tuesday</option>
+               <option value="3">Wednesday</option>
+               <option value="4">Thursday</option>
+               <option value="5">Friday</option>
+               <option value="6">Saturday</option>
+            </select>
+         </div>
+         <div class="form-group">
+            <label for="time">Timeslot</label>
+            <select id="time" name="time" class="form-control">
+               <option value="">Select Timeslot</option>
+               <option value="1">Morning</option>
+               <option value="2">Afternoon</option>
+               <option value="3">Evening</option>
+            </select>
+         </div>
+
+         <div class="form-group">
+            <label for="phase">Bid Phase</label>
+            <select id="phase" name="phase" class="form-control">
+               <option value="">Select Bid Phase</option>
+               <option value="1">Phase 1</option>
+               <option value="2">Phase 2</option>
+               <option value="3">Phase 3</option>
+               <option value="4">Phase 4</option>
+            </select>
+         </div>
+
+         <button class="btn btn-primary btn-block">Show Stats</button>
+      </form>
+   </div>
+</div>

@@ -63,6 +63,9 @@ td, th {
 #wrap {
    min-height: 100%;
 }
+.bid_stats {
+   margin-top: 20px;
+}
 
 .btn-link .fa-times {
    color: #D00000;
@@ -154,13 +157,44 @@ td, th {
    width: 100%
 }
 
+.filter {
+      padding-left: 15px;
+      font-size: 14px;
+}
 
 .form-control {
    font-size: 14px;
 }
+.form-check {
+   margin-top: 5px;
+}
+
+.half-credit {
+   color: #D00000;
+}
 
 .hide {
    display: none;
+}
+
+.higher-good {
+   color: #3FB618;
+   font-size: 80%;
+}
+
+.lower-bad {
+   color: #D00000;
+   font-size: 80%;
+}
+
+.higher-bad {
+   color: #D00000;
+   font-size: 80%;
+}
+
+.lower-good {
+   color: #3FB618;
+   font-size: 80%;
 }
 
 .nav-tabs>li {
@@ -212,6 +246,20 @@ td, th {
    margin-bottom: 3px;
 }
 
+.rating_stats {
+   padding-left: 5vw;
+   font-size: 18px;
+}
+.rating_stats .stat {
+   margin-bottom: 5px;
+   font-variant: small-caps;
+}
+
+.rating_stats hr {
+   margin-top: 5px;
+   margin-bottom: 0px;
+}
+
 .remove_plan, .toggle_plan {
    width: 100%;
 }
@@ -231,6 +279,22 @@ td, th {
 }
 .section_schedules .fa-calendar-times {
    color: #D00000;
+}
+
+.small-caps {
+   font-variant: small-caps; 
+}
+
+.stats_from {
+   padding-left: 5vw;
+   font-style: italic;
+   font-size: 10px;
+}
+
+.superscript {
+   position: relative;
+   top: -0.5em;
+   font-size: 70%;
 }
 
 .table {
@@ -320,7 +384,26 @@ td, th {
 
 /* Small Devices, Tablets */
 @media screen and (min-width: 768px) {
-
+   .rating_stats {
+      margin-top: 10.5px;
+      padding-left: 10.5px;
+      font-size: 16px;
+   }
+   .rating_stats .stat {
+      margin-bottom: 5px;
+      font-variant: small-caps;
+   }
+   .filter {
+      font-size: 12px;
+   }
+   .bid_stats {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+   }
+   .form-check {
+      margin-top: 10px;
+   }
 }
 
 /* Extra Small Devices, Phones */

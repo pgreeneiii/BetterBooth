@@ -1,0 +1,232 @@
+<div class="page-header">
+   <h1>
+      Statistics Results
+   </h1>
+</div>
+<div class="row">
+   <div class="col-sm-4">
+      <h5><i class="fas fa-filter fa-fw"></i> Rating Filter:</h5>
+
+      <ul class="list-group">
+         <li class="list-group-item"><%= @outputs[:subject] %></li>
+      </ul>
+   </div>
+   <div class="col-sm-8">
+      <div class="rating_stats row">
+         <!-- Filtered Avg. Hours Mean -->
+
+         <div class="col-sm-6 stat">
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="far fa-clock fa-fw"></i> Avg. Hours:
+               </div>
+               <div class="col-xs-4">
+                  <%= @ratings[:filter][:avg_hours] %>
+                  <% if @ratings[:filter][:avg_hours] > @ratings[:general][:avg_hours] %>
+                  <i class="higher-bad fas fa-long-arrow-alt-up"></i>
+                  <% elsif @ratings[:filter][:avg_hours] < @ratings[:general][:avg_hours] %>
+                  <i class="lower-good fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+         </div>
+
+         <!-- Filtered Communication Mean -->
+         <div class="col-sm-6 stat">
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="far fa-comment fa-fw"></i>
+                  Communication:
+               </div>
+               <div class="col-xs-4">
+                  <%= @ratings[:filter][:comms] %>
+                  <% if @ratings[:filter][:comms] > @ratings[:general][:comms] %>
+                  <i class="higher-good fas fa-long-arrow-alt-up"></i>
+                  <% elsif @ratings[:filter][:comms] < @ratings[:general][:comms] %>
+                  <i class="lower-bad fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+         </div>
+
+         <!-- Filtered Engagement Mean -->
+         <div class="col-sm-6 stat">
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="fas fa-eye fa-fw"></i>
+                  Engagement:
+               </div>
+               <div class="col-xs-4">
+                  <%= @ratings[:filter][:engaging] %>
+                  <% if @ratings[:filter][:engaging] > @ratings[:general][:engaging] %>
+                  <i class="higher-good fas fa-long-arrow-alt-up"></i>
+                  <% elsif @ratings[:filter][:engaging] < @ratings[:general][:engaging] %>
+                  <i class="lower-bad fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+         </div>
+
+         <!-- Filtered Practicality Mean -->
+         <div class="col-sm-6 stat">
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="far fa-handshake fa-fw"></i>
+                  Practical:
+               </div>
+               <div class="col-xs-4">
+                  <%= @ratings[:filter][:practical] %>
+                  <% if @ratings[:filter][:practical] > @ratings[:general][:practical] %>
+                  <i class="higher-good fas fa-long-arrow-alt-up"></i>
+                  <% elsif @ratings[:filter][:practical] < @ratings[:general][:practical] %>
+                  <i class="lower-bad fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+         </div>
+
+         <!-- Filtered Amt. Learned Mean -->
+         <div class="col-sm-6 stat">
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="fas fa-book fa-fw"></i>
+                  Learning:
+               </div>
+               <div class="col-xs-4">
+                  <%= @ratings[:filter][:amt_learned] %>
+                  <% if @ratings[:filter][:amt_learned] > @ratings[:general][:amt_learned] %>
+                  <i class="higher-good fas fa-long-arrow-alt-up"></i>
+                  <% elsif @ratings[:filter][:amt_learned] < @ratings[:general][:amt_learned] %>
+                  <i class="lower-bad fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+         </div>
+
+         <!-- Filtered Recommendation Mean -->
+         <div class="col-sm-6 stat">
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="fas fa-star fa-fw"></i>
+                  Recommendation:
+               </div>
+               <div class="col-xs-4">
+                  <%= @ratings[:filter][:recommend] %>
+                  <% if @ratings[:filter][:recommend] > @ratings[:general][:recommend] %>
+                  <i class="higher-good fas fa-long-arrow-alt-up"></i>
+                  <% elsif @ratings[:filter][:recommend] < @ratings[:general][:recommend] %>
+                  <i class="lower-bad fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+         </div>
+      </div>
+      <div class="stats_from row">
+         <div class="col-xs-12">
+            <p>
+               Results are the mean scores from <%= pluralize(@ratings[:filter][:count], "evaluation") %> across <%= pluralize(@ratings[:filter][:course_count], "course") %>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row bid_stats">
+   <div class="col-sm-4">
+      <h5><i class="fas fa-filter fa-fw"></i> Bid Filter:</h5>
+      <ul class="list-group">
+         <li class="list-group-item"><%= @outputs[:subject] %></li>
+         <li class="list-group-item"><%= @outputs[:phase] %></li>
+         <li class="list-group-item"><%= @outputs[:time] %> timeslots</li>
+         <li class="list-group-item"><%= @outputs[:day] %></li>
+      </ul>
+   </div>
+   <div class="col-sm-8">
+      <div class="rating_stats row">
+         <div class="col-sm-6 stat">
+
+            <!-- Mean Price All Filters -->
+            <div class="row">
+               <div class="col-xs-8">
+                  <i class="fab fa-btc fa-fw"></i>
+                  Mean Price:
+               </div>
+               <div class="col-xs-4">
+                  <%= number_with_precision(@bids[:all_filters][:mean], precision: 0, delimiter: ",") %>
+                  <% if @bids[:all_filters][:mean] > @bids[:general][:mean] %>
+                  <i class="higher-bad fas fa-long-arrow-alt-up"></i>
+                  <% elsif @bids[:all_filters][:mean] < @bids[:general][:mean] %>
+                  <i class="lower-good fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+
+            <!-- Only show extra stats if subject and schedule filters exist -->
+            <% if @subject_check && @schedule_check %>
+            <!-- Mean Price Schedule Filters Only -->
+            <div class="row">
+               <div class="col-xs-8">
+                  <span class="filter">Schedule Filters Only:</span>
+               </div>
+               <div class="col-xs-4">
+                  <%= number_with_precision(@bids[:schedule_filters][:mean], precision: 0, delimiter: ",") %>
+                  <% if @bids[:schedule_filters][:mean] > @bids[:general][:mean] %>
+                  <i class="higher-bad fas fa-long-arrow-alt-up"></i>
+                  <% elsif @bids[:schedule_filters][:mean] < @bids[:general][:mean] %>
+                  <i class="lower-good fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+
+            <!-- Mean Price Subject Filters Only -->
+            <div class="row">
+               <div class="col-xs-8">
+                  <span class="filter">Subject Filter Only:</span>
+               </div>
+               <div class="col-xs-4">
+                  <%= number_with_precision(@bids[:subject_filters][:mean], precision: 0, delimiter: ",") %>
+                  <% if @bids[:subject_filters][:mean] > @bids[:general][:mean] %>
+                  <i class="higher-bad fas fa-long-arrow-alt-up"></i>
+                  <% elsif @bids[:subject_filters][:mean] < @bids[:general][:mean] %>
+                  <i class="lower-good fas fa-long-arrow-alt-down"></i>
+                  <% end %>
+               </div>
+            </div>
+            <hr>
+            <% end %>
+            <!-- Mean Price No Filters -->
+            <div class="row">
+               <div class="col-xs-8">
+                  <span class="filter">No Filters:</span>
+               </div>
+               <div class="col-xs-4">
+                  <%= number_with_precision(@bids[:general][:mean], precision: 0, delimiter: ",") %>
+               </div>
+            </div>
+            <hr>
+         </div>
+      </div>
+      <div class="stats_from row">
+         <div class="col-xs-12">
+            <p>
+               Results are mean scores from <%= pluralize(@bids[:all_filters][:count], "bids") %> across <%= pluralize(@bids[:all_filters][:course_count], "course") %>
+            </p>
+         </div>
+      </div>
+   </div>
+
+</div>
+<div class="row mt-2 mb-2">
+   <div class="col-md-offset-3 col-md-6">
+      <a href="/plans/stats" class="btn btn-primary btn-block">
+         Set New Filters
+      </a>
+   </div>
+</div>

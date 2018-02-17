@@ -33,6 +33,9 @@
                <a href="javascript:void(0);">
                   <%= course.course_name %>
                </a>
+               <% if course.half_credit? %>
+               <span class="superscript half-credit">50</span>
+               <% end %>
             </h5>
 
             <!-- Identify Winter Sections for Course Card and Store as sections -->

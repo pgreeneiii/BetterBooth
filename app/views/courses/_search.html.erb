@@ -1,6 +1,4 @@
 <!-- Generate search form with ransack -->
-
-
 <div class="row">
   <div class="col-md-12">
     <form action="/query_courses" method="get">
@@ -9,7 +7,7 @@
       <input type="hidden" id="quarter" name="quarter" placeholder="Quarter" class="form-control" value="<%= @quarter %>">
 
       <!-- Search by Course Name -->
-      <div class="form-group col-md-offset-1 col-md-2 mb-1">
+      <div class="form-group col-xs-12 col-md-2 mb-1">
          <label for="course_name_cont" class="control-label sr-only">
             Course Name
          </label>
@@ -17,7 +15,7 @@
       </div>
 
       <!-- Search by Professor Name -->
-      <div class="form-group col-md-2 mb-1">
+      <div class="form-group col-xs-12 col-md-2 mb-1">
          <label for="prof_name_cont" class="control-label sr-only">
             Professor Name
          </label>
@@ -25,14 +23,14 @@
       </div>
 
       <!-- Search by Day of the Week -->
-      <div class="form-group col-md-2 mb-1">
+      <div class="form-group col-xs-6 col-md-2 mb-1">
          <label for="schedules_day" class='sr-only'>
             Class Day
          </label>
 
          <!-- Create custom select field -->
          <select name="schedules_day" id="schedules_day" class='form-control'>
-            <option value="">Select Class Day</option>
+            <option value="">Day of Week</option>
             <option value="1">Monday</option>
             <option value="2">Tuesday</option>
             <option value="3">Wednesday</option>
@@ -45,14 +43,14 @@
       </div>
 
       <!-- Search by Subject -->
-      <div class='form-group col-md-2 mb-1'>
+      <div class='form-group col-xs-6 col-md-2 mb-1'>
          <label for="subject" class='sr-only'>
             Subject
          </label>
 
          <!-- Create custom select field -->
          <select name="subject" id="subject" class='form-control'>
-            <option value="">Select Subject</option>
+            <option value="">Subject</option>
             <option value="Financial Management">Financial Management</option>
             <option value="Accounting">Accounting</option>
             <option value="Microeconomics">Microeconomics</option>
@@ -66,7 +64,17 @@
             <option value="Statistics">Statistics</option>
          </select>
       </div>
-      <div class="col-md-2 mb-1">
+
+      <div class="form-check col-xs-6 col-md-2 mb-1">
+         <input type="checkbox" class="form-check-input" id="half" name="half">
+         <label class="form-check-label" for="half">Half-credit</label>
+      </div>
+
+      <!-- <div class="form-check col-xs-6 col-md-3 mb-1">
+         <input type="checkbox" class="form-check-input" id="take" name="take">
+         <label class="form-check-label" for="take">Take-home Final</label>
+      </div> -->
+      <div class="col-md-2 col-sm-6 col-xs-12 mb-1">
          <button class="btn btn-block btn-primary">
            Search
          </button>

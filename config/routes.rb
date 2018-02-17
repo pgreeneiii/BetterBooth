@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 
     root 'welcome#welcome'
 
+   # Routes to view mailer templates
    get "/test/plan", :controller => "mailtesting", :action => "test_plan"
    get "/test/welcome", :controller => "mailtesting", :action => "test_welcome"
    get "/test/confirm", :controller => "mailtesting", :action => "test_confirm"
+
    # Routes for the Plan resource:
    # CREATE
    get "/plans/new", :controller => "plans", :action => "new"
@@ -20,13 +22,15 @@ Rails.application.routes.draw do
 
    # READ
    get "/plans", :controller => "plans", :action => "index"
-   get "/plans/:id", :controller => "plans", :action => "show"
+   get "/plans/stats", controller: "plans", action: "stat_form"
+   get "/plans/build_stats", controller: "plans", action: "stat_results"
+   # get "/plans/:id", :controller => "plans", :action => "show"
    get "generate_plan", :controller => 'plans', :action => 'mail'
    post '/add', :controller => 'plans', :action => 'create'
 
    # UPDATE
-   get "/plans/:id/edit", :controller => "plans", :action => "edit"
-   post "/update_plan/:id", :controller => "plans", :action => "update"
+   # get "/plans/:id/edit", :controller => "plans", :action => "edit"
+   # post "/update_plan/:id", :controller => "plans", :action => "update"
 
    # DELETE
    get "/delete_plan/:id", :controller => "plans", :action => "destroy"
