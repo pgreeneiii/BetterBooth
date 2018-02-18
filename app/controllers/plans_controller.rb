@@ -1,5 +1,275 @@
 class PlansController < ApplicationController
 
+   def hot
+      a_effort = Section.find(10)
+      a_rating = Section.find(9)
+
+      m_effort = Section.find(35)
+      m_rating = Section.find(35)
+
+      core_f_effort = Section.find(122)
+      core_f_rating = Section.find(106)
+
+      core_m_effort = Section.find(163)
+      core_m_rating = Section.find(175)
+
+      core_o_effort = Section.find(237)
+      core_o_rating = Section.find(231)
+
+      core_d_effort = Section.find(194)
+      core_d_rating = Section.find(194)
+
+      core_p_effort = Section.find(190)
+      core_p_rating = Section.find(38)
+
+      core_s_effort = Section.find(222)
+      core_s_rating = Section.find(272)
+
+      core_b_effort = Section.find(59)
+      core_b_rating = Section.find(59)
+
+      @foundations = {
+         accounting: {
+            effort: {
+               id: a_effort.id,
+               course: a_effort.course.course_name,
+               professor: "#{a_effort.professor.first_name} #{a_effort.professor.last_name}",
+               avg_hours: a_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: a_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: a_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: a_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: a_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: a_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: a_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: a_rating.id,
+               course: a_rating.course.course_name,
+               professor: "#{a_rating.professor.first_name} #{a_rating.professor.last_name}",
+               avg_hours: a_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: a_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: a_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: a_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: a_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: a_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: a_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         microeconomics: {
+            effort: {
+               id: m_effort.id,
+               course: m_effort.course.course_name,
+               professor: "#{m_effort.professor.first_name} #{m_effort.professor.last_name}",
+               avg_hours: m_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: m_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: m_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: m_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: m_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: m_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: m_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: m_rating.id,
+               course: m_rating.course.course_name,
+               professor: "#{m_rating.professor.first_name} #{m_rating.professor.last_name}",
+               avg_hours: m_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: m_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: m_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: m_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: m_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: m_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: m_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         }
+      }
+
+      @core = {
+         finance: {
+            effort: {
+               id: core_f_effort.id,
+               course: core_f_effort.course.course_name,
+               professor: "#{core_f_effort.professor.first_name} #{core_f_effort.professor.last_name}",
+               avg_hours: core_f_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_f_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_f_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_f_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_f_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_f_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_f_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_f_rating.id,
+               course: core_f_rating.course.course_name,
+               professor: "#{core_f_rating.professor.first_name} #{core_f_rating.professor.last_name}",
+               avg_hours: core_f_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_f_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_f_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_f_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_f_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_f_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_f_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         marketing: {
+            effort: {
+               id: core_m_effort.id,
+               course: core_m_effort.course.course_name,
+               professor: "#{core_m_effort.professor.first_name} #{core_m_effort.professor.last_name}",
+               avg_hours: core_m_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_m_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_m_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_m_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_m_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_m_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_m_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_m_rating.id,
+               course: core_m_rating.course.course_name,
+               professor: "#{core_m_rating.professor.first_name} #{core_m_rating.professor.last_name}",
+               avg_hours: core_m_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_m_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_m_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_m_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_m_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_m_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_m_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         operations: {
+            effort: {
+               id: core_o_effort.id,
+               course: core_o_effort.course.course_name,
+               professor: "#{core_o_effort.professor.first_name} #{core_o_effort.professor.last_name}",
+               avg_hours: core_o_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_o_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_o_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_o_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_o_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_o_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_o_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_o_rating.id,
+               course: core_o_rating.course.course_name,
+               professor: "#{core_o_rating.professor.first_name} #{core_o_rating.professor.last_name}",
+               avg_hours: core_o_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_o_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_o_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_o_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_o_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_o_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_o_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         decisions: {
+            effort: {
+               id: core_d_effort.id,
+               course: core_d_effort.course.course_name,
+               professor: "#{core_d_effort.professor.first_name} #{core_d_effort.professor.last_name}",
+               avg_hours: core_d_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_d_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_d_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_d_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_d_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_d_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_d_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_d_rating.id,
+               course: core_d_rating.course.course_name,
+               professor: "#{core_d_rating.professor.first_name} #{core_d_rating.professor.last_name}",
+               avg_hours: core_d_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_d_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_d_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_d_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_d_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_d_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_d_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         people: {
+            effort: {
+               id: core_p_effort.id,
+               course: core_p_effort.course.course_name,
+               professor: "#{core_p_effort.professor.first_name} #{core_p_effort.professor.last_name}",
+               avg_hours: core_p_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_p_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_p_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_p_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_p_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_p_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_p_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_p_rating.id,
+               course: core_p_rating.course.course_name,
+               professor: "#{core_p_rating.professor.first_name} #{core_p_rating.professor.last_name}",
+               avg_hours: core_p_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_p_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_p_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_p_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_p_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_p_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_p_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         strategy: {
+            effort: {
+               id: core_s_effort.id,
+               course: core_s_effort.course.course_name,
+               professor: "#{core_s_effort.professor.first_name} #{core_s_effort.professor.last_name}",
+               avg_hours: core_s_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_s_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_s_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_s_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_s_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_s_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_s_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_s_rating.id,
+               course: core_s_rating.course.course_name,
+               professor: "#{core_s_rating.professor.first_name} #{core_s_rating.professor.last_name}",
+               avg_hours: core_s_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_s_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_s_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_s_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_s_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_s_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_s_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         },
+         business: {
+            effort: {
+               id: core_b_effort.id,
+               course: core_b_effort.course.course_name,
+               professor: "#{core_b_effort.professor.first_name} #{core_b_effort.professor.last_name}",
+               avg_hours: core_b_effort.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_b_effort.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_b_effort.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_b_effort.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_b_effort.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_b_effort.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_b_effort.bids.average(:p1_price).to_f.round(2)
+            },
+            rating: {
+               id: core_b_rating.id,
+               course: core_b_rating.course.course_name,
+               professor: "#{core_b_rating.professor.first_name} #{core_b_rating.professor.last_name}",
+               avg_hours: core_b_rating.ratings.average(:avg_hours).to_f.round(2),
+               engaging: core_b_rating.ratings.average(:engaging_mean).to_f.round(2),
+               amt_learned: core_b_rating.ratings.average(:amt_learned_mean).to_f.round(2),
+               comms: core_b_rating.ratings.average(:comms_mean).to_f.round(2),
+               practical: core_b_rating.ratings.average(:practical_mean).to_f.round(2),
+               recommend: core_b_rating.ratings.average(:recommend_mean).to_f.round(2),
+               cost: core_b_rating.bids.average(:p1_price).to_f.round(2)
+            }
+         }
+      }
+      render("plans/hot_takes.html.erb")
+   end
+
    def stat_form
       # stats = {
       #    "General" => {bid: {

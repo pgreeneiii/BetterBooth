@@ -1,0 +1,572 @@
+<div class="page-header">
+   <h1>
+      Spring Hot Takes
+   </h1>
+</div>
+<div class="row">
+   <div class="col-xs-12">
+      <p class="hot">This guidance for those pesky foundational and core requirement courses is by no means prescriptive. It is based on the data available for the courses offered in the Spring that meet Booth requirements.</p>
+   </div>
+   <div class="col-xs-12">
+      <h2>Foundations</h2>
+      <div class="carousel">
+         <div class="carousel-links">
+            <div class="row">
+               <div class="col-xs-4 pr-0">
+                  <div class="car-link">
+                     Accounting
+                  </div>
+               </div>
+               <div class="col-xs-4 pr-0">
+                  <div class="car-link">
+                     Microeconomics
+                  </div>
+               </div>
+               <div class="col-xs-4 pr-0">
+                  <div class="car-link">
+                     Statistics
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xs-12">
+               <div class="carousel-items">
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-xs-12">
+                           <h4>Accounting</h4>
+                        </div>
+                        <div class="col-sm-6">
+                           <h5><i class="far fa-clock fa-fw"></i> Least Work</h5>
+                           <ul class="list-group">
+                              <li class="list-group-item"><strong>Course:</strong> <%= @foundations[:accounting][:effort][:course] %></li>
+                              <li class="list-group-item"><strong>Professor:</strong> <%= @foundations[:accounting][:effort][:professor] %></li>
+                              <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @foundations[:accounting][:effort][:avg_hours] %></li>
+                              <li class="list-group-item"><strong>Engaging:</strong> <%= @foundations[:accounting][:effort][:engaging] %></li>
+                              <li class="list-group-item"><strong>Learning:</strong> <%= @foundations[:accounting][:effort][:amt_learned] %></li>
+                              <li class="list-group-item"><strong>Communication:</strong> <%= @foundations[:accounting][:effort][:comms] %></li>
+                              <li class="list-group-item"><strong>Practical:</strong> <%= @foundations[:accounting][:effort][:practical] %></li>
+                              <li class="list-group-item"><strong>Recommendation:</strong> <%= @foundations[:accounting][:effort][:recommend] %></li>
+                              <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @foundations[:accounting][:effort][:cost] %></li>
+                           </ul>
+                           <div class="row mt-1 mb-2">
+                              <div class="col-xs-offset-2 col-xs-8">
+                                 <a href="sections/<%= @foundations[:accounting][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                    <i class="fas fa-binoculars fa-fw"></i>
+                                    See Course Details
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <h5><i class="fas fa-star fa-fw"></i> Highest Rated</h5>
+                           <ul class="list-group">
+                              <li class="list-group-item"><strong>Course:</strong> <%= @foundations[:accounting][:rating][:course] %></li>
+                              <li class="list-group-item"><strong>Professor:</strong> <%= @foundations[:accounting][:rating][:professor] %></li>
+                              <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @foundations[:accounting][:rating][:avg_hours] %></li>
+                              <li class="list-group-item"><strong>Engaging:</strong> <%= @foundations[:accounting][:rating][:engaging] %></li>
+                              <li class="list-group-item"><strong>Learning:</strong> <%= @foundations[:accounting][:rating][:amt_learned] %></li>
+                              <li class="list-group-item"><strong>Communication:</strong> <%= @foundations[:accounting][:rating][:comms] %></li>
+                              <li class="list-group-item"><strong>Practical:</strong> <%= @foundations[:accounting][:rating][:practical] %></li>
+                              <li class="list-group-item"><strong>Recommendation:</strong> <%= @foundations[:accounting][:rating][:recommend] %></li>
+                              <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @foundations[:accounting][:rating][:cost] %></li>
+                           </ul>
+                           <div class="row mt-1 mb-2">
+                              <div class="col-xs-offset-2 col-xs-8">
+                                 <a href="sections/<%= @foundations[:accounting][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                    <i class="fas fa-binoculars fa-fw"></i>
+                                    See Course Details
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-xs-12">
+                           <h4>Microeconomics</h4>
+                        </div>
+                        <div class="col-sm-6">
+                           <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                           <ul class="list-group">
+                              <li class="list-group-item"><strong>Course:</strong> <%= @foundations[:microeconomics][:effort][:course] %></li>
+                              <li class="list-group-item"><strong>Professor:</strong> <%= @foundations[:microeconomics][:effort][:professor] %></li>
+                              <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @foundations[:microeconomics][:effort][:avg_hours] %></li>
+                              <li class="list-group-item"><strong>Engaging:</strong> <%= @foundations[:microeconomics][:effort][:engaging] %></li>
+                              <li class="list-group-item"><strong>Learning:</strong> <%= @foundations[:microeconomics][:effort][:amt_learned] %></li>
+                              <li class="list-group-item"><strong>Communication:</strong> <%= @foundations[:microeconomics][:effort][:comms] %></li>
+                              <li class="list-group-item"><strong>Practical:</strong> <%= @foundations[:microeconomics][:effort][:practical] %></li>
+                              <li class="list-group-item"><strong>Recommendation:</strong> <%= @foundations[:microeconomics][:effort][:recommend] %></li>
+                              <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @foundations[:microeconomics][:effort][:cost] %></li>
+                           </ul>
+                           <div class="row mt-1 mb-2">
+                              <div class="col-xs-offset-2 col-xs-8">
+                                 <a href="sections/<%= @foundations[:microeconomics][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                    <i class="fas fa-binoculars fa-fw"></i>
+                                    See Course Details
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                           <ul class="list-group">
+                              <li class="list-group-item"><strong>Course:</strong> <%= @foundations[:microeconomics][:rating][:course] %></li>
+                              <li class="list-group-item"><strong>Professor:</strong> <%= @foundations[:microeconomics][:rating][:professor] %></li>
+                              <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @foundations[:microeconomics][:rating][:avg_hours] %></li>
+                              <li class="list-group-item"><strong>Engaging:</strong> <%= @foundations[:microeconomics][:rating][:engaging] %></li>
+                              <li class="list-group-item"><strong>Learning:</strong> <%= @foundations[:microeconomics][:rating][:amt_learned] %></li>
+                              <li class="list-group-item"><strong>Communication:</strong> <%= @foundations[:microeconomics][:rating][:comms] %></li>
+                              <li class="list-group-item"><strong>Practical:</strong> <%= @foundations[:microeconomics][:rating][:practical] %></li>
+                              <li class="list-group-item"><strong>Recommendation:</strong> <%= @foundations[:microeconomics][:rating][:recommend] %></li>
+                              <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @foundations[:microeconomics][:rating][:cost] %></li>
+                           </ul>
+                           <div class="row mt-1 mb-2">
+                              <div class="col-xs-offset-2 col-xs-8">
+                                 <a href="sections/<%= @foundations[:microeconomics][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                    <i class="fas fa-binoculars fa-fw"></i>
+                                    See Course Details
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-xs-12">
+                           <h4>Statistics</h4>
+                        </div>
+                        <div class="col-xs-12">
+                           <p class="center">Sorry! There's no data on the Business Statistics courses taught this quarter. Your guess is as good as mine..</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-xs-12">
+      <h2>Core Requirements</h2>
+      <div class="carousel">
+         <div class="carousel-links">
+            <div class="row">
+               <div class="col-sm-3 col-xs-4">
+                  <div class="car-link">
+                     Finance
+                  </div>
+               </div>
+               <div class="col-sm-3 col-xs-4">
+                  <div class="car-link">
+                     Marketing
+                  </div>
+               </div>
+               <div class="col-sm-3 col-xs-4">
+                  <div class="car-link">
+                     Operations
+                  </div>
+               </div>
+               <div class="col-sm-3 col-xs-4">
+                  <div class="car-link">
+                     Decisions
+                  </div>
+               </div>
+               <div class="col-sm-3 col-xs-4">
+                  <div class="car-link">
+                     People
+                  </div>
+               </div>
+               <div class="col-sm-3 col-xs-4">
+                  <div class="car-link">
+                     Strategy
+                  </div>
+               </div>
+               <div class="col-sm-6 col-xs-12">
+                  <div class="car-link">
+                     Business Environment
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="carousel-items">
+
+               <!-- Finance -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>Finance</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:finance][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:finance][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:finance][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:finance][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:finance][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:finance][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:finance][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:finance][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:finance][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:finance][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:finance][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:finance][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:finance][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:finance][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:finance][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:finance][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:finance][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:finance][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:finance][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:finance][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Marketing -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>Marketing</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:marketing][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:marketing][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:marketing][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:marketing][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:marketing][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:marketing][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:marketing][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:marketing][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:marketing][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:marketing][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:marketing][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:marketing][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:marketing][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:marketing][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:marketing][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:marketing][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:marketing][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:marketing][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:marketing][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:marketing][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Operations -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>Operations</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:operations][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:operations][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:operations][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:operations][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:operations][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:operations][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:operations][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:operations][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:operations][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:operations][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:operations][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:operations][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:operations][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:operations][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:operations][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:operations][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:operations][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:operations][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:operations][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:operations][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Decisions -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>Decisions</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:decisions][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:decisions][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:decisions][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:decisions][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:decisions][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:decisions][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:decisions][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:decisions][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:decisions][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:decisions][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:decisions][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:decisions][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:decisions][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:decisions][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:decisions][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:decisions][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:decisions][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:decisions][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:decisions][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:decisions][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- People -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>People</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:people][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:people][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:people][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:people][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:people][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:people][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:people][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:people][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:people][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:people][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:people][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:people][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:people][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:people][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:people][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:people][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:people][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:people][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:people][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:people][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Strategy -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>Strategy</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:strategy][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:strategy][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:strategy][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:strategy][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:strategy][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:strategy][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:strategy][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:strategy][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:strategy][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:strategy][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:strategy][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:strategy][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:strategy][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:strategy][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:strategy][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:strategy][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:strategy][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:strategy][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:strategy][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:strategy][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Business Environment -->
+               <div class="carousel-item">
+                  <div class="row">
+                     <div class="col-xs-12">
+                        <h4>Business Environment</h4>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="far fa-clock fa-fw"></i> Least Work</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:business][:effort][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:business][:effort][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:business][:effort][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:business][:effort][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:business][:effort][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:business][:effort][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:business][:effort][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:business][:effort][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:business][:effort][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:business][:effort][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <p class="center"><i class="fas fa-star fa-fw"></i> Highest Rated</p>
+                        <ul class="list-group">
+                           <li class="list-group-item"><strong>Course:</strong> <%= @core[:business][:rating][:course] %></li>
+                           <li class="list-group-item"><strong>Professor:</strong> <%= @core[:business][:rating][:professor] %></li>
+                           <li class="list-group-item"><strong>Avg. Hours:</strong> <%= @core[:business][:rating][:avg_hours] %></li>
+                           <li class="list-group-item"><strong>Engaging:</strong> <%= @core[:business][:rating][:engaging] %></li>
+                           <li class="list-group-item"><strong>Learning:</strong> <%= @core[:business][:rating][:amt_learned] %></li>
+                           <li class="list-group-item"><strong>Communication:</strong> <%= @core[:business][:rating][:comms] %></li>
+                           <li class="list-group-item"><strong>Practical:</strong> <%= @core[:business][:rating][:practical] %></li>
+                           <li class="list-group-item"><strong>Recommendation:</strong> <%= @core[:business][:rating][:recommend] %></li>
+                           <li class="list-group-item"><strong>Average Phase 1 Price:</strong> <%= @core[:business][:rating][:cost] %></li>
+                        </ul>
+                        <div class="row mt-1 mb-2">
+                           <div class="col-xs-offset-2 col-xs-8">
+                              <a href="sections/<%= @core[:business][:rating][:id] %>" target="_blank" class="btn btn-block btn-primary btn-sm">
+                                 <i class="fas fa-binoculars fa-fw"></i>
+                                 See Course Details
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

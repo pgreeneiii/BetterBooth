@@ -71,19 +71,24 @@
                         Statistics <span class="superscript small-caps">Beta</span>
                      </a>
                   </li>
+                  <li>
+                     <a href="/hot">
+                        <i class="fas fa-fire fa-fw"></i>
+                        Hot Takes
+                     </a>
+                  </li>
                   <% end %>
                </ul>
 
                <ul class="nav navbar-nav navbar-right">
                   <% if current_user != nil %> <!-- If signed in -->
                   <li>
-                     <a href="/users/edit"><i class="fas fa-cog"></i>
+                     <a href="/users/edit"><i class="fas fa-cog fa-fw"></i>
                         <span class="account"> Account</span></a>
                      </li>
                      <li>
                         <a href="/users/sign_out" data-method="delete" rel="nofollow">
-                           <i class="fas fa-sign-out-alt"></i>
-                           Sign Out
+                           <i class="fas fa-sign-out-alt fa-fw"></i> Sign Out
                         </a>
                      </li>
                      <% else %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     root 'welcome#welcome'
 
+
    # Routes to view mailer templates
    get "/test/plan", :controller => "mailtesting", :action => "test_plan"
    get "/test/welcome", :controller => "mailtesting", :action => "test_welcome"
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
    post "/create_plan", :controller => "plans", :action => "create"
 
    # READ
+   get "/hot", :controller => "plans", :action => "hot"
    get "/plans", :controller => "plans", :action => "index"
    get "/plans/stats", controller: "plans", action: "stat_form"
    get "/plans/build_stats", controller: "plans", action: "stat_results"

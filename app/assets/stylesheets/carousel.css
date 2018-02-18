@@ -11,6 +11,17 @@
    border-width: 0.5px;
    border-color: #e6e6e6;
 }
+
+.carousel ul {
+   text-align: left;
+   line-height: normal;
+}
+
+.carousel .list-group-item {
+   padding-bottom: 5px;
+   padding-top: 5px;
+}
+
 .carousel-links {
    border-top-left-radius: 3px;
    border-top-right-radius: 3px;
