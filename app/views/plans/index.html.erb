@@ -6,10 +6,13 @@
 
 <%= render partial: 'plan', locals: {plans: @plans} %>
 
-<div class='row mt-2 mb-1'>
-   <div class='col-md-offset-3 col-md-6'>
-      <%= link_to 'generate_plan', class: 'btn btn-success btn-block btn-lg' do %>
+<div class='row mt-2'>
+   <div class='col-md-offset-2 col-md-4'>
+      <%= link_to 'generate_plan', class: 'btn btn-success btn-block btn-lg mb-1' do %>
          <i class="fas fa-share-square"></i> Send Plan to Inbox
       <% end %>
+   </div>
+   <div class='col-md-4'>
+      <a href="https://appcenter.chicagobooth.edu/Apps/BoothSSO/iBid/goiBid.aspx" target="_blank" class="btn btn-primary btn-block btn-lg mb-1">iBid Portal</a>
    </div>
 </div>
