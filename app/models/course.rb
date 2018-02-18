@@ -33,23 +33,23 @@ class Course < ApplicationRecord
 
          if subject == "All" || subject.blank?
             if day.present? && time.present?
-               joins(:bids).where("day_id == :day AND time_id == :time", {day: day, time: time}).distinct.count
+               joins(:bids).where("day_id = :day AND time_id = :time", {day: day, time: time}).distinct.count
             elsif day.present? && time.empty?
-               joins(:bids).where("day_id == :day", {day: day}).distinct.count
+               joins(:bids).where("day_id = :day", {day: day}).distinct.count
             elsif day.empty? && time.present?
-               joins(:bids).where("time_id == :time", {time: time}).distinct.count
+               joins(:bids).where("time_id = :time", {time: time}).distinct.count
             else
                joins(:bids).distinct.count
             end
          else
             if day.present? && time.present?
-               joins(:bids).where("subject == :subject", {subject: subject}).where("day_id == :day AND time_id == :time", {day: day, time: time}).distinct.count
+               joins(:bids).where("subject = :subject", {subject: subject}).where("day_id = :day AND time_id = :time", {day: day, time: time}).distinct.count
             elsif day.present? && time.empty?
-               joins(:bids).where("subject == :subject", {subject: subject}).where("day_id == :day", {day: day}).distinct.count
+               joins(:bids).where("subject = :subject", {subject: subject}).where("day_id = :day", {day: day}).distinct.count
             elsif day.empty? && time.present?
-               joins(:bids).where("subject == :subject", {subject: subject}).where("time_id == :time", {time: time}).distinct.count
+               joins(:bids).where("subject = :subject", {subject: subject}).where("time_id = :time", {time: time}).distinct.count
             else
-               joins(:bids).where("subject == :subject", {subject: subject}).distinct.count
+               joins(:bids).where("subject = :subject", {subject: subject}).distinct.count
             end
          end
       else
@@ -80,7 +80,7 @@ class Course < ApplicationRecord
       if subject == "All" || subject.blank?
          Course.joins(:ratings).distinct.count
       else
-         Course.where("subject == :subject", {subject: subject}).joins(:ratings).distinct.count
+         Course.where("subject = :subject", {subject: subject}).joins(:ratings).distinct.count
       end
    end
 

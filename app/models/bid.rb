@@ -44,11 +44,11 @@ class Bid < ApplicationRecord
       end
 
       if day.present? && time.present?
-         where("day_id == :day AND time_id == :time", {day: day, time: time}).average(phase).to_f.round(2)
+         where("day_id = :day AND time_id = :time", {day: day, time: time}).average(phase).to_f.round(2)
       elsif day.present? && time.empty?
-         where("day_id == :day", {day: day}).average(phase).to_f.round(2)
+         where("day_id = :day", {day: day}).average(phase).to_f.round(2)
       elsif day.empty? && time.present?
-         where("time_id == :time", {time: time}).average(phase).to_f.round(2)
+         where("time_id = :time", {time: time}).average(phase).to_f.round(2)
       else
          all.average(phase).to_f.round(2)
       end
@@ -66,11 +66,11 @@ class Bid < ApplicationRecord
       end
 
       if day.present? && time.present?
-         where("day_id == :day AND time_id == :time", {day: day, time: time}).count
+         where("day_id = :day AND time_id = :time", {day: day, time: time}).count
       elsif day.present? && time.empty?
-         where("day_id == :day", {day: day}).count
+         where("day_id = :day", {day: day}).count
       elsif day.empty? && time.present?
-         where("time_id == :time", {time: time}).count
+         where("time_id = :time", {time: time}).count
       else
          all.count
       end
