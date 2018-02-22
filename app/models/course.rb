@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
    has_many(:sections, :class_name => "Section", :foreign_key => "course_id")
+   has_one(:stats, class_name: "Stat", foreign_key: "course_id")
    has_many(:professors, :through => :sections)
    has_many(:schedules, :through => :sections)
    has_many(:ratings, :through => :sections)

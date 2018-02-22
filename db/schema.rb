@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217154716) do
+ActiveRecord::Schema.define(version: 20180222163650) do
 
   create_table "bids", force: :cascade do |t|
     t.integer  "section_id"
@@ -147,6 +147,26 @@ ActiveRecord::Schema.define(version: 20180217154716) do
     t.boolean  "final_take"
     t.boolean  "canvas"
     t.boolean  "sample_exam"
+  end
+
+  create_table "stats", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "quarter"
+    t.integer  "ratings_count"
+    t.integer  "bids_count"
+    t.float    "hours"
+    t.float    "comms"
+    t.float    "engage"
+    t.float    "practical"
+    t.float    "amt_learned"
+    t.float    "recommend"
+    t.float    "enrollment"
+    t.float    "p1"
+    t.float    "p2"
+    t.float    "p3"
+    t.float    "p4"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "time_tables", force: :cascade do |t|
