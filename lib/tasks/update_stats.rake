@@ -78,6 +78,7 @@ namespace :update do
                   stat.save
                end
             end
+         end
 
       end
    end
