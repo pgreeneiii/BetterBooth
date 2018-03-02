@@ -33,46 +33,47 @@ namespace :update do
                stat.save
             end
          end
+      end
 
-         task spring: :environment do
-            quarter = 3
+      task spring: :environment do
+         quarter = 3
 
-            Course.all.each do |course|
-               sections = Section.joins(:course, :schedules).where("courses.id = :id AND schedules.quarter = :quarter", {id: course.id, quarter: quarter}).joins(:ratings, :bids).distinct
+         Course.all.each do |course|
+            sections = Section.joins(:course, :schedules).where("courses.id = :id AND schedules.quarter = :quarter", {id: course.id, quarter: quarter}).joins(:ratings, :bids).distinct
 
-               if sections.present?
+            if sections.present?
 
-                  stat = Stat.new
-                  stat.quarter = quarter
+               stat = Stat.new
+               stat.quarter = quarter
 
-                  stat.course_id = course.id
+               stat.course_id = course.id
 
-                  ratings_count = 0
-                  bids_count = 0
-                  sections.each do |section|
-                     ratings_count += section.ratings.count
-                     bids_count += section.bids.count
-                  end
+               ratings_count = 0
+               bids_count = 0
+               sections.each do |section|
+                  ratings_count += section.ratings.count
+                  bids_count += section.bids.count
+               end
 
-                  stat.ratings_count = ratings_count
-                  stat.bids_count = bids_count
+               stat.ratings_count = ratings_count
+               stat.bids_count = bids_count
 
-                  stat.hours = sections.average("ratings.avg_hours").to_f.round(2)
-                  stat.comms = sections.average("ratings.comms_mean").to_f.round(2)
-                  stat.engage = sections.average("ratings.engaging_mean").to_f.round(2)
-                  stat.practical = sections.average("ratings.practical_mean").to_f.round(2)
-                  stat.amt_learned = sections.average("ratings.amt_learned_mean").to_f.round(2)
-                  stat.recommend = sections.average("ratings.recommend_mean").to_f.round(2)
-                  stat.enrollment = sections.average("ratings.enrollment").to_f.round(0)
+               stat.hours = sections.average("ratings.avg_hours").to_f.round(2)
+               stat.comms = sections.average("ratings.comms_mean").to_f.round(2)
+               stat.engage = sections.average("ratings.engaging_mean").to_f.round(2)
+               stat.practical = sections.average("ratings.practical_mean").to_f.round(2)
+               stat.amt_learned = sections.average("ratings.amt_learned_mean").to_f.round(2)
+               stat.recommend = sections.average("ratings.recommend_mean").to_f.round(2)
+               stat.enrollment = sections.average("ratings.enrollment").to_f.round(0)
 
 
-                  stat.p1 = sections.average("bids.p1_price").to_f.round(0)
+               stat.p1 = sections.average("bids.p1_price").to_f.round(0)
 
-                  stat.p2 = sections.average("bids.p2_price").to_f.round(0)
+               stat.p2 = sections.average("bids.p2_price").to_f.round(0)
 
-                  stat.p3 = sections.average("bids.p3_price").to_f.round(0)
+               stat.p3 = sections.average("bids.p3_price").to_f.round(0)
 
-                  stat.p4 = sections.average("bids.p4_price").to_f.round(0)
+               stat.p4 = sections.average("bids.p4_price").to_f.round(0)
 
                if save_check > 0
                   stat.save
